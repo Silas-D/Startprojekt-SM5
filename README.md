@@ -1,7 +1,7 @@
 # Startprojekt-SM5
 
 Assets:
-  Main:
+  Main
   https://www.kenney.nl/assets/tower-defense-top-down
   https://www.kenney.nl/assets/top-down-tanks-redux
   https://www.kenney.nl/assets/top-down-shooter
