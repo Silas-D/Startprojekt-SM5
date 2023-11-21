@@ -12,7 +12,7 @@ point_count = 2
 curve = SubResource("Curve2D_ekoxt")
 
 [node name="PathSpawner" type="PathFollow2D" parent="."]
-position = Vector2(1902, 545)
+position = Vector2(1902, 544)
 rotation = 3.14051
 loop = false
 

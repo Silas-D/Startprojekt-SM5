@@ -18,3 +18,10 @@ func _physics_process(delta):
 	look_at(target)
 	
 	move_and_slide()
+
+
+func _on_area_2d_body_entered(body):
+	if "Soldier A" in body.name:
+		#body.Health -= bulletDAmage
+		queue_free()
+		
