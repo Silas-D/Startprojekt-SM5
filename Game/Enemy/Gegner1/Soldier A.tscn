@@ -6,6 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_dwfuq"]
 
 [node name="Soldier A" type="CharacterBody2D"]
+scale = Vector2(0.8, 0.8)
 script = ExtResource("1_831s7")
 
 [node name="TowerDefenseTile245" type="Sprite2D" parent="."]
@@ -13,5 +14,5 @@ scale = Vector2(5, 5)
 texture = ExtResource("1_7kqux")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(5, 5)
+scale = Vector2(7, 7)
 shape = SubResource("CircleShape2D_dwfuq")

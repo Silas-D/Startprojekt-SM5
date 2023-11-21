@@ -7,29 +7,27 @@
 size = Vector2(45, 46)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qf2ul"]
-size = Vector2(977.865, 72.5)
+size = Vector2(78.5, 894)
 
 [node name="RedBulletTower" type="StaticBody2D"]
+rotation = 1.5708
 scale = Vector2(2, 2)
 script = ExtResource("1_bby4v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(1.2904, 0.931725)
+position = Vector2(2.54322e-07, 6.5)
 shape = SubResource("RectangleShape2D_la7cb")
 
 [node name="Aim" type="Marker2D" parent="."]
-position = Vector2(27, 0)
-scale = Vector2(0.942703, 1.38895)
+position = Vector2(0.5, -29.5)
 
 [node name="TowerDefenseTile250" type="Sprite2D" parent="."]
-rotation = 1.5708
 texture = ExtResource("2_q326t")
 
 [node name="Tower" type="Area2D" parent="."]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Tower"]
-position = Vector2(451.905, 0)
-scale = Vector2(0.977966, -0.65919)
+position = Vector2(0.249981, -418)
 shape = SubResource("RectangleShape2D_qf2ul")
 
 [node name="BulletContainer" type="Node" parent="."]
