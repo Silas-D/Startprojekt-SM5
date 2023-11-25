@@ -34,5 +34,18 @@ shape = SubResource("RectangleShape2D_qf2ul")
 
 [node name="BulletContainer" type="Node" parent="."]
 
+[node name="MenuButton" type="MenuButton" parent="."]
+offset_left = -30.0
+offset_top = -24.0
+offset_right = 32.0
+offset_bottom = 29.0
+toggle_mode = false
+action_mode = 1
+item_count = 2
+popup/item_0/text = "A"
+popup/item_0/id = 0
+popup/item_1/text = "B"
+popup/item_1/id = 1
+
 [connection signal="body_entered" from="Tower" to="." method="_on_tower_body_entered"]
 [connection signal="body_exited" from="Tower" to="." method="_on_tower_body_exited"]

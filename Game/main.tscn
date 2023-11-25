@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://b86hrtmfbwl50"]
+[gd_scene load_steps=5 format=3 uid="uid://b86hrtmfbwl50"]
 
+[ext_resource type="Script" path="res://Game/main.gd" id="1_1spnh"]
 [ext_resource type="PackedScene" uid="uid://blq1sl63fc5oi" path="res://Game/Level/TileMap.tscn" id="1_u8suv"]
 [ext_resource type="Script" path="res://Game/Level/PathSpawner.gd" id="2_3atv1"]
 [ext_resource type="PackedScene" uid="uid://dwhoxxd23ue82" path="res://Game/Defense/Turm1/RedBulletTower.tscn" id="3_f3vnp"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_1spnh")
 
 [node name="TileMap" parent="." instance=ExtResource("1_u8suv")]
 scale = Vector2(1.667, 1.688)
@@ -22,4 +24,19 @@ autostart = true
 [node name="RedBulletTower" parent="Towers" instance=ExtResource("3_f3vnp")]
 position = Vector2(132, 540)
 
+[node name="Button" type="Button" parent="."]
+offset_left = 67.0
+offset_top = 495.0
+offset_right = 156.0
+offset_bottom = 584.0
+flat = true
+
+[node name="Pause" type="Button" parent="."]
+offset_left = 1846.0
+offset_top = 1.0
+offset_right = 1919.0
+offset_bottom = 75.0
+
 [connection signal="timeout" from="PathSpawner/Timer" to="PathSpawner" method="_on_timer_timeout"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]
