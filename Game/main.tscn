@@ -25,7 +25,7 @@ autostart = true
 [node name="RedBulletTower" parent="Towers" instance=ExtResource("3_f3vnp")]
 position = Vector2(132, 540)
 
-[node name="PauseMenu" parent="." instance=ExtResource("5_1yo3r")]
+[node name="pauseMenu" parent="." instance=ExtResource("5_1yo3r")]
 visible = false
 offset_left = 586.0
 offset_top = 311.0

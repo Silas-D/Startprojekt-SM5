@@ -1,6 +1,6 @@
 extends Control
 
-@onready var main = $"../../"
+@onready var main = owner
 
 func _on_weiterspielen_pressed():
 	main.pauseMenu()
