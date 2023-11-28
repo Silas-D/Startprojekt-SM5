@@ -17,8 +17,7 @@ config/icon="res://icon.svg"
 
 [display]
 
-window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
+window/stretch/mode="viewport"
 window/stretch/scale=0.5
 window/vsync/vsync_mode=0
 
