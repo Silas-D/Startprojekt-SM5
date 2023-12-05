@@ -22,6 +22,6 @@ func _physics_process(delta):
 
 func _on_area_2d_body_entered(body):
 	if "Soldier A" in body.name:
-		#body.Health -= bulletDAmage
+		body.Health -= bulletDAmage
 		queue_free()
 		

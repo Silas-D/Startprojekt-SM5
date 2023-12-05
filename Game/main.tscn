@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://blq1sl63fc5oi" path="res://Game/Level/TileMap.tscn" id="1_u8suv"]
 [ext_resource type="Script" path="res://Game/Level/PathSpawner.gd" id="2_3atv1"]
 [ext_resource type="PackedScene" uid="uid://dwhoxxd23ue82" path="res://Game/Defense/Turm1/RedBulletTower.tscn" id="3_f3vnp"]
-[ext_resource type="PackedScene" uid="uid://dbyjqrpe10lgi" path="res://pause_menu.tscn" id="5_1yo3r"]
+[ext_resource type="PackedScene" path="res://pause_menu.tscn" id="5_1yo3r"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_66rgv")
