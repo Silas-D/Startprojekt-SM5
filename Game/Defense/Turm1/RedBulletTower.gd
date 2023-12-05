@@ -2,7 +2,7 @@ extends StaticBody2D
 
 
 var Bullet = preload("res://Game/Defense/Turm1/RedBullet.tscn")
-var bulletDamage = 5
+const bulletDamage = 5
 var pathName
 var currTargets = []
 var curr
@@ -31,9 +31,10 @@ func _on_tower_body_entered(body):
 		
 		var tempBullet = Bullet.instantiate()
 		tempBullet.pathName = pathName
-		tempBullet.bulletDamage = bulletDamage
+		#tempBullet.bulletDamage = bulletDamage
+		#Anscheinend nicht benötigt
 		get_node("BulletContainer").add_child(tempBullet)
 		tempBullet.global_position = $Aim.global_position
 		
-func _on_tower_body_exited(body):
+func _on_tower_body_exited(_body):
 	pass # Replace with function body.

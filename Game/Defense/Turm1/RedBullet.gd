@@ -2,11 +2,11 @@ extends CharacterBody2D
 
 
 var target
-var Speed = 1000
+const Speed = 1000
 var pathName = ""
-var bulletDamage
+const bulletDamage = 5
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var pathSpawnerNode = get_tree().get_root().get_node("Main/PathSpawner")
 	
 	for i in pathSpawnerNode.get_child_count():
@@ -22,6 +22,6 @@ func _physics_process(delta):
 
 func _on_area_2d_body_entered(body):
 	if "Soldier A" in body.name:
-		body.Health -= bulletDAmage
+		body.health -= bulletDamage
 		queue_free()
 		
