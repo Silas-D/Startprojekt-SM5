@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://4x5v2qrv1xpq"]
+[gd_scene load_steps=3 format=3 uid="uid://bwkq5l08wx7h8"]
 
 [ext_resource type="PackedScene" uid="uid://u5fag5k1uv4e" path="res://Game/Enemy/Gegner1/Soldier A.tscn" id="2_n3pc2"]
 
