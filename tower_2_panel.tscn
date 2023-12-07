@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhwvtjnmhgapo"]
+
+[ext_resource type="Texture2D" uid="uid://b7uboj3b8iaaf" path="res://Game/Assets/Towers/towerDefense_tile292.png" id="1_m38wy"]
+
+[node name="Tower2Panel" type="Panel"]
+offset_right = 194.0
+offset_bottom = 160.0
+
+[node name="TowerDefenseTile292" type="Sprite2D" parent="."]
+position = Vector2(98, 79)
+scale = Vector2(3.03125, 2.53125)
+texture = ExtResource("1_m38wy")

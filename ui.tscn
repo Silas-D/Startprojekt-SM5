@@ -1,3 +1,36 @@
-[gd_scene format=3 uid="uid://daihyucdfil6l"]
+[gd_scene load_steps=3 format=3 uid="uid://daihyucdfil6l"]
+
+[ext_resource type="PackedScene" uid="uid://dqm3dc5uat6ls" path="res://tower_panel1.tscn" id="1_0nq62"]
+[ext_resource type="PackedScene" uid="uid://bhwvtjnmhgapo" path="res://tower_2_panel.tscn" id="2_hdybp"]
 
 [node name="UI" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 1362.0
+offset_top = 6.0
+offset_right = 1914.0
+offset_bottom = 1076.0
+
+[node name="FlowContainer" type="FlowContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 26.0
+offset_right = 243.0
+offset_bottom = 206.0
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+
+[node name="tower1Panel" parent="Panel/FlowContainer" instance=ExtResource("1_0nq62")]
+layout_mode = 2
+
+[node name="FlowContainer2" type="FlowContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 309.0
+offset_top = 26.0
+offset_right = 528.0
+offset_bottom = 206.0
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+
+[node name="Tower2Panel" parent="Panel/FlowContainer2" instance=ExtResource("2_hdybp")]
+layout_mode = 2
