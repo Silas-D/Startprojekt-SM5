@@ -36,8 +36,6 @@ func _on_tower_body_entered(body):
 		
 		var tempBullet = Bullet.instantiate()
 		tempBullet.pathName = pathName
-		#tempBullet.bulletDamage = bulletDamage
-		#Anscheinend nicht benötigt
 		get_node("BulletContainer").add_child(tempBullet)
 		tempBullet.global_position = $Aim.global_position
 

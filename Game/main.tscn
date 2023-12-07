@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b86hrtmfbwl50"]
+[gd_scene load_steps=7 format=3 uid="uid://b86hrtmfbwl50"]
 
 [ext_resource type="Script" path="res://Game/main.gd" id="1_66rgv"]
 [ext_resource type="PackedScene" uid="uid://blq1sl63fc5oi" path="res://Game/Level/TileMap.tscn" id="1_u8suv"]
 [ext_resource type="Script" path="res://Game/Level/PathSpawner.gd" id="2_3atv1"]
 [ext_resource type="PackedScene" uid="uid://dwhoxxd23ue82" path="res://Game/Defense/Turm1/RedBulletTower.tscn" id="3_f3vnp"]
 [ext_resource type="PackedScene" uid="uid://dbyjqrpe10lgi" path="res://pause_menu.tscn" id="5_1yo3r"]
+[ext_resource type="PackedScene" uid="uid://ccx0k6v5pltrp" path="res://Game/Defense/Turm2/advancedtower.tscn" id="5_lv0t5"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_66rgv")
@@ -24,6 +25,9 @@ autostart = true
 
 [node name="RedBulletTower" parent="Towers" instance=ExtResource("3_f3vnp")]
 position = Vector2(132, 540)
+
+[node name="advancedtower" parent="Towers" instance=ExtResource("5_lv0t5")]
+position = Vector2(118, 319)
 
 [node name="pauseMenu" parent="." instance=ExtResource("5_1yo3r")]
 visible = false
