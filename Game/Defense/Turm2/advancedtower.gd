@@ -7,13 +7,13 @@ var currTargets = []
 var curr
 
 
-func _on_tower_body_entered(body):
+func _on_advancedtower_body_entered(body):
 	if "Soldier A" in body.name:
 		var tempArray = []
 		currTargets = get_node("Tower").get_overlapping_bodies()
 		
 		for i in currTargets:
-			if "Soldier" in i.name:
+			if "Soldier A" in i.name:
 				tempArray.append(i)
 		
 		var currTarget = null
