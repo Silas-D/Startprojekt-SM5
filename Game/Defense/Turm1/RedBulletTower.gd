@@ -6,6 +6,7 @@ const bulletDamage = 5
 var pathName
 var currTargets = []
 var curr
+var towerHealth = 10
 
 
 func _on_tower_body_entered(body):
@@ -38,3 +39,4 @@ func _on_tower_body_entered(body):
 		
 func _on_tower_body_exited(_body):
 	pass # Replace with function body.
+
