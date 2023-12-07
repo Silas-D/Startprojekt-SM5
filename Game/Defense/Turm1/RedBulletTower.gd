@@ -46,21 +46,22 @@ func _on_gegner_scan_body_entered(body):
 	if "Soldier A" in body.name:
 		towerHealth -= 2
 		body.health -= 100
+	
 	if "slime_1" in body.name:
 		towerHealth -= 1
-		
+		body.health -= 100
 	if "slime_2" in body.name:
 		towerHealth -= 2
-		
+		body.health -= 100
 	if "slime_3" in body.name:
 		towerHealth -= 3
-		
+		body.health -= 100
 	if "slime_4" in body.name:
 		towerHealth -= 4
-		
+		body.health -= 100
 	if "slime_5" in body.name:
 		towerHealth -= 5
-		
+		body.health -= 100
 	if "slime_6" in body.name:
 		towerHealth -= 6
-		
+		body.health -= 100
