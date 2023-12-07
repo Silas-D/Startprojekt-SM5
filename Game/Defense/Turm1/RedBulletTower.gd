@@ -2,12 +2,16 @@ extends StaticBody2D
 
 
 var Bullet = preload("res://Game/Defense/Turm1/RedBullet.tscn")
-const bulletDamage = 5
 var pathName
 var currTargets = []
 var curr
 var towerHealth = 10
 
+
+func _process(_delta):
+	if towerHealth <= 0:
+		print("Turm down")
+		queue_free()
 
 func _on_tower_body_entered(body):
 	if "Soldier A" in body.name:
@@ -36,7 +40,27 @@ func _on_tower_body_entered(body):
 		#Anscheinend nicht benötigt
 		get_node("BulletContainer").add_child(tempBullet)
 		tempBullet.global_position = $Aim.global_position
-		
-func _on_tower_body_exited(_body):
-	pass # Replace with function body.
 
+
+func _on_gegner_scan_body_entered(body):
+	if "Soldier A" in body.name:
+		towerHealth -= 2
+		body.health -= 100
+	if "slime_1" in body.name:
+		towerHealth -= 1
+		
+	if "slime_2" in body.name:
+		towerHealth -= 2
+		
+	if "slime_3" in body.name:
+		towerHealth -= 3
+		
+	if "slime_4" in body.name:
+		towerHealth -= 4
+		
+	if "slime_5" in body.name:
+		towerHealth -= 5
+		
+	if "slime_6" in body.name:
+		towerHealth -= 6
+		

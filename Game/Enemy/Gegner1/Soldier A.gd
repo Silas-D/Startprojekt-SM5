@@ -1,9 +1,8 @@
 extends CharacterBody2D
 
-const speed = 200 
+const speed = 100
 
-@export
-var health = 10
+@export var health = 10
 
 func _process(delta):
 	get_parent().set_progress(get_parent().get_progress() + speed*delta)
@@ -12,4 +11,6 @@ func _process(delta):
 		#Hier Game Over einfügen
 	
 	if health <= 0:
+		print("Tod")
 		get_parent().get_parent().queue_free()
+

@@ -30,7 +30,13 @@ texture = ExtResource("2_q326t")
 position = Vector2(0.249981, -418)
 shape = SubResource("RectangleShape2D_qf2ul")
 
+[node name="GegnerScan" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="GegnerScan"]
+position = Vector2(2.54322e-07, 6.5)
+shape = SubResource("RectangleShape2D_la7cb")
+
 [node name="BulletContainer" type="Node" parent="."]
 
 [connection signal="body_entered" from="Tower" to="." method="_on_tower_body_entered"]
-[connection signal="body_exited" from="Tower" to="." method="_on_tower_body_exited"]
+[connection signal="body_entered" from="GegnerScan" to="." method="_on_gegner_scan_body_entered"]

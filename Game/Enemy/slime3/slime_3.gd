@@ -1,9 +1,7 @@
 extends CharacterBody2D
 
-const speed = 30 
-@export
-var health = 9
-var damage = 3
+const speed = 30
+@export var health = 9
 
 func _process(delta):
 	get_parent().set_progress(get_parent().get_progress() + speed*delta)

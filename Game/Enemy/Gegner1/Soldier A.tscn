@@ -6,6 +6,8 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_dwfuq"]
 
 [node name="Soldier A" type="CharacterBody2D"]
+texture_filter = 1
+texture_repeat = 1
 script = ExtResource("1_831s7")
 
 [node name="TowerDefenseTile245" type="Sprite2D" parent="."]
