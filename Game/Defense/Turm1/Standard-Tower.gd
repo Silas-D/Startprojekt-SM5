@@ -1,7 +1,7 @@
 extends Node2D
 
 
-var Bullet = preload("res://Game/Defense/Turm1/RedBullet.tscn")
+var Bullet = preload("res://Game/Defense/Turm1/Standard-Bullet.tscn")
 var pathName
 var currTargets = []
 var curr

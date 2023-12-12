@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var UI = $UI
 
-const Tower1 = preload("res://Game/Defense/Turm1/RedBulletTower.tscn")
+const Tower1 = preload("res://Game/Defense/Turm1/Standard-Tower.tscn")
 const Tower2 = preload ("res://Game/Defense/Turm2/advancedtower.tscn")
 
 
@@ -23,4 +23,4 @@ func _on_button_tower_1_pressed():
 func _on_button_tower_2_pressed():
 	UI.hide()
 	print(2)
-	pass # Spawn Tower 1 an Buttonposition
+	pass # Spawn Tower 2 an Buttonposition

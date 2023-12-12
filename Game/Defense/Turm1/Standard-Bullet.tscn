@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bansovbc2a25g"]
+[gd_scene load_steps=5 format=3 uid="uid://caeskkvkild1l"]
 
-[ext_resource type="Texture2D" uid="uid://bwu48iiddin7h" path="res://Game/Assets/Towers/towerDefense_tile251.png" id="1_5pnec"]
-[ext_resource type="Script" path="res://Game/Defense/Turm1/RedBullet.gd" id="1_y1det"]
+[ext_resource type="Script" path="res://Game/Defense/Turm1/Standard-Bullet.gd" id="1_ou7ss"]
+[ext_resource type="Texture2D" uid="uid://bwu48iiddin7h" path="res://Game/Assets/Towers/towerDefense_tile251.png" id="2_xqa3e"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_021al"]
 
@@ -9,13 +9,13 @@
 radius = 12.0
 height = 38.0
 
-[node name="RedBullet" type="CharacterBody2D"]
-script = ExtResource("1_y1det")
+[node name="Standard-Bullet" type="CharacterBody2D"]
+script = ExtResource("1_ou7ss")
 
 [node name="TowerDefenseTile251" type="Sprite2D" parent="."]
 position = Vector2(0, -2)
 rotation = 1.5708
-texture = ExtResource("1_5pnec")
+texture = ExtResource("2_xqa3e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708

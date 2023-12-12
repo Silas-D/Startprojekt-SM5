@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Game/main.gd" id="1_66rgv"]
 [ext_resource type="PackedScene" uid="uid://blq1sl63fc5oi" path="res://Game/Level/TileMap.tscn" id="1_u8suv"]
 [ext_resource type="Script" path="res://Game/PathSpawner.gd" id="3_18eh6"]
-[ext_resource type="PackedScene" uid="uid://dwhoxxd23ue82" path="res://Game/Defense/Turm1/RedBulletTower.tscn" id="3_f3vnp"]
+[ext_resource type="PackedScene" uid="uid://b66kvas3htwn7" path="res://Game/Defense/Turm1/Standard-Tower.tscn" id="3_f3vnp"]
 [ext_resource type="PackedScene" uid="uid://dbyjqrpe10lgi" path="res://pause_menu.tscn" id="5_1yo3r"]
 [ext_resource type="PackedScene" uid="uid://ccx0k6v5pltrp" path="res://Game/Defense/Turm2/advancedtower.tscn" id="5_lv0t5"]
 [ext_resource type="Script" path="res://Game/Buttons.gd" id="7_4hchu"]
@@ -26,7 +26,7 @@ autostart = true
 
 [node name="Towers" type="Node2D" parent="."]
 
-[node name="RedBulletTower" parent="Towers" instance=ExtResource("3_f3vnp")]
+[node name="Standard-Tower" parent="Towers" instance=ExtResource("3_f3vnp")]
 position = Vector2(132, 540)
 
 [node name="advancedtower" parent="Towers" instance=ExtResource("5_lv0t5")]
