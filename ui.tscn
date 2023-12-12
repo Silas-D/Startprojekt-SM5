@@ -1,36 +1,40 @@
 [gd_scene load_steps=3 format=3 uid="uid://daihyucdfil6l"]
 
-[ext_resource type="PackedScene" uid="uid://dqm3dc5uat6ls" path="res://tower_panel1.tscn" id="1_0nq62"]
-[ext_resource type="PackedScene" uid="uid://bhwvtjnmhgapo" path="res://tower_2_panel.tscn" id="2_hdybp"]
+[ext_resource type="Script" path="res://ui.gd" id="1_7secx"]
+[ext_resource type="Texture2D" uid="uid://dse4b2vaddkji" path="res://icon.svg" id="2_drv3t"]
 
 [node name="UI" type="CanvasLayer"]
+visible = false
+script = ExtResource("1_7secx")
 
 [node name="Panel" type="Panel" parent="."]
-offset_left = 1362.0
-offset_top = 6.0
-offset_right = 1914.0
-offset_bottom = 1076.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -276.0
+offset_top = -119.0
+offset_right = 276.0
+offset_bottom = 119.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="FlowContainer" type="FlowContainer" parent="Panel"]
+[node name="Button" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 26.0
-offset_right = 243.0
-offset_bottom = 206.0
-theme_override_constants/h_separation = 10
-theme_override_constants/v_separation = 10
+offset_left = 36.0
+offset_top = 35.0
+offset_right = 172.0
+offset_bottom = 171.0
+icon = ExtResource("2_drv3t")
 
-[node name="tower1Panel" parent="Panel/FlowContainer" instance=ExtResource("1_0nq62")]
-layout_mode = 2
-
-[node name="FlowContainer2" type="FlowContainer" parent="Panel"]
+[node name="Button2" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = 309.0
-offset_top = 26.0
-offset_right = 528.0
-offset_bottom = 206.0
-theme_override_constants/h_separation = 10
-theme_override_constants/v_separation = 10
+offset_left = 346.0
+offset_top = 53.0
+offset_right = 482.0
+offset_bottom = 189.0
+icon = ExtResource("2_drv3t")
 
-[node name="Tower2Panel" parent="Panel/FlowContainer2" instance=ExtResource("2_hdybp")]
-layout_mode = 2
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed_tower1"]
+[connection signal="pressed" from="Panel/Button2" to="." method="_on_button_2_pressed_tower2"]

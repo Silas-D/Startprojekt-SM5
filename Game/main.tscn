@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b86hrtmfbwl50"]
+[gd_scene load_steps=9 format=3 uid="uid://b86hrtmfbwl50"]
 
 [ext_resource type="Script" path="res://Game/main.gd" id="1_66rgv"]
 [ext_resource type="PackedScene" uid="uid://blq1sl63fc5oi" path="res://Game/Level/TileMap.tscn" id="1_u8suv"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dwhoxxd23ue82" path="res://Game/Defense/Turm1/RedBulletTower.tscn" id="3_f3vnp"]
 [ext_resource type="PackedScene" uid="uid://dbyjqrpe10lgi" path="res://pause_menu.tscn" id="5_1yo3r"]
 [ext_resource type="PackedScene" uid="uid://ccx0k6v5pltrp" path="res://Game/Defense/Turm2/advancedtower.tscn" id="5_lv0t5"]
+[ext_resource type="Script" path="res://Game/Buttons.gd" id="7_4hchu"]
 [ext_resource type="PackedScene" uid="uid://daihyucdfil6l" path="res://ui.tscn" id="7_ambas"]
 
 [node name="Main" type="Node2D"]
@@ -37,6 +38,17 @@ offset_top = 311.0
 offset_right = 586.0
 offset_bottom = 311.0
 
-[node name="UI" parent="." instance=ExtResource("7_ambas")]
+[node name="Buttons" type="Node2D" parent="."]
+script = ExtResource("7_4hchu")
+
+[node name="UI" parent="Buttons" instance=ExtResource("7_ambas")]
+
+[node name="Button" type="Button" parent="Buttons"]
+show_behind_parent = true
+offset_left = 80.0
+offset_top = 59.0
+offset_right = 231.0
+offset_bottom = 146.0
 
 [connection signal="timeout" from="PathSpawner/Timer" to="PathSpawner" method="_on_timer_timeout"]
+[connection signal="pressed" from="Buttons/Button" to="Buttons" method="_on_button_pressed"]
