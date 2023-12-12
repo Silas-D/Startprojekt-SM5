@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dwhoxxd23ue82"]
 
 [ext_resource type="Script" path="res://Game/Defense/Turm1/RedBulletTower.gd" id="1_bby4v"]
-[ext_resource type="Texture2D" uid="uid://1l8wq6es31jg" path="res://Game/Assets/Towers/towerDefense_tile250.png" id="2_q326t"]
+[ext_resource type="Texture2D" uid="uid://broq1vbrkluww" path="res://Game/Assets/Towers/TurmStandard.png" id="2_l3jvw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_la7cb"]
 size = Vector2(45, 46)
@@ -23,8 +23,8 @@ shape = SubResource("RectangleShape2D_la7cb")
 [node name="Aim" type="Marker2D" parent="Node2D"]
 position = Vector2(0.5, -29.5)
 
-[node name="TowerDefenseTile250" type="Sprite2D" parent="Node2D"]
-texture = ExtResource("2_q326t")
+[node name="Texture" type="Sprite2D" parent="Node2D"]
+texture = ExtResource("2_l3jvw")
 
 [node name="Tower" type="Area2D" parent="Node2D"]
 
