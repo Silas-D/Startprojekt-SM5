@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b86hrtmfbwl50"]
+[gd_scene load_steps=10 format=3 uid="uid://b86hrtmfbwl50"]
 
 [ext_resource type="Script" path="res://Game/main.gd" id="1_66rgv"]
 [ext_resource type="PackedScene" uid="uid://blq1sl63fc5oi" path="res://Game/Level/TileMap.tscn" id="1_u8suv"]
@@ -6,7 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://dwhoxxd23ue82" path="res://Game/Defense/Turm1/RedBulletTower.tscn" id="3_f3vnp"]
 [ext_resource type="PackedScene" uid="uid://dbyjqrpe10lgi" path="res://pause_menu.tscn" id="5_1yo3r"]
 [ext_resource type="PackedScene" uid="uid://ccx0k6v5pltrp" path="res://Game/Defense/Turm2/advancedtower.tscn" id="5_lv0t5"]
-[ext_resource type="PackedScene" uid="uid://daihyucdfil6l" path="res://ui.tscn" id="7_ambas"]
+[ext_resource type="Script" path="res://Game/Buttons.gd" id="7_4hchu"]
+[ext_resource type="PackedScene" uid="uid://kig4mqufjjjx" path="res://ui.tscn" id="7_ambas"]
+[ext_resource type="Texture2D" uid="uid://dse4b2vaddkji" path="res://icon.svg" id="9_2eljx"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_66rgv")
@@ -36,6 +38,50 @@ offset_top = 311.0
 offset_right = 586.0
 offset_bottom = 311.0
 
-[node name="UI" parent="." instance=ExtResource("7_ambas")]
+[node name="Buttons" type="Node2D" parent="."]
+script = ExtResource("7_4hchu")
+
+[node name="Button" type="Button" parent="Buttons"]
+show_behind_parent = true
+offset_left = 80.0
+offset_top = 59.0
+offset_right = 231.0
+offset_bottom = 146.0
+
+[node name="UI" parent="Buttons" instance=ExtResource("7_ambas")]
+visible = true
+script = null
+
+[node name="Panel2" type="Panel" parent="Buttons/UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -276.0
+offset_top = -119.0
+offset_right = 276.0
+offset_bottom = 119.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button Tower 1" type="Button" parent="Buttons/UI/Panel2"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 35.0
+offset_right = 172.0
+offset_bottom = 171.0
+icon = ExtResource("9_2eljx")
+
+[node name="Button Tower 2" type="Button" parent="Buttons/UI/Panel2"]
+layout_mode = 0
+offset_left = 346.0
+offset_top = 53.0
+offset_right = 482.0
+offset_bottom = 189.0
+icon = ExtResource("9_2eljx")
 
 [connection signal="timeout" from="PathSpawner/Timer" to="PathSpawner" method="_on_timer_timeout"]
+[connection signal="pressed" from="Buttons/Button" to="Buttons" method="_on_button_pressed"]
+[connection signal="pressed" from="Buttons/UI/Panel2/Button Tower 1" to="Buttons" method="_on_button_tower_1_pressed"]
+[connection signal="pressed" from="Buttons/UI/Panel2/Button Tower 2" to="Buttons" method="_on_button_tower_2_pressed"]
