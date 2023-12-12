@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b66kvas3htwn7"]
+[gd_scene load_steps=6 format=3 uid="uid://b66kvas3htwn7"]
 
 [ext_resource type="Script" path="res://Game/Defense/Turm1/Standard-Tower.gd" id="1_by2g1"]
 [ext_resource type="Texture2D" uid="uid://broq1vbrkluww" path="res://Game/Assets/Towers/TurmStandard.png" id="2_y8f7n"]
+[ext_resource type="Script" path="res://Game/Defense/Turm1/ProgressBar.gd" id="3_3aqwr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_la7cb"]
 size = Vector2(45, 46)
@@ -40,5 +41,14 @@ shape = SubResource("RectangleShape2D_la7cb")
 
 [node name="BulletContainer" type="Node" parent="Node2D"]
 
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_right = 4.0
+offset_bottom = 27.0
+script = ExtResource("3_3aqwr")
+
+[node name="Timer" type="Timer" parent="ProgressBar"]
+wait_time = 3.0
+
 [connection signal="body_entered" from="Node2D/Tower" to="." method="_on_tower_body_entered"]
 [connection signal="body_entered" from="Node2D/GegnerScan" to="." method="_on_gegner_scan_body_entered"]
+[connection signal="timeout" from="ProgressBar/Timer" to="." method="_on_timer_timeout"]

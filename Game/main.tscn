@@ -32,7 +32,7 @@ autostart = true
 [node name="Towers" type="Node2D" parent="."]
 
 [node name="Standard-Tower" parent="Towers" instance=ExtResource("3_f3vnp")]
-position = Vector2(132, 540)
+position = Vector2(114, 674)
 
 [node name="advancedtower" parent="Towers" instance=ExtResource("5_lv0t5")]
 position = Vector2(118, 319)
