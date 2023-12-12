@@ -21,25 +21,6 @@ func _physics_process(_delta):
 
 
 func _on_area_2d_body_entered(body):
-	if "Soldier A" in body.name:
-		body.health -= bulletDamage
-		queue_free()
-	
-	if "slime_1" in body.name:
-		body.health -= bulletDamage
-		queue_free()
-	if "slime_2" in body.name:
-		body.health -= bulletDamage
-		queue_free()
-	if "slime_3" in body.name:
-		body.health -= bulletDamage
-		queue_free()
-	if "slime_4" in body.name:
-		body.health -= bulletDamage
-		queue_free()
-	if "slime_5" in body.name:
-		body.health -= bulletDamage
-		queue_free()
-	if "slime_6" in body.name:
+	if "Slime" in body.name:
 		body.health -= bulletDamage
 		queue_free()

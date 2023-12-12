@@ -14,12 +14,12 @@ func _process(_delta):
 		queue_free()
 
 func _on_tower_body_entered(body):
-	if "Soldier A" in body.name:
+	if "Slime" in body.name:
 		var tempArray = []
 		currTargets = get_node("Tower").get_overlapping_bodies()
 		
 		for i in currTargets:
-			if "Soldier" in i.name:
+			if "Slime" in i.name:
 				tempArray.append(i)
 		
 		var currTarget = null
@@ -32,7 +32,7 @@ func _on_tower_body_entered(body):
 					currTarget = i.get_node("../")
 		
 		curr = currTarget
-		pathName = currTarget.get_parent().name
+		pathName = curr.get_parent().name
 		
 		var tempBullet = Bullet.instantiate()
 		tempBullet.pathName = pathName
@@ -45,21 +45,21 @@ func _on_gegner_scan_body_entered(body):
 		towerHealth -= 2
 		body.health -= 100
 	
-	if "slime_1" in body.name:
+	if "Slime_1" in body.name:
 		towerHealth -= 1
 		body.health -= 100
-	if "slime_2" in body.name:
+	if "Slime_2" in body.name:
 		towerHealth -= 2
 		body.health -= 100
-	if "slime_3" in body.name:
+	if "Slime_3" in body.name:
 		towerHealth -= 3
 		body.health -= 100
-	if "slime_4" in body.name:
+	if "Slime_4" in body.name:
 		towerHealth -= 4
 		body.health -= 100
-	if "slime_5" in body.name:
+	if "Slime_5" in body.name:
 		towerHealth -= 5
 		body.health -= 100
-	if "slime_6" in body.name:
+	if "Slime_6" in body.name:
 		towerHealth -= 6
 		body.health -= 100

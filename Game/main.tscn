@@ -21,6 +21,7 @@ layer_0/tile_data = PackedInt32Array(0, 196608, 0, 131072, 196608, 0, 65536, 196
 script = ExtResource("3_18eh6")
 
 [node name="Timer" type="Timer" parent="PathSpawner"]
+wait_time = 5.0
 autostart = true
 
 [node name="Towers" type="Node2D" parent="."]
@@ -49,7 +50,6 @@ offset_right = 231.0
 offset_bottom = 146.0
 
 [node name="UI" parent="Buttons" instance=ExtResource("7_ambas")]
-visible = true
 script = null
 
 [node name="Panel2" type="Panel" parent="Buttons/UI"]
