@@ -542,7 +542,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Slime 4" type="CharacterBody2D"]
+[node name="Slime_4" type="CharacterBody2D"]
 scale = Vector2(0.8, 0.8)
 script = ExtResource("1_htyf7")
 

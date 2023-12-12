@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://baq7vkiqyeayo"]
+[gd_scene load_steps=77 format=3 uid="uid://cit2opki73s6e"]
 
 [ext_resource type="Script" path="res://Game/Enemy/slime1/slime_1.gd" id="1_h5so2"]
 [ext_resource type="Texture2D" uid="uid://y2fedqdwyyp5" path="res://Game/Assets/Enemis/Slimes1.png" id="2_7l325"]
@@ -542,7 +542,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Slime 1" type="CharacterBody2D"]
+[node name="Slime_1" type="CharacterBody2D"]
 scale = Vector2(0.8, 0.8)
 script = ExtResource("1_h5so2")
 
