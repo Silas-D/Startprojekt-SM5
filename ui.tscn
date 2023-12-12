@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://daihyucdfil6l"]
+[gd_scene load_steps=3 format=3 uid="uid://kig4mqufjjjx"]
 
 [ext_resource type="Script" path="res://ui.gd" id="1_7secx"]
 [ext_resource type="Texture2D" uid="uid://dse4b2vaddkji" path="res://icon.svg" id="2_drv3t"]
@@ -20,7 +20,7 @@ offset_bottom = 119.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="Panel"]
+[node name="Button Tower 1" type="Button" parent="Panel"]
 layout_mode = 0
 offset_left = 36.0
 offset_top = 35.0
@@ -28,7 +28,7 @@ offset_right = 172.0
 offset_bottom = 171.0
 icon = ExtResource("2_drv3t")
 
-[node name="Button2" type="Button" parent="Panel"]
+[node name="Button Tower 2" type="Button" parent="Panel"]
 layout_mode = 0
 offset_left = 346.0
 offset_top = 53.0
@@ -36,5 +36,5 @@ offset_right = 482.0
 offset_bottom = 189.0
 icon = ExtResource("2_drv3t")
 
-[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed_tower1"]
-[connection signal="pressed" from="Panel/Button2" to="." method="_on_button_2_pressed_tower2"]
+[connection signal="pressed" from="Panel/Button Tower 1" to="." method="_on_button_pressed_tower1"]
+[connection signal="pressed" from="Panel/Button Tower 2" to="." method="_on_button_2_pressed_tower2"]

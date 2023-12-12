@@ -20,9 +20,3 @@ func pauseMenu():
 		
 	paused = !paused
 
-
-
-func _on_button_pressed():
-	pass
-
-
