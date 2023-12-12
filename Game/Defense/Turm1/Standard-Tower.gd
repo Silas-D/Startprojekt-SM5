@@ -8,7 +8,6 @@ var curr
 var towerHealth = 10
 
 var reload = 0
-var range = 400
 
 @onready var timer = get_node("ProgressBar/Timer")
 var startShooting = false

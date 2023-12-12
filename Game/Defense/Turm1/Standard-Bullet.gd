@@ -13,7 +13,9 @@ func _physics_process(_delta):
 		if pathSpawnerNode.get_child(i).name == pathName:
 			target = pathSpawnerNode.get_child(i).get_child(0).get_child(0).global_position
 	
+	#Problem, maybe wenn geschossen wird und der Slime in der Sek stirbt
 	velocity = global_position.direction_to(target) * Speed
+	print(velocity)
 	
 	look_at(target)
 	
