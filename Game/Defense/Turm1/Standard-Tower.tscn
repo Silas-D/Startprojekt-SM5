@@ -47,7 +47,6 @@ offset_bottom = 27.0
 script = ExtResource("3_3aqwr")
 
 [node name="Timer" type="Timer" parent="ProgressBar"]
-wait_time = 3.0
 
 [connection signal="body_entered" from="Node2D/Tower" to="." method="_on_tower_body_entered"]
 [connection signal="body_entered" from="Node2D/GegnerScan" to="." method="_on_gegner_scan_body_entered"]
