@@ -1,12 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://c5tj6x03vs7ec"]
 
-[ext_resource type="PackedScene" uid="uid://c1wd138ka86xp" path="res://Game/Level/Map.tscn" id="1_5tqkn"]
-[ext_resource type="Script" path="res://Game/Play.gd" id="2_goytn"]
-[ext_resource type="Script" path="res://Game/Quit.gd" id="3_mxi7y"]
+[ext_resource type="PackedScene" uid="uid://c1wd138ka86xp" path="res://Game/Level/Map.tscn" id="1_38mar"]
+[ext_resource type="Script" path="res://Game/UI/mainmenu/Play.gd" id="2_ccd8p"]
+[ext_resource type="Script" path="res://Game/UI/mainmenu/Quit.gd" id="3_6m22a"]
 
 [node name="MainMenu" type="Node2D"]
 
-[node name="Map" parent="." instance=ExtResource("1_5tqkn")]
+[node name="Map" parent="." instance=ExtResource("1_38mar")]
 
 [node name="Panel" type="Panel" parent="."]
 offset_left = 96.0
@@ -32,7 +32,7 @@ offset_right = 1703.0
 offset_bottom = 871.0
 theme_override_font_sizes/font_size = 50
 text = "Spielen!"
-script = ExtResource("2_goytn")
+script = ExtResource("2_ccd8p")
 
 [node name="Quit" type="Button" parent="."]
 offset_left = 231.0
@@ -41,7 +41,7 @@ offset_right = 652.0
 offset_bottom = 874.0
 theme_override_font_sizes/font_size = 50
 text = "Verlassen"
-script = ExtResource("3_mxi7y")
+script = ExtResource("3_6m22a")
 
 [connection signal="pressed" from="Play" to="Play" method="_on_pressed"]
 [connection signal="pressed" from="Quit" to="Quit" method="_on_pressed"]
