@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1wd138ka86xp"]
+
+[ext_resource type="Texture2D" uid="uid://cf3a12yu1xpwr" path="res://Game/Assets/Environment/Map.png" id="1_yeawc"]
+
+[node name="Map" type="Sprite2D"]
+position = Vector2(960, 540)
+texture = ExtResource("1_yeawc")
