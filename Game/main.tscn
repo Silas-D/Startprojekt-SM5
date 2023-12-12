@@ -44,10 +44,10 @@ script = ExtResource("7_4hchu")
 
 [node name="Button" type="Button" parent="Buttons"]
 show_behind_parent = true
-offset_left = 80.0
-offset_top = 59.0
-offset_right = 231.0
-offset_bottom = 146.0
+offset_left = 245.0
+offset_top = 533.0
+offset_right = 396.0
+offset_bottom = 620.0
 
 [node name="UI" parent="Buttons" instance=ExtResource("7_ambas")]
 script = null

@@ -9,34 +9,36 @@ size = Vector2(45, 46)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qf2ul"]
 size = Vector2(78.5, 894)
 
-[node name="RedBulletTower" type="StaticBody2D"]
+[node name="RedBulletTower" type="Node2D"]
 rotation = 1.5708
 scale = Vector2(2, 2)
 script = ExtResource("1_bby4v")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Node2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D"]
 position = Vector2(2.54322e-07, 6.5)
 shape = SubResource("RectangleShape2D_la7cb")
 
-[node name="Aim" type="Marker2D" parent="."]
+[node name="Aim" type="Marker2D" parent="Node2D"]
 position = Vector2(0.5, -29.5)
 
-[node name="TowerDefenseTile250" type="Sprite2D" parent="."]
+[node name="TowerDefenseTile250" type="Sprite2D" parent="Node2D"]
 texture = ExtResource("2_q326t")
 
-[node name="Tower" type="Area2D" parent="."]
+[node name="Tower" type="Area2D" parent="Node2D"]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tower"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/Tower"]
 position = Vector2(0.249981, -418)
 shape = SubResource("RectangleShape2D_qf2ul")
 
-[node name="GegnerScan" type="Area2D" parent="."]
+[node name="GegnerScan" type="Area2D" parent="Node2D"]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="GegnerScan"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/GegnerScan"]
 position = Vector2(2.54322e-07, 6.5)
 shape = SubResource("RectangleShape2D_la7cb")
 
-[node name="BulletContainer" type="Node" parent="."]
+[node name="BulletContainer" type="Node" parent="Node2D"]
 
-[connection signal="body_entered" from="Tower" to="." method="_on_tower_body_entered"]
-[connection signal="body_entered" from="GegnerScan" to="." method="_on_gegner_scan_body_entered"]
+[connection signal="body_entered" from="Node2D/Tower" to="." method="_on_tower_body_entered"]
+[connection signal="body_entered" from="Node2D/GegnerScan" to="." method="_on_gegner_scan_body_entered"]

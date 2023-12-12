@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Node2D
 
 
 var Bullet = preload("res://Game/Defense/Turm1/RedBullet.tscn")
@@ -16,7 +16,7 @@ func _process(_delta):
 func _on_tower_body_entered(body):
 	if "Slime" in body.name:
 		var tempArray = []
-		currTargets = get_node("Tower").get_overlapping_bodies()
+		currTargets = get_node("Node2D/Tower").get_overlapping_bodies()
 		
 		for i in currTargets:
 			if "Slime" in i.name:
@@ -36,14 +36,11 @@ func _on_tower_body_entered(body):
 		
 		var tempBullet = Bullet.instantiate()
 		tempBullet.pathName = pathName
-		get_node("BulletContainer").add_child(tempBullet)
-		tempBullet.global_position = $Aim.global_position
+		get_node("Node2D/BulletContainer").add_child(tempBullet)
+		tempBullet.global_position = $Node2D/Aim.global_position
 
 
 func _on_gegner_scan_body_entered(body):
-	if "Soldier A" in body.name:
-		towerHealth -= 2
-		body.health -= 100
 	
 	if "Slime_1" in body.name:
 		towerHealth -= 1
