@@ -23,4 +23,4 @@ func pauseMenu():
 
 
 func _on_pause_button_pressed():
-	pause_menu.hide()
+	pauseMenu();
