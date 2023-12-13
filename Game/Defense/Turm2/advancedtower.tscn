@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b7uboj3b8iaaf" path="res://Game/Assets/Towers/towerDefense_tile292.png" id="2_wi8g2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lxsew"]
-size = Vector2(93.25, 39)
+size = Vector2(77.25, 41)
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_nqrca"]
 points = PackedVector2Array(0, -50, 200, -50, 500, -200, 1000, -300, 1250, 0, 1000, 300, 500, 200, 200, 50, 0, 50)
@@ -13,7 +13,7 @@ points = PackedVector2Array(0, -50, 200, -50, 500, -200, 1000, -300, 1250, 0, 10
 script = ExtResource("1_46rs1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4.375, 0.5)
+position = Vector2(-3.625, -0.5)
 shape = SubResource("RectangleShape2D_lxsew")
 
 [node name="Aim" type="Marker2D" parent="."]
@@ -29,6 +29,12 @@ disabled = true
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tower"]
 polygon = PackedVector2Array(0, -50, 200, -50, 500, -200, 1000, -300, 1250, 0, 1000, 300, 500, 200, 200, 50, 0, 50)
 
+[node name="GegnerScan" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GegnerScan"]
+position = Vector2(-3.625, -0.5)
+shape = SubResource("RectangleShape2D_lxsew")
+
 [node name="BulletContainer" type="Node" parent="."]
 
 [node name="TowerDefenseTile292" type="Sprite2D" parent="."]
@@ -36,3 +42,4 @@ scale = Vector2(2, 2)
 texture = ExtResource("2_wi8g2")
 
 [connection signal="body_entered" from="Tower" to="." method="_on_advancedtower_body_entered"]
+[connection signal="body_entered" from="GegnerScan" to="." method="_on_gegner_scan_body_entered"]

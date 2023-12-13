@@ -21,7 +21,7 @@ func _physics_process(_delta):
 
 
 func _on_area_2d_body_entered(body):
-	if "Soldier A" in body.name:
-		body.Health -= bulletDamage
+	if "Slime" in body.name:
+		body.health -= bulletDamage
 		queue_free()
 		

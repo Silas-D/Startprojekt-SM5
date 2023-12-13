@@ -20,8 +20,9 @@ func _on_button_tower_1_pressed():
 func _on_button_tower_2_pressed():
 	UI.hide()
 	print(2)
-	pass # Spawn Tower 2 an Buttonposition
-
+	var turm2 = Tower2.instantiate()
+	get_parent().add_child(turm2)
+	turm2.position = $".".global_position + Vector2(33, 37)
 
 func _on_close_button_pressed():
 	UI.hide()
