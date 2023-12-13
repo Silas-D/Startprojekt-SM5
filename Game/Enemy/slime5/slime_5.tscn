@@ -554,3 +554,4 @@ shape = SubResource("CircleShape2D_dwfuq")
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_k04tn")
 animation = &"slime 5"
+autoplay = "slime 5"

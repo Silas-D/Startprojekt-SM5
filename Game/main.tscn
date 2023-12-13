@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b86hrtmfbwl50"]
+[gd_scene load_steps=19 format=3 uid="uid://b86hrtmfbwl50"]
 
 [ext_resource type="Script" path="res://Game/main.gd" id="1_66rgv"]
 [ext_resource type="PackedScene" uid="uid://c1wd138ka86xp" path="res://Game/Level/Map.tscn" id="2_80g8p"]
@@ -6,11 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://b66kvas3htwn7" path="res://Game/Defense/Turm1/Standard-Tower.tscn" id="3_f3vnp"]
 [ext_resource type="PackedScene" uid="uid://dbyjqrpe10lgi" path="res://Game/UI/pause_menu/pause_menu.tscn" id="5_1yo3r"]
 [ext_resource type="PackedScene" uid="uid://ccx0k6v5pltrp" path="res://Game/Defense/Turm2/advancedtower.tscn" id="5_lv0t5"]
+[ext_resource type="Texture2D" uid="uid://cvnoal2v35crs" path="res://Game/Assets/UI/menuGrid.png" id="6_mw6pf"]
 [ext_resource type="Script" path="res://Game/UI/Kaufmenu/Button1.gd" id="8_8okx3"]
 [ext_resource type="Texture2D" uid="uid://broq1vbrkluww" path="res://Game/Assets/Towers/TurmStandard.png" id="8_di1yw"]
 [ext_resource type="Script" path="res://Game/UI/Kaufmenu/Button2.gd" id="9_oe136"]
 [ext_resource type="Texture2D" uid="uid://b7uboj3b8iaaf" path="res://Game/Assets/Towers/towerDefense_tile292.png" id="9_rwl77"]
 [ext_resource type="Script" path="res://Game/UI/Kaufmenu/Button3.gd" id="11_p0gxq"]
+[ext_resource type="Texture2D" uid="uid://c2qboehssxrox" path="res://Game/Assets/UI/cross.png" id="11_wognc"]
 [ext_resource type="Script" path="res://Game/UI/Kaufmenu/Button4.gd" id="12_1jgxp"]
 [ext_resource type="Script" path="res://Game/UI/Kaufmenu/Button5.gd" id="13_p0xle"]
 [ext_resource type="Script" path="res://Game/UI/Kaufmenu/Button6.gd" id="14_hsmw4"]
@@ -36,6 +38,15 @@ position = Vector2(114, 674)
 
 [node name="advancedtower" parent="Towers" instance=ExtResource("5_lv0t5")]
 position = Vector2(118, 319)
+
+[node name="PauseButton" type="Button" parent="."]
+offset_left = 1812.0
+offset_right = 1920.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("6_mw6pf")
+flat = true
 
 [node name="pauseMenu" parent="." instance=ExtResource("5_1yo3r")]
 visible = false
@@ -102,6 +113,16 @@ icon = ExtResource("9_rwl77")
 icon_alignment = 1
 expand_icon = true
 
+[node name="Close Button" type="Button" parent="Kaufmenu/Button1/Panel11"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -58.0
+offset_bottom = 58.0
+grow_horizontal = 0
+icon = ExtResource("11_wognc")
+
 [node name="Button2" type="Button" parent="Kaufmenu"]
 show_behind_parent = true
 offset_left = 369.0
@@ -156,6 +177,16 @@ grow_vertical = 2
 icon = ExtResource("9_rwl77")
 icon_alignment = 1
 expand_icon = true
+
+[node name="Close Button" type="Button" parent="Kaufmenu/Button2/Panel12"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -58.0
+offset_bottom = 58.0
+grow_horizontal = 0
+icon = ExtResource("11_wognc")
 
 [node name="Button3" type="Button" parent="Kaufmenu"]
 show_behind_parent = true
@@ -213,6 +244,16 @@ icon = ExtResource("9_rwl77")
 icon_alignment = 1
 expand_icon = true
 
+[node name="Close Button" type="Button" parent="Kaufmenu/Button3/Panel21"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -58.0
+offset_bottom = 58.0
+grow_horizontal = 0
+icon = ExtResource("11_wognc")
+
 [node name="Button4" type="Button" parent="Kaufmenu"]
 show_behind_parent = true
 offset_left = 505.0
@@ -267,6 +308,16 @@ grow_vertical = 2
 icon = ExtResource("9_rwl77")
 icon_alignment = 1
 expand_icon = true
+
+[node name="Close Button" type="Button" parent="Kaufmenu/Button4/Panel22"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -58.0
+offset_bottom = 58.0
+grow_horizontal = 0
+icon = ExtResource("11_wognc")
 
 [node name="Button5" type="Button" parent="Kaufmenu"]
 show_behind_parent = true
@@ -324,6 +375,16 @@ icon = ExtResource("9_rwl77")
 icon_alignment = 1
 expand_icon = true
 
+[node name="Close Button" type="Button" parent="Kaufmenu/Button5/Panel31"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -58.0
+offset_bottom = 58.0
+grow_horizontal = 0
+icon = ExtResource("11_wognc")
+
 [node name="Button6" type="Button" parent="Kaufmenu"]
 show_behind_parent = true
 offset_left = 499.0
@@ -378,6 +439,16 @@ grow_vertical = 2
 icon = ExtResource("9_rwl77")
 icon_alignment = 1
 expand_icon = true
+
+[node name="Close Button" type="Button" parent="Kaufmenu/Button6/Panel32"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -58.0
+offset_bottom = 58.0
+grow_horizontal = 0
+icon = ExtResource("11_wognc")
 
 [node name="Button7" type="Button" parent="Kaufmenu"]
 show_behind_parent = true
@@ -435,6 +506,16 @@ icon = ExtResource("9_rwl77")
 icon_alignment = 1
 expand_icon = true
 
+[node name="Close Button" type="Button" parent="Kaufmenu/Button7/Panel41"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -58.0
+offset_bottom = 58.0
+grow_horizontal = 0
+icon = ExtResource("11_wognc")
+
 [node name="Button8" type="Button" parent="Kaufmenu"]
 show_behind_parent = true
 offset_left = 371.0
@@ -490,28 +571,47 @@ icon = ExtResource("9_rwl77")
 icon_alignment = 1
 expand_icon = true
 
+[node name="Close Button" type="Button" parent="Kaufmenu/Button8/Panel42"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -58.0
+offset_bottom = 58.0
+grow_horizontal = 0
+icon = ExtResource("11_wognc")
+
 [connection signal="timeout" from="PathSpawner/Timer" to="PathSpawner" method="_on_timer_timeout"]
+[connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
 [connection signal="pressed" from="Kaufmenu/Button1" to="Kaufmenu/Button1" method="_on_pressed"]
 [connection signal="pressed" from="Kaufmenu/Button1/Panel11/Button Tower 1" to="Kaufmenu/Button1" method="_on_button_tower_1_pressed"]
 [connection signal="pressed" from="Kaufmenu/Button1/Panel11/Button Tower 2" to="Kaufmenu/Button1" method="_on_button_tower_2_pressed"]
+[connection signal="pressed" from="Kaufmenu/Button1/Panel11/Close Button" to="Kaufmenu/Button1" method="_on_close_button_pressed"]
 [connection signal="pressed" from="Kaufmenu/Button2" to="Kaufmenu/Button2" method="_on_pressed"]
 [connection signal="pressed" from="Kaufmenu/Button2/Panel12/Button Tower 1" to="Kaufmenu/Button2" method="_on_button_tower_1_pressed"]
 [connection signal="pressed" from="Kaufmenu/Button2/Panel12/Button Tower 2" to="Kaufmenu/Button2" method="_on_button_tower_2_pressed"]
+[connection signal="pressed" from="Kaufmenu/Button2/Panel12/Close Button" to="Kaufmenu/Button2" method="_on_close_button_pressed"]
 [connection signal="pressed" from="Kaufmenu/Button3" to="Kaufmenu/Button3" method="_on_pressed"]
 [connection signal="pressed" from="Kaufmenu/Button3/Panel21/Button Tower 1" to="Kaufmenu/Button3" method="_on_button_tower_1_pressed"]
 [connection signal="pressed" from="Kaufmenu/Button3/Panel21/Button Tower 2" to="Kaufmenu/Button3" method="_on_button_tower_2_pressed"]
+[connection signal="pressed" from="Kaufmenu/Button3/Panel21/Close Button" to="Kaufmenu/Button3" method="_on_close_button_pressed"]
 [connection signal="pressed" from="Kaufmenu/Button4" to="Kaufmenu/Button4" method="_on_pressed"]
 [connection signal="pressed" from="Kaufmenu/Button4/Panel22/Button Tower 1" to="Kaufmenu/Button4" method="_on_button_tower_1_pressed"]
 [connection signal="pressed" from="Kaufmenu/Button4/Panel22/Button Tower 2" to="Kaufmenu/Button4" method="_on_button_tower_2_pressed"]
+[connection signal="pressed" from="Kaufmenu/Button4/Panel22/Close Button" to="Kaufmenu/Button4" method="_on_close_button_pressed"]
 [connection signal="pressed" from="Kaufmenu/Button5" to="Kaufmenu/Button5" method="_on_pressed"]
 [connection signal="pressed" from="Kaufmenu/Button5/Panel31/Button Tower 1" to="Kaufmenu/Button5" method="_on_button_tower_1_pressed"]
 [connection signal="pressed" from="Kaufmenu/Button5/Panel31/Button Tower 2" to="Kaufmenu/Button5" method="_on_button_tower_2_pressed"]
+[connection signal="pressed" from="Kaufmenu/Button5/Panel31/Close Button" to="Kaufmenu/Button5" method="_on_close_button_pressed"]
 [connection signal="pressed" from="Kaufmenu/Button6" to="Kaufmenu/Button6" method="_on_pressed"]
 [connection signal="pressed" from="Kaufmenu/Button6/Panel32/Button Tower 1" to="Kaufmenu/Button6" method="_on_button_tower_1_pressed"]
 [connection signal="pressed" from="Kaufmenu/Button6/Panel32/Button Tower 2" to="Kaufmenu/Button6" method="_on_button_tower_2_pressed"]
+[connection signal="pressed" from="Kaufmenu/Button6/Panel32/Close Button" to="Kaufmenu/Button6" method="_on_close_button_pressed"]
 [connection signal="pressed" from="Kaufmenu/Button7" to="Kaufmenu/Button7" method="_on_pressed"]
 [connection signal="pressed" from="Kaufmenu/Button7/Panel41/Button Tower 1" to="Kaufmenu/Button7" method="_on_button_tower_1_pressed"]
 [connection signal="pressed" from="Kaufmenu/Button7/Panel41/Button Tower 2" to="Kaufmenu/Button7" method="_on_button_tower_2_pressed"]
+[connection signal="pressed" from="Kaufmenu/Button7/Panel41/Close Button" to="Kaufmenu/Button7" method="_on_close_button_pressed"]
 [connection signal="pressed" from="Kaufmenu/Button8" to="Kaufmenu/Button8" method="_on_pressed"]
 [connection signal="pressed" from="Kaufmenu/Button8/Panel42/Button Tower 1" to="Kaufmenu/Button8" method="_on_button_tower_1_pressed"]
 [connection signal="pressed" from="Kaufmenu/Button8/Panel42/Button Tower 2" to="Kaufmenu/Button8" method="_on_button_tower_2_pressed"]
+[connection signal="pressed" from="Kaufmenu/Button8/Panel42/Close Button" to="Kaufmenu/Button8" method="_on_close_button_pressed"]

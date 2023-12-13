@@ -25,3 +25,7 @@ func _on_button_tower_2_pressed():
 
 
 
+
+
+func _on_close_button_pressed():
+	UI.hide()

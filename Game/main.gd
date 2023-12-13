@@ -20,3 +20,7 @@ func pauseMenu():
 		
 	paused = !paused
 
+
+
+func _on_pause_button_pressed():
+	pause_menu.hide()

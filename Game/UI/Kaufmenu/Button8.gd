@@ -22,3 +22,7 @@ func _on_button_tower_2_pressed():
 	UI.hide()
 	print(2)
 	pass # Spawn Tower 2 an Buttonposition
+
+
+func _on_close_button_pressed():
+	UI.hide()
