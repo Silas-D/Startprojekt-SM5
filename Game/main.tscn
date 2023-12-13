@@ -50,10 +50,6 @@ flat = true
 
 [node name="pauseMenu" parent="." instance=ExtResource("5_1yo3r")]
 visible = false
-offset_left = 586.0
-offset_top = 311.0
-offset_right = 586.0
-offset_bottom = 311.0
 
 [node name="Kaufmenu" type="Node2D" parent="."]
 
@@ -64,6 +60,8 @@ offset_top = 169.0
 offset_right = 142.0
 offset_bottom = 243.0
 pivot_offset = Vector2(33, 37)
+mouse_force_pass_scroll_events = false
+flat = true
 script = ExtResource("8_8okx3")
 
 [node name="Panel11" type="Panel" parent="Kaufmenu/Button1"]
@@ -80,6 +78,7 @@ offset_right = 589.0
 offset_bottom = 115.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_force_pass_scroll_events = false
 metadata/_edit_use_anchors_ = true
 
 [node name="Button Tower 1" type="Button" parent="Kaufmenu/Button1/Panel11"]
@@ -92,6 +91,7 @@ offset_top = -68.0
 offset_right = 196.0
 offset_bottom = 68.0
 grow_vertical = 2
+mouse_force_pass_scroll_events = false
 icon = ExtResource("8_di1yw")
 icon_alignment = 1
 expand_icon = true
@@ -109,6 +109,7 @@ offset_right = -60.0
 offset_bottom = 68.0
 grow_horizontal = 0
 grow_vertical = 2
+mouse_force_pass_scroll_events = false
 icon = ExtResource("9_rwl77")
 icon_alignment = 1
 expand_icon = true
@@ -121,6 +122,7 @@ anchor_right = 1.0
 offset_left = -58.0
 offset_bottom = 58.0
 grow_horizontal = 0
+mouse_force_pass_scroll_events = false
 icon = ExtResource("11_wognc")
 
 [node name="Button2" type="Button" parent="Kaufmenu"]
@@ -130,6 +132,8 @@ offset_top = 168.0
 offset_right = 435.0
 offset_bottom = 242.0
 pivot_offset = Vector2(33, 37)
+mouse_force_pass_scroll_events = false
+flat = true
 script = ExtResource("9_oe136")
 
 [node name="Panel12" type="Panel" parent="Kaufmenu/Button2"]
@@ -146,6 +150,7 @@ offset_right = 589.0
 offset_bottom = 115.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_force_pass_scroll_events = false
 
 [node name="Button Tower 1" type="Button" parent="Kaufmenu/Button2/Panel12"]
 layout_mode = 1
@@ -157,6 +162,7 @@ offset_top = -68.0
 offset_right = 196.0
 offset_bottom = 68.0
 grow_vertical = 2
+mouse_force_pass_scroll_events = false
 icon = ExtResource("8_di1yw")
 icon_alignment = 1
 expand_icon = true
@@ -174,6 +180,7 @@ offset_right = -60.0
 offset_bottom = 68.0
 grow_horizontal = 0
 grow_vertical = 2
+mouse_force_pass_scroll_events = false
 icon = ExtResource("9_rwl77")
 icon_alignment = 1
 expand_icon = true
@@ -186,6 +193,7 @@ anchor_right = 1.0
 offset_left = -58.0
 offset_bottom = 58.0
 grow_horizontal = 0
+mouse_force_pass_scroll_events = false
 icon = ExtResource("11_wognc")
 
 [node name="Button3" type="Button" parent="Kaufmenu"]
@@ -195,6 +203,8 @@ offset_top = 394.0
 offset_right = 282.0
 offset_bottom = 468.0
 pivot_offset = Vector2(33, 37)
+mouse_force_pass_scroll_events = false
+flat = true
 script = ExtResource("11_p0gxq")
 
 [node name="Panel21" type="Panel" parent="Kaufmenu/Button3"]
@@ -211,6 +221,7 @@ offset_right = 589.0
 offset_bottom = 115.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_force_pass_scroll_events = false
 metadata/_edit_use_anchors_ = true
 
 [node name="Button Tower 1" type="Button" parent="Kaufmenu/Button3/Panel21"]
@@ -223,6 +234,7 @@ offset_top = -68.0
 offset_right = 196.0
 offset_bottom = 68.0
 grow_vertical = 2
+mouse_force_pass_scroll_events = false
 icon = ExtResource("8_di1yw")
 icon_alignment = 1
 expand_icon = true
@@ -240,6 +252,7 @@ offset_right = -60.0
 offset_bottom = 68.0
 grow_horizontal = 0
 grow_vertical = 2
+mouse_force_pass_scroll_events = false
 icon = ExtResource("9_rwl77")
 icon_alignment = 1
 expand_icon = true
@@ -252,6 +265,7 @@ anchor_right = 1.0
 offset_left = -58.0
 offset_bottom = 58.0
 grow_horizontal = 0
+mouse_force_pass_scroll_events = false
 icon = ExtResource("11_wognc")
 
 [node name="Button4" type="Button" parent="Kaufmenu"]
@@ -261,6 +275,8 @@ offset_top = 391.0
 offset_right = 571.0
 offset_bottom = 465.0
 pivot_offset = Vector2(33, 37)
+mouse_force_pass_scroll_events = false
+flat = true
 script = ExtResource("12_1jgxp")
 
 [node name="Panel22" type="Panel" parent="Kaufmenu/Button4"]
@@ -277,6 +293,7 @@ offset_right = 589.0
 offset_bottom = 115.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_force_pass_scroll_events = false
 
 [node name="Button Tower 1" type="Button" parent="Kaufmenu/Button4/Panel22"]
 layout_mode = 1
@@ -288,6 +305,7 @@ offset_top = -68.0
 offset_right = 196.0
 offset_bottom = 68.0
 grow_vertical = 2
+mouse_force_pass_scroll_events = false
 icon = ExtResource("8_di1yw")
 icon_alignment = 1
 expand_icon = true
@@ -305,6 +323,7 @@ offset_right = -60.0
 offset_bottom = 68.0
 grow_horizontal = 0
 grow_vertical = 2
+mouse_force_pass_scroll_events = false
 icon = ExtResource("9_rwl77")
 icon_alignment = 1
 expand_icon = true
@@ -317,6 +336,7 @@ anchor_right = 1.0
 offset_left = -58.0
 offset_bottom = 58.0
 grow_horizontal = 0
+mouse_force_pass_scroll_events = false
 icon = ExtResource("11_wognc")
 
 [node name="Button5" type="Button" parent="Kaufmenu"]
@@ -326,6 +346,8 @@ offset_top = 634.0
 offset_right = 284.0
 offset_bottom = 708.0
 pivot_offset = Vector2(33, 37)
+mouse_force_pass_scroll_events = false
+flat = true
 script = ExtResource("13_p0xle")
 
 [node name="Panel31" type="Panel" parent="Kaufmenu/Button5"]
@@ -342,6 +364,7 @@ offset_right = 589.0
 offset_bottom = 115.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_force_pass_scroll_events = false
 metadata/_edit_use_anchors_ = true
 
 [node name="Button Tower 1" type="Button" parent="Kaufmenu/Button5/Panel31"]
@@ -354,6 +377,7 @@ offset_top = -68.0
 offset_right = 196.0
 offset_bottom = 68.0
 grow_vertical = 2
+mouse_force_pass_scroll_events = false
 icon = ExtResource("8_di1yw")
 icon_alignment = 1
 expand_icon = true
@@ -371,6 +395,7 @@ offset_right = -60.0
 offset_bottom = 68.0
 grow_horizontal = 0
 grow_vertical = 2
+mouse_force_pass_scroll_events = false
 icon = ExtResource("9_rwl77")
 icon_alignment = 1
 expand_icon = true
@@ -383,6 +408,7 @@ anchor_right = 1.0
 offset_left = -58.0
 offset_bottom = 58.0
 grow_horizontal = 0
+mouse_force_pass_scroll_events = false
 icon = ExtResource("11_wognc")
 
 [node name="Button6" type="Button" parent="Kaufmenu"]
@@ -392,6 +418,8 @@ offset_top = 635.0
 offset_right = 565.0
 offset_bottom = 709.0
 pivot_offset = Vector2(33, 37)
+mouse_force_pass_scroll_events = false
+flat = true
 script = ExtResource("14_hsmw4")
 
 [node name="Panel32" type="Panel" parent="Kaufmenu/Button6"]
@@ -408,6 +436,7 @@ offset_right = 589.0
 offset_bottom = 115.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_force_pass_scroll_events = false
 
 [node name="Button Tower 1" type="Button" parent="Kaufmenu/Button6/Panel32"]
 layout_mode = 1
@@ -419,6 +448,7 @@ offset_top = -68.0
 offset_right = 196.0
 offset_bottom = 68.0
 grow_vertical = 2
+mouse_force_pass_scroll_events = false
 icon = ExtResource("8_di1yw")
 icon_alignment = 1
 expand_icon = true
@@ -436,6 +466,7 @@ offset_right = -60.0
 offset_bottom = 68.0
 grow_horizontal = 0
 grow_vertical = 2
+mouse_force_pass_scroll_events = false
 icon = ExtResource("9_rwl77")
 icon_alignment = 1
 expand_icon = true
@@ -448,6 +479,7 @@ anchor_right = 1.0
 offset_left = -58.0
 offset_bottom = 58.0
 grow_horizontal = 0
+mouse_force_pass_scroll_events = false
 icon = ExtResource("11_wognc")
 
 [node name="Button7" type="Button" parent="Kaufmenu"]
@@ -457,6 +489,8 @@ offset_top = 891.0
 offset_right = 140.0
 offset_bottom = 965.0
 pivot_offset = Vector2(33, 37)
+mouse_force_pass_scroll_events = false
+flat = true
 script = ExtResource("15_3gsyx")
 
 [node name="Panel41" type="Panel" parent="Kaufmenu/Button7"]
@@ -473,6 +507,7 @@ offset_right = 589.0
 offset_bottom = 115.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_force_pass_scroll_events = false
 metadata/_edit_use_anchors_ = true
 
 [node name="Button Tower 1" type="Button" parent="Kaufmenu/Button7/Panel41"]
@@ -485,6 +520,7 @@ offset_top = -68.0
 offset_right = 196.0
 offset_bottom = 68.0
 grow_vertical = 2
+mouse_force_pass_scroll_events = false
 icon = ExtResource("8_di1yw")
 icon_alignment = 1
 expand_icon = true
@@ -502,6 +538,7 @@ offset_right = -60.0
 offset_bottom = 68.0
 grow_horizontal = 0
 grow_vertical = 2
+mouse_force_pass_scroll_events = false
 icon = ExtResource("9_rwl77")
 icon_alignment = 1
 expand_icon = true
@@ -514,6 +551,7 @@ anchor_right = 1.0
 offset_left = -58.0
 offset_bottom = 58.0
 grow_horizontal = 0
+mouse_force_pass_scroll_events = false
 icon = ExtResource("11_wognc")
 
 [node name="Button8" type="Button" parent="Kaufmenu"]
@@ -523,6 +561,8 @@ offset_top = 890.0
 offset_right = 437.0
 offset_bottom = 964.0
 pivot_offset = Vector2(33, 37)
+mouse_force_pass_scroll_events = false
+flat = true
 script = ExtResource("16_hi6k0")
 
 [node name="Panel42" type="Panel" parent="Kaufmenu/Button8"]
@@ -539,6 +579,7 @@ offset_right = 589.0
 offset_bottom = 115.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_force_pass_scroll_events = false
 
 [node name="Button Tower 1" type="Button" parent="Kaufmenu/Button8/Panel42"]
 layout_mode = 1
@@ -550,6 +591,7 @@ offset_top = -68.0
 offset_right = 196.0
 offset_bottom = 68.0
 grow_vertical = 2
+mouse_force_pass_scroll_events = false
 icon = ExtResource("8_di1yw")
 icon_alignment = 1
 expand_icon = true
@@ -567,6 +609,7 @@ offset_right = -60.0
 offset_bottom = 68.0
 grow_horizontal = 0
 grow_vertical = 2
+mouse_force_pass_scroll_events = false
 icon = ExtResource("9_rwl77")
 icon_alignment = 1
 expand_icon = true
@@ -579,6 +622,7 @@ anchor_right = 1.0
 offset_left = -58.0
 offset_bottom = 58.0
 grow_horizontal = 0
+mouse_force_pass_scroll_events = false
 icon = ExtResource("11_wognc")
 
 [connection signal="timeout" from="PathSpawner/Timer" to="PathSpawner" method="_on_timer_timeout"]

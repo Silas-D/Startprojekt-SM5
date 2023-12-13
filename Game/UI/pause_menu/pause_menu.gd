@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 @onready var main = owner
 
@@ -8,6 +8,4 @@ func _on_weiterspielen_pressed():
 
 func _on_verlassen_pressed():
 	get_tree().quit()
-
-
 
