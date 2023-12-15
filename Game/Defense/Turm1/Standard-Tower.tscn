@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b66kvas3htwn7"]
+[gd_scene load_steps=11 format=3 uid="uid://b66kvas3htwn7"]
 
 [ext_resource type="Script" path="res://Game/Defense/Turm1/Standard-Tower.gd" id="1_by2g1"]
 [ext_resource type="Texture2D" uid="uid://broq1vbrkluww" path="res://Game/Assets/Towers/TurmStandard.png" id="2_y8f7n"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Game/Defense/Turm1/UpgradeMenu.gd" id="4_l5xth"]
 [ext_resource type="Texture2D" uid="uid://d27aesdwsp64k" path="res://Game/Assets/Towers/TurmDamage.png" id="5_6ub6n"]
 [ext_resource type="Texture2D" uid="uid://dg6xsevla63td" path="res://Game/Assets/Towers/TurmSchnell.png" id="6_woyex"]
+[ext_resource type="Texture2D" uid="uid://c2qboehssxrox" path="res://Game/Assets/UI/cross.png" id="7_32xb1"]
 [ext_resource type="Texture2D" uid="uid://deyrxyynp2f0u" path="res://Game/Assets/UI/trashcanOpen.png" id="7_fvbsf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_la7cb"]
@@ -64,54 +65,63 @@ flat = true
 [node name="Panel" type="Panel" parent="UpgradeMenu"]
 visible = false
 layout_mode = 0
-offset_left = -27.0
-offset_top = 227.0
-offset_right = 259.0
-offset_bottom = 326.0
+offset_left = -1.0
+offset_top = 255.0
+offset_right = 122.0
+offset_bottom = 361.0
 rotation = -1.5708
 
 [node name="Upgrade1" type="Button" parent="UpgradeMenu/Panel"]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 20.0
-offset_top = -36.0
-offset_right = 92.0
-offset_bottom = 36.0
-grow_vertical = 2
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 50.0
+offset_bottom = 50.0
 icon = ExtResource("5_6ub6n")
+expand_icon = true
 
 [node name="Upgrade2" type="Button" parent="UpgradeMenu/Panel"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -36.0
-offset_top = -36.0
-offset_right = 36.0
-offset_bottom = 36.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = -5.0
+grow_vertical = 0
 icon = ExtResource("6_woyex")
+expand_icon = true
 
 [node name="Delete" type="Button" parent="UpgradeMenu/Panel"]
 layout_mode = 1
-anchors_preset = 6
+anchors_preset = 3
 anchor_left = 1.0
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -92.0
-offset_top = -36.0
-offset_right = -20.0
-offset_bottom = 36.0
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -50.0
+offset_right = -5.0
+offset_bottom = -5.0
 grow_horizontal = 0
-grow_vertical = 2
+grow_vertical = 0
 theme_override_colors/icon_hover_color = Color(0.666667, 0, 0, 1)
 icon = ExtResource("7_fvbsf")
+expand_icon = true
+
+[node name="Close" type="Button" parent="UpgradeMenu/Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -35.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = 35.0
+grow_horizontal = 0
+theme_override_colors/icon_normal_color = Color(0.666667, 0, 0, 1)
+icon = ExtResource("7_32xb1")
 expand_icon = true
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
@@ -127,4 +137,5 @@ script = ExtResource("3_3aqwr")
 [connection signal="pressed" from="UpgradeMenu/Panel/Upgrade1" to="UpgradeMenu" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="UpgradeMenu/Panel/Upgrade2" to="UpgradeMenu" method="_on_upgrade_2_pressed"]
 [connection signal="pressed" from="UpgradeMenu/Panel/Delete" to="UpgradeMenu" method="_on_delete_pressed"]
+[connection signal="pressed" from="UpgradeMenu/Panel/Close" to="UpgradeMenu" method="_on_close_pressed"]
 [connection signal="timeout" from="ProgressBar/Timer" to="." method="_on_timer_timeout"]

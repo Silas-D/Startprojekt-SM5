@@ -19,3 +19,7 @@ func _on_upgrade_1_pressed():
 func _on_upgrade_2_pressed():
 	
 	$Panel.hide()
+
+
+func _on_close_pressed():
+	$Panel.hide()
