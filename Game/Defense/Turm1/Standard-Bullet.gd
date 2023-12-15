@@ -17,7 +17,6 @@ func _physics_process(_delta):
 	
 	if foundTarget:
 		velocity = global_position.direction_to(target) * Speed
-		print(velocity)
 		look_at(target)
 		move_and_slide()
 
