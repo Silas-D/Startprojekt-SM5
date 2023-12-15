@@ -10,6 +10,8 @@ radius = 12.0
 height = 38.0
 
 [node name="Standard-Bullet" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_ou7ss")
 
 [node name="TowerDefenseTile251" type="Sprite2D" parent="."]

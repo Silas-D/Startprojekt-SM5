@@ -544,6 +544,7 @@ animations = [{
 
 [node name="Slime_1" type="CharacterBody2D"]
 scale = Vector2(0.8, 0.8)
+collision_layer = 3
 script = ExtResource("1_h5so2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
