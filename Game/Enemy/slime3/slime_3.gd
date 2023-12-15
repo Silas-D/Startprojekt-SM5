@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const speed = 30
+const speed = 100
 @export var health = 9
 
 func _process(delta):

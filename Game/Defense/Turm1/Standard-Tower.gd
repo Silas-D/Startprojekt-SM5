@@ -5,9 +5,9 @@ var Bullet = preload("res://Game/Defense/Turm1/Standard-Bullet.tscn")
 var pathName
 var currTargets = []
 var curr
-@export var towerHealth = 10
-
-var reload = 0
+var towerHealth = 10
+#wahrscheinlich nicht benötigt
+#var reload = 0
 
 @onready var timer = get_node("ProgressBar/Timer")
 var startShooting = false
