@@ -10,22 +10,21 @@ func _on_pressed():
 	UI.show()
 
 func _on_button_tower_1_pressed():
-	UI.hide()
-	print(1)
-	var turm1 = Tower1.instantiate()
-	get_parent().add_child(turm1)
-	
-	turm1.position = $".".global_position + Vector2(33, 37)
+	if Money.Gold >= 150:
+		UI.hide()
+		var turm1 = Tower1.instantiate()
+		get_parent().add_child(turm1)
+		turm1.position = $".".global_position + Vector2(33, 37)
+		Money.Gold -= 150
 
 
 func _on_button_tower_2_pressed():
-	UI.hide()
-	print(2)
-	var turm2 = Tower2.instantiate()
-	get_parent().add_child(turm2)
-	turm2.position = $".".global_position + Vector2(33, 37)
-
-
+	if Money.Gold >= 250:
+		UI.hide()
+		var turm2 = Tower2.instantiate()
+		get_parent().add_child(turm2)
+		turm2.position = $".".global_position + Vector2(33, 37)
+		Money.Gold -= 250
 
 
 
