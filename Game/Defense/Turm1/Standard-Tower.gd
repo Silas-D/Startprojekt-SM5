@@ -5,7 +5,7 @@ var Bullet = preload("res://Game/Defense/Turm1/Standard-Bullet.tscn")
 var pathName
 var currTargets = []
 var curr
-var towerHealth = 10
+@export var towerHealth = 10
 
 var reload = 0
 

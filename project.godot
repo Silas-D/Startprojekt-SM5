@@ -10,9 +10,10 @@ config_version=5
 
 [application]
 
-config/name="TD-Game"
+config/name="Slime-TD"
+config/version="V0.2.5"
 run/main_scene="res://Game/UI/mainmenu/main_menu.tscn"
-config/features=PackedStringArray("4.1", "Mobile")
+config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
 [display]

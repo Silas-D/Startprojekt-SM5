@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bw0347sojbd7u"
-path="res://.godot/imported/power.png-953cdb1d2f8e29493674016591b0cbaa.ctex"
+uid="uid://ci0kumdxua3tt"
+path="res://.godot/imported/green_button05.png-5d28aea64ed8ceaa24325bc44aa5712e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Assets/UI/power.png"
-dest_files=["res://.godot/imported/power.png-953cdb1d2f8e29493674016591b0cbaa.ctex"]
+source_file="res://Game/Assets/UI/green_button05.png"
+dest_files=["res://.godot/imported/green_button05.png-5d28aea64ed8ceaa24325bc44aa5712e.ctex"]
 
 [params]
 

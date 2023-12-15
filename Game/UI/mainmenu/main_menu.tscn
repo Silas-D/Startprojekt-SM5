@@ -1,47 +1,62 @@
-[gd_scene load_steps=4 format=3 uid="uid://c5tj6x03vs7ec"]
+[gd_scene load_steps=6 format=3 uid="uid://c5tj6x03vs7ec"]
 
-[ext_resource type="PackedScene" uid="uid://c1wd138ka86xp" path="res://Game/Level/Map.tscn" id="1_38mar"]
 [ext_resource type="Script" path="res://Game/UI/mainmenu/Play.gd" id="2_ccd8p"]
 [ext_resource type="Script" path="res://Game/UI/mainmenu/Quit.gd" id="3_6m22a"]
+[ext_resource type="Texture2D" uid="uid://dpswk1yspwxa3" path="res://Game/Assets/UI/exit.png" id="4_2v8mw"]
+[ext_resource type="Texture2D" uid="uid://bn4qgpm0fa510" path="res://Game/Assets/UI/green_button04.png" id="7_bdtwq"]
+[ext_resource type="Texture2D" uid="uid://ci0kumdxua3tt" path="res://Game/Assets/UI/green_button05.png" id="8_34tmh"]
 
 [node name="MainMenu" type="Node2D"]
 
-[node name="Map" parent="." instance=ExtResource("1_38mar")]
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Panel" type="Panel" parent="."]
-offset_left = 96.0
-offset_top = 73.0
-offset_right = 1845.0
-offset_bottom = 1029.0
-
-[node name="Label" type="Label" parent="."]
-offset_left = 100.0
-offset_top = 69.0
-offset_right = 1878.0
-offset_bottom = 523.0
-theme_override_font_sizes/font_size = 80
-text = "Hauptmenü
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Play" type="Button" parent="."]
-offset_left = 1295.0
-offset_top = 654.0
-offset_right = 1703.0
-offset_bottom = 871.0
-theme_override_font_sizes/font_size = 50
-text = "Spielen!"
+[node name="Play" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -204.0
+offset_top = -217.0
+offset_right = 204.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("7_bdtwq")
+texture_pressed = ExtResource("8_34tmh")
+stretch_mode = 5
 script = ExtResource("2_ccd8p")
 
-[node name="Quit" type="Button" parent="."]
-offset_left = 231.0
-offset_top = 664.0
-offset_right = 652.0
-offset_bottom = 874.0
+[node name="Label" type="Label" parent="Control/Play"]
+layout_mode = 0
+offset_right = 408.0
+offset_bottom = 217.0
+theme_override_font_sizes/font_size = 60
+text = "Start"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Quit" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -200.0
+offset_bottom = 200.0
+grow_horizontal = 0
+theme_override_colors/icon_normal_color = Color(0.517647, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
-text = "Verlassen"
+icon = ExtResource("4_2v8mw")
+flat = true
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("3_6m22a")
 
-[connection signal="pressed" from="Play" to="Play" method="_on_pressed"]
-[connection signal="pressed" from="Quit" to="Quit" method="_on_pressed"]
+[connection signal="pressed" from="Control/Play" to="Control/Play" method="_on_pressed"]
+[connection signal="pressed" from="Control/Quit" to="Control/Quit" method="_on_pressed"]
