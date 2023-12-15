@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://cemg8afkqteqr"]
+
+[ext_resource type="Script" path="res://Game/UI/Money/Symbol.gd" id="1_ttund"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Infobar" type="ColorRect" parent="."]
+self_modulate = Color(0.14902, 0.14902, 0.14902, 1)
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 21.0
+offset_bottom = 101.0
+grow_horizontal = 2
+
+[node name="H" type="HBoxContainer" parent="Infobar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 158.0
+offset_top = 1.0
+offset_right = 158.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Symbol" type="Label" parent="Infobar/H"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "$"
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("1_ttund")

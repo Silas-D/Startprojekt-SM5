@@ -16,6 +16,10 @@ run/main_scene="res://Game/UI/mainmenu/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Money="*res://Game/UI/Money/Money.gd"
+
 [display]
 
 window/size/viewport_width=1920

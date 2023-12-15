@@ -55,6 +55,7 @@ offset_bottom = 29.0
 script = ExtResource("4_l5xth")
 
 [node name="Button" type="Button" parent="UpgradeMenu"]
+layout_mode = 0
 offset_top = 200.0
 offset_right = 46.0
 offset_bottom = 257.0
@@ -62,6 +63,7 @@ flat = true
 
 [node name="Panel" type="Panel" parent="UpgradeMenu"]
 visible = false
+layout_mode = 0
 offset_left = -27.0
 offset_top = 227.0
 offset_right = 259.0
