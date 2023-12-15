@@ -12,8 +12,10 @@ func _on_delete_pressed():
 
 
 func _on_upgrade_1_pressed():
-	pass # Replace with function body.
+	
+	$Panel.hide()
 
 
 func _on_upgrade_2_pressed():
-	pass # Replace with function body.
+	
+	$Panel.hide()
