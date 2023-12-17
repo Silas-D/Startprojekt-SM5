@@ -1,7 +1,49 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1wd138ka86xp"]
+[gd_scene load_steps=6 format=3 uid="uid://c1wd138ka86xp"]
 
 [ext_resource type="Texture2D" uid="uid://cf3a12yu1xpwr" path="res://Game/Assets/Environment/Map.png" id="1_yeawc"]
 
-[node name="Map" type="Sprite2D"]
+[sub_resource type="Curve2D" id="Curve2D_hh8tq"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 933, -348, 0, 0, 0, 0, -131, -340, 0, 0, 0, 0, -412, -338, 0, 0, 0, 0, -601, -338, 0, 0, 0, 0, -901, -334)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_qmuij"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 943, -101, 0, 0, 0, 0, -84, -107, 0, 0, 0, 0, -385, -113, 0, 0, 0, 0, -593, -105, 0, 0, 0, 0, -941, -102)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_vkbgi"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 947, 148, 0, 0, 0, 0, -183, 138, 0, 0, 0, 0, -491, 137, 0, 0, 0, 0, -673, 132, 0, 0, 0, 0, -894, 151)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_ei0q4"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 938, 387, 0, 0, 0, 0, -146, 384, 0, 0, 0, 0, -446, 378, 0, 0, 0, 0, -642, 396, 0, 0, 0, 0, -912, 395)
+}
+point_count = 5
+
+[node name="Map" type="Node2D"]
+
+[node name="Mappicture" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
 texture = ExtResource("1_yeawc")
+
+[node name="Path1" type="Path2D" parent="."]
+position = Vector2(960, 540)
+curve = SubResource("Curve2D_hh8tq")
+
+[node name="Path2" type="Path2D" parent="."]
+position = Vector2(960, 540)
+curve = SubResource("Curve2D_qmuij")
+
+[node name="Path3" type="Path2D" parent="."]
+position = Vector2(960, 540)
+curve = SubResource("Curve2D_vkbgi")
+
+[node name="Path4" type="Path2D" parent="."]
+position = Vector2(960, 540)
+curve = SubResource("Curve2D_ei0q4")

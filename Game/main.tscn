@@ -1,8 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://b86hrtmfbwl50"]
+[gd_scene load_steps=17 format=3 uid="uid://b86hrtmfbwl50"]
 
 [ext_resource type="Script" path="res://Game/main.gd" id="1_66rgv"]
 [ext_resource type="PackedScene" uid="uid://c1wd138ka86xp" path="res://Game/Level/Map.tscn" id="2_80g8p"]
-[ext_resource type="Script" path="res://Game/PathSpawner.gd" id="3_18eh6"]
 [ext_resource type="PackedScene" uid="uid://dbyjqrpe10lgi" path="res://Game/UI/pause_menu/pause_menu.tscn" id="5_1yo3r"]
 [ext_resource type="Texture2D" uid="uid://cvnoal2v35crs" path="res://Game/Assets/UI/menuGrid.png" id="6_mw6pf"]
 [ext_resource type="Script" path="res://Game/UI/Kaufmenu/Button1.gd" id="8_8okx3"]
@@ -22,13 +21,6 @@
 script = ExtResource("1_66rgv")
 
 [node name="Map" parent="." instance=ExtResource("2_80g8p")]
-
-[node name="PathSpawner" type="Node2D" parent="."]
-script = ExtResource("3_18eh6")
-
-[node name="Timer" type="Timer" parent="PathSpawner"]
-wait_time = 5.0
-autostart = true
 
 [node name="Towers" type="Node2D" parent="."]
 
@@ -620,7 +612,6 @@ icon = ExtResource("11_wognc")
 
 [node name="HUD" parent="." instance=ExtResource("17_l81qk")]
 
-[connection signal="timeout" from="PathSpawner/Timer" to="PathSpawner" method="_on_timer_timeout"]
 [connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
 [connection signal="pressed" from="Kaufmenu/Button1" to="Kaufmenu/Button1" method="_on_pressed"]
 [connection signal="pressed" from="Kaufmenu/Button1/Panel11/Button Tower 1" to="Kaufmenu/Button1" method="_on_button_tower_1_pressed"]
