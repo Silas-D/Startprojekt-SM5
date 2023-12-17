@@ -72,10 +72,13 @@ func spawn_enemies(wave_data):
 	# : Array) -> void
 	for i in wave_data:
 		var new_enemy = load("res://Game/Enemy/slime1/" + i[0] + ".tscn").instantiate()
-		map_node3.add_child(new_enemy)
-		map_node2.add_child(new_enemy)
-		map_node3.add_child(new_enemy)
-		map_node4.add_child(new_enemy)
+		map_node1.add_child(new_enemy, true)
+		new_enemy = load("res://Game/Enemy/slime1/" + i[0] + ".tscn").instantiate()
+		map_node2.add_child(new_enemy, true)
+		new_enemy = load("res://Game/Enemy/slime1/" + i[0] + ".tscn").instantiate()
+		map_node3.add_child(new_enemy, true)
+		new_enemy = load("res://Game/Enemy/slime1/" + i[0] + ".tscn").instantiate()
+		map_node4.add_child(new_enemy, true)
 		#await <- Nicht nötig
 		get_tree().create_timer(i[1])
 
