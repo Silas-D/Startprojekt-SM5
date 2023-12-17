@@ -5,10 +5,16 @@ var paused = false
 
 # var current_wave -> WaveCounter.current_wave
 var enemies_in_wave = 0
-var map_node
+var map_node1
+var map_node2
+var map_node3
+var map_node4
 
 func _ready():
-	map_node = get_node("Map/Path1")
+	map_node1 = get_node("Map/Path1")
+	map_node2 = get_node("Map/Path2")
+	map_node3 = get_node("Map/Path3")
+	map_node4 = get_node("Map/Path4")
 #	var new_enemy = load("res://Game/Enemy/slime1/slime_1.tscn").instantiate()
 #	map_node.add_child(new_enemy, true)
 #.get_node("Path1")
@@ -66,7 +72,10 @@ func spawn_enemies(wave_data):
 	# : Array) -> void
 	for i in wave_data:
 		var new_enemy = load("res://Game/Enemy/slime1/" + i[0] + ".tscn").instantiate()
-		map_node.add_child(new_enemy, true)
+		map_node3.add_child(new_enemy)
+		map_node2.add_child(new_enemy)
+		map_node3.add_child(new_enemy)
+		map_node4.add_child(new_enemy)
 		#await <- Nicht nötig
 		get_tree().create_timer(i[1])
 
