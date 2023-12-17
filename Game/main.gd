@@ -3,12 +3,13 @@ extends Node2D
 @onready var pause_menu = $pauseMenu
 var paused = false
 
-# var current_wave -> WaveCounter.current_wave
+@export var current_wave = 0
 var enemies_in_wave = 0
 var map_node1
 var map_node2
 var map_node3
 var map_node4
+
 
 func _ready():
 	map_node1 = get_node("Map/Path1")
@@ -31,47 +32,48 @@ func start_next_wave():
 	#-> void
 	var wave_data = retrieve_wave_data()
 	#:
-	#await <- Nicht nötig
-	get_tree().create_timer(0.2) ##padding
+	await get_tree().create_timer(0.2).timeout ##padding
 	spawn_enemies(wave_data)
 
 func retrieve_wave_data():
 	# -> Array
 	var wave_data = []
 	
-	if WaveCounter.current_wave == 0:
+	if current_wave == 0:
+		wave_data = [["slime_1", 1]]
+	elif current_wave == 1:
+		wave_data = [["slime_1", 1], ["slime_1", 1]]
+	elif current_wave == 2:
+		wave_data = [["slime_1", 1], ["slime_1", 2], ["slime_1", 4], ["slime_1", 5]]
+	elif current_wave == 3:
 		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 0.1], ["slime_1", 0.1]]
-	if WaveCounter.current_wave == 1:
+	elif current_wave == 4:
 		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 0.1], ["slime_1", 0.1]]
-	if WaveCounter.current_wave == 2:
+	elif current_wave == 5:
 		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 0.1], ["slime_1", 0.1]]
-	if WaveCounter.current_wave == 3:
+	elif current_wave == 6:
 		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 0.1], ["slime_1", 0.1]]
-	if WaveCounter.current_wave == 4:
+	elif current_wave == 7:
 		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 0.1], ["slime_1", 0.1]]
-	if WaveCounter.current_wave == 5:
+	elif current_wave == 8:
 		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 0.1], ["slime_1", 0.1]]
-	if WaveCounter.current_wave == 6:
+	elif current_wave == 9:
 		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 0.1], ["slime_1", 0.1]]
-	if WaveCounter.current_wave == 7:
-		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 0.1], ["slime_1", 0.1]]
-	if WaveCounter.current_wave == 8:
-		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 0.1], ["slime_1", 0.1]]
-	if WaveCounter.current_wave == 9:
-		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 0.1], ["slime_1", 0.1]]
-	if WaveCounter.current_wave == 10:
+	elif current_wave == 10:
 		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 0.1], ["slime_1", 0.1]]
 	else:
-		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 0.1], ["slime_1", 0.1]]
+		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 2], ["slime_1", 0.1]]
 	# : Array
-	WaveCounter.current_wave += 1
+	current_wave += 1
 	enemies_in_wave = wave_data.size()
 	return wave_data
 
 func spawn_enemies(wave_data):
 	# : Array) -> void
+	var new_enemy
 	for i in wave_data:
-		var new_enemy = load("res://Game/Enemy/slime1/" + i[0] + ".tscn").instantiate()
+		#vollständige konfig
+		new_enemy = load("res://Game/Enemy/slime1/" + i[0] + ".tscn").instantiate()
 		map_node1.add_child(new_enemy, true)
 		new_enemy = load("res://Game/Enemy/slime1/" + i[0] + ".tscn").instantiate()
 		map_node2.add_child(new_enemy, true)
@@ -79,8 +81,7 @@ func spawn_enemies(wave_data):
 		map_node3.add_child(new_enemy, true)
 		new_enemy = load("res://Game/Enemy/slime1/" + i[0] + ".tscn").instantiate()
 		map_node4.add_child(new_enemy, true)
-		#await <- Nicht nötig
-		get_tree().create_timer(i[1])
+		await get_tree().create_timer(i[1]).timeout
 
 func pauseMenu():
 	if paused:
