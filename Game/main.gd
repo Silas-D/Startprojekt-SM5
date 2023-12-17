@@ -3,7 +3,7 @@ extends Node2D
 @onready var pause_menu = $pauseMenu
 var paused = false
 
-var current_wave = WaveCounter.current_wave
+# var current_wave -> WaveCounter.current_wave
 var enemies_in_wave = 0
 var map_node
 
@@ -33,32 +33,32 @@ func retrieve_wave_data():
 	# -> Array
 	var wave_data = []
 	
-	if current_wave == 0:
+	if WaveCounter.current_wave == 0:
 		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 0.1], ["slime_1", 0.1]]
-	if current_wave == 1:
+	if WaveCounter.current_wave == 1:
 		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 0.1], ["slime_1", 0.1]]
-	if current_wave == 2:
+	if WaveCounter.current_wave == 2:
 		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 0.1], ["slime_1", 0.1]]
-	if current_wave == 3:
+	if WaveCounter.current_wave == 3:
 		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 0.1], ["slime_1", 0.1]]
-	if current_wave == 4:
+	if WaveCounter.current_wave == 4:
 		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 0.1], ["slime_1", 0.1]]
-	if current_wave == 5:
+	if WaveCounter.current_wave == 5:
 		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 0.1], ["slime_1", 0.1]]
-	if current_wave == 6:
+	if WaveCounter.current_wave == 6:
 		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 0.1], ["slime_1", 0.1]]
-	if current_wave == 7:
+	if WaveCounter.current_wave == 7:
 		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 0.1], ["slime_1", 0.1]]
-	if current_wave == 8:
+	if WaveCounter.current_wave == 8:
 		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 0.1], ["slime_1", 0.1]]
-	if current_wave == 9:
+	if WaveCounter.current_wave == 9:
 		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 0.1], ["slime_1", 0.1]]
-	if current_wave == 10:
+	if WaveCounter.current_wave == 10:
 		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 0.1], ["slime_1", 0.1]]
 	else:
 		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 0.1], ["slime_1", 0.1]]
 	# : Array
-	current_wave += 1
+	WaveCounter.current_wave += 1
 	enemies_in_wave = wave_data.size()
 	return wave_data
 

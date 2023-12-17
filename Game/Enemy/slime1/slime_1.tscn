@@ -543,6 +543,7 @@ animations = [{
 }]
 
 [node name="Slime_1" type="PathFollow2D"]
+loop = false
 script = ExtResource("1_h5so2")
 
 [node name="slime1" type="CharacterBody2D" parent="."]
