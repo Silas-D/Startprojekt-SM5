@@ -31,7 +31,32 @@ func start_next_wave():
 
 func retrieve_wave_data():
 	# -> Array
-	var wave_data = [["slime_1", 0.1], ["slime_1", 0.1], ["slime_1", 0.1], ["slime_1", 0.1]]
+	var wave_data = []
+	
+	if current_wave == 0:
+		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 0.1], ["slime_1", 0.1]]
+	if current_wave == 1:
+		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 0.1], ["slime_1", 0.1]]
+	if current_wave == 2:
+		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 0.1], ["slime_1", 0.1]]
+	if current_wave == 3:
+		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 0.1], ["slime_1", 0.1]]
+	if current_wave == 4:
+		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 0.1], ["slime_1", 0.1]]
+	if current_wave == 5:
+		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 0.1], ["slime_1", 0.1]]
+	if current_wave == 6:
+		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 0.1], ["slime_1", 0.1]]
+	if current_wave == 7:
+		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 0.1], ["slime_1", 0.1]]
+	if current_wave == 8:
+		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 0.1], ["slime_1", 0.1]]
+	if current_wave == 9:
+		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 0.1], ["slime_1", 0.1]]
+	if current_wave == 10:
+		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 0.1], ["slime_1", 0.1]]
+	else:
+		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 0.1], ["slime_1", 0.1]]
 	# : Array
 	current_wave += 1
 	enemies_in_wave = wave_data.size()
