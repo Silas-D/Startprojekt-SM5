@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Money="*res://Game/UI/Money/Money.gd"
+WaveCounter="*res://Game/UI/Money/WaveCounter.gd"
 
 [display]
 

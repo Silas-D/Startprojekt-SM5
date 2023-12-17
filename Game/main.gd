@@ -3,7 +3,7 @@ extends Node2D
 @onready var pause_menu = $pauseMenu
 var paused = false
 
-var current_wave = 0
+var current_wave = WaveCounter.current_wave
 var enemies_in_wave = 0
 var map_node
 
