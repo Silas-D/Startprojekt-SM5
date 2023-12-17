@@ -1,12 +1,10 @@
 extends PathFollow2D
 
-const speed = 250 #50
+const speed = 50
 @export var health = 3
 
 func _process(delta):
 	move(delta)
-
-	#get_parent().set_progress(get_parent().get_progress() + speed*delta)
 	
 	if get_progress_ratio() == 1:
 		queue_free()

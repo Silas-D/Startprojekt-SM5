@@ -544,9 +544,11 @@ animations = [{
 
 [node name="Slime_3" type="PathFollow2D"]
 scale = Vector2(0.8, 0.8)
+loop = false
 script = ExtResource("1_xldpf")
 
 [node name="slime3" type="CharacterBody2D" parent="."]
+rotation = 3.14159
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="slime3"]
 scale = Vector2(6, 6)
