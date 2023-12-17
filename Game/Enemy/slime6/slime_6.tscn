@@ -542,15 +542,17 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Slime_6" type="CharacterBody2D"]
+[node name="Slime_6" type="PathFollow2D"]
 scale = Vector2(0.8, 0.8)
 script = ExtResource("1_tkpnm")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="slime6" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slime6"]
 scale = Vector2(6, 6)
 shape = SubResource("CircleShape2D_dwfuq")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="slime6"]
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_k04tn")
 animation = &"slime 6"

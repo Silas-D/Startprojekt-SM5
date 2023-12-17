@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends PathFollow2D
 
 const speed = 120
 @export var health = 12
