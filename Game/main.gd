@@ -25,7 +25,8 @@ func start_next_wave():
 	#-> void
 	var wave_data = retrieve_wave_data()
 	#:
-	await get_tree().create_timer(0.2) ##padding
+	#await <- Nicht nötig
+	get_tree().create_timer(0.2) ##padding
 	spawn_enemies(wave_data)
 
 func retrieve_wave_data():
@@ -41,7 +42,8 @@ func spawn_enemies(wave_data):
 	for i in wave_data:
 		var new_enemy = load("res://Game/Enemy/slime1/" + i[0] + ".tscn").instantiate()
 		map_node.add_child(new_enemy, true)
-		await get_tree().create_timer(i[1])
+		#await <- Nicht nötig
+		get_tree().create_timer(i[1])
 
 func pauseMenu():
 	if paused:
