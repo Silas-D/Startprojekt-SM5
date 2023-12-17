@@ -25,6 +25,8 @@ func _process(_delta):
 		print("Turm down")
 		queue_free()
 
+func _on_timer_timeout():
+	Shoot()
 
 func Shoot():
 	var tempBullet = Bullet.instantiate()
@@ -35,12 +37,13 @@ func Shoot():
 
 
 func _on_tower_body_entered(body):
-	if "Slime" in body.name:
+	#ob body.name funktioniert wegen umstrukturierung der slime struktur weiß ich nicht
+	if "slime" in body.name:
 		var tempArray = []
 		currTargets = get_node("Node2D/Tower").get_overlapping_bodies()
 		
 		for i in currTargets:
-			if "Slime" in i.name:
+			if "slime" in i.name:
 				tempArray.append(i)
 		
 		var currTarget = null
@@ -57,25 +60,24 @@ func _on_tower_body_entered(body):
 		
 func _on_gegner_scan_body_entered(body):
 	
-	if "Slime_1" in body.name:
+	if "slime1" in body.name:
 		towerHealth -= 1
-		body.health -= 100
-	if "Slime_2" in body.name:
+		body.get_parent().health -= 100
+	if "slime2" in body.name:
 		towerHealth -= 2
-		body.health -= 100
-	if "Slime_3" in body.name:
+		body.get_parent().health -= 100
+	if "slime3" in body.name:
 		towerHealth -= 3
-		body.health -= 100
-	if "Slime_4" in body.name:
+		body.get_parent().health -= 100
+	if "slime4" in body.name:
 		towerHealth -= 4
-		body.health -= 100
-	if "Slime_5" in body.name:
+		body.get_parent().health -= 100
+	if "slime5" in body.name:
 		towerHealth -= 5
-		body.health -= 100
-	if "Slime_6" in body.name:
+		body.get_parent().health -= 100
+	if "slime6" in body.name:
 		towerHealth -= 6
-		body.health -= 100
+		body.get_parent().health -= 100
 
 
-func _on_timer_timeout():
-	Shoot()
+

@@ -125,8 +125,9 @@ icon = ExtResource("7_32xb1")
 expand_icon = true
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
 offset_right = 4.0
-offset_bottom = 27.0
+offset_bottom = 4.0
 script = ExtResource("3_3aqwr")
 
 [node name="Timer" type="Timer" parent="ProgressBar"]

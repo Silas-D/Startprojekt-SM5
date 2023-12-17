@@ -30,7 +30,7 @@ func start_next_wave():
 
 func retrieve_wave_data():
 	# -> Array
-	var wave_data = [["slime_1", 0.7], ["slime_1", 0.1]]
+	var wave_data = [["slime_1", 0.1], ["slime_1", 0.1], ["slime_1", 0.1], ["slime_1", 0.1]]
 	# : Array
 	current_wave += 1
 	enemies_in_wave = wave_data.size()

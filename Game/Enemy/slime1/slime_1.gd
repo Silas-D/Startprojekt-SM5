@@ -15,7 +15,7 @@ func _process(delta):
 		Money.Gold += 50
 		print("Tod")
 		#noch ändern dann
-		get_parent().get_parent().queue_free()
+		self.queue_free()
 
 func move(delta):
 	set_progress(get_progress() + speed * delta)

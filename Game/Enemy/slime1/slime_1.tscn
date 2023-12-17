@@ -545,16 +545,16 @@ animations = [{
 [node name="Slime_1" type="PathFollow2D"]
 script = ExtResource("1_h5so2")
 
-[node name="Body2D" type="CharacterBody2D" parent="."]
+[node name="slime1" type="CharacterBody2D" parent="."]
 rotation = 3.14159
 scale = Vector2(0.8, 0.8)
 collision_layer = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Body2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slime1"]
 scale = Vector2(6, 6)
 shape = SubResource("CircleShape2D_dwfuq")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Body2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="slime1"]
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_k04tn")
 animation = &"slime 1"
