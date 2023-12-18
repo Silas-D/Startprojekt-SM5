@@ -28,7 +28,6 @@ func _process(_delta):
 		
 func _on_next_wave_pressed():
 	if waveDone:
-		get_node("NextWave").modulate = Color(255,255,255)
 		waveDone = false
 		start_next_wave()
 		
@@ -129,6 +128,7 @@ func spawn_enemies():
 		
 	await get_tree().create_timer(2).timeout
 	waveDone = true
+	get_node("NextWave").modulate = Color(255,255,255)
 
 func checkSlime(slime):
 	var new_enemy
