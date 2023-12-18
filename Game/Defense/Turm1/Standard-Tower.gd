@@ -33,8 +33,10 @@ func _on_timer_timeout():
 func Shoot():
 	var tempBullet = Bullet.instantiate()
 	tempBullet.pathName = pathName
-	get_node("Node2D/BulletContainer").add_child(tempBullet)
-	tempBullet.global_position = $Node2D/Aim.global_position
+	var bullet_container = get_node("Node2D/BulletContainer")
+	if bullet_container:
+		get_node("Node2D/BulletContainer").add_child(tempBullet)
+		tempBullet.global_position = $Node2D/Aim.global_position
 
 
 
