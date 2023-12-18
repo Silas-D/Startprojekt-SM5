@@ -1,39 +1,94 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbyjqrpe10lgi"]
+[gd_scene load_steps=7 format=3 uid="uid://dbyjqrpe10lgi"]
 
 [ext_resource type="Script" path="res://Game/UI/pause_menu/pause_menu.gd" id="1_v4qru"]
+[ext_resource type="Texture2D" uid="uid://6jog3wp43utg" path="res://Game/Assets/UI/forward.png" id="2_0ys8m"]
+[ext_resource type="Texture2D" uid="uid://dfk6xvmfte3as" path="res://Game/Assets/UI/gear.png" id="3_wubqg"]
+[ext_resource type="Texture2D" uid="uid://bianpclqvhloq" path="res://Game/Assets/UI/home.png" id="4_4q0ps"]
+[ext_resource type="Texture2D" uid="uid://dd7op3nsyftq0" path="res://Game/Assets/UI/grey_box.png" id="5_xgka7"]
+[ext_resource type="Texture2D" uid="uid://cm4twq1y08kc1" path="res://Game/Assets/UI/green_boxCheckmark.png" id="6_coc5c"]
 
 [node name="PauseMenu" type="CanvasLayer"]
 script = ExtResource("1_v4qru")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-top_level = true
-clip_children = 2
+[node name="Panel" type="Panel" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -527.5
-offset_top = -223.0
-offset_right = 527.5
-offset_bottom = 223.0
+offset_left = -550.0
+offset_top = -300.0
+offset_right = 550.0
+offset_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-alignment = 1
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -337.5
+offset_top = -240.0
+offset_right = 337.5
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 50
 
-[node name="Weiterspielen" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Weiterspielen" type="Button" parent="Panel/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 50
-text = "Weiterspielen"
+icon = ExtResource("2_0ys8m")
+flat = true
+expand_icon = true
 
-[node name="Verlassen" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Optionen" type="Button" parent="Panel/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+icon = ExtResource("3_wubqg")
+flat = true
+expand_icon = true
+
+[node name="Verlassen" type="Button" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 50
-text = "Verlassen
+text = "
 "
+icon = ExtResource("4_4q0ps")
+flat = true
+expand_icon = true
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Weiterspielen" to="." method="_on_weiterspielen_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Verlassen" to="." method="_on_verlassen_pressed"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -337.5
+offset_top = -95.0
+offset_right = 337.5
+offset_bottom = 95.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureButton" type="TextureButton" parent="Panel/HBoxContainer2"]
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("5_xgka7")
+texture_pressed = ExtResource("6_coc5c")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Autostart der nächsten Runde"
+
+[connection signal="pressed" from="Panel/HBoxContainer/Weiterspielen" to="." method="_on_weiterspielen_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/Verlassen" to="." method="_on_verlassen_pressed"]
