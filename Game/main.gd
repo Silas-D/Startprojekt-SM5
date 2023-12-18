@@ -126,8 +126,8 @@ func spawn_enemies(wave_data):
 				map_node4.add_child(checkSlime(i[0]))
 		await get_tree().create_timer(i[1]).timeout
 		
-		await get_tree().create_timer(10).timeout
-		waveDone = true
+	await get_tree().create_timer(10).timeout
+	waveDone = true
 		
 func checkSlime(slime):
 	var new_enemy
