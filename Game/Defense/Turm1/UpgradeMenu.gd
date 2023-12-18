@@ -2,7 +2,7 @@ extends Control
 
 const Tower1U1 = preload("res://Game/Defense/Turm1U1/Standard-TowerU1.tscn")
 const Tower1U2 = preload("res://Game/Defense/Turm1U2/Standard-TowerU2.tscn")
-var main = preload("res://Game/main.tscn")
+var main = load("res://Game/main.tscn")
 var towerContainer 
 
 func _ready():
