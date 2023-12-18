@@ -24,7 +24,7 @@ func _ready():
 #	var new_enemy = load("res://Game/Enemy/slime1/slime_1.tscn").instantiate()
 #	map_node.add_child(new_enemy, true)
 #.get_node("Path1")
-	start_next_wave()
+	#start_next_wave()
 
 func _process(_delta):
 	if Input.is_action_just_pressed("Pause"):
@@ -32,6 +32,7 @@ func _process(_delta):
 		
 
 func _on_next_wave_pressed():
+	#Farbe Ändern
 	if waveDone:
 		waveDone = false
 		start_next_wave()
@@ -58,7 +59,7 @@ func retrieve_wave_data():
 	elif current_wave == 1:
 		wave_data = [["slime_1", 1]]
 	elif current_wave == 2:
-		wave_data = [["slime_1", 1]]
+		wave_data = [["slime_2", 1]]
 	elif current_wave == 3:
 		wave_data = [["slime_1", 1]]
 	elif current_wave == 4:
@@ -159,7 +160,8 @@ func _on_pause_button_pressed():
 
 func _on_area_2d_body_entered(body):
 	#Game Over Funktion
-	pass
+	if "slime" in body.name:
+		get_tree().change_scene_to_file("res://Game/UI/mainmenu/main_menu.tscn")
 
 func next2randomPath(existingPath):
 	var secActivePath = rng.randi_range(1, 4)
