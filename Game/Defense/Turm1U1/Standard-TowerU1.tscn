@@ -11,7 +11,7 @@
 size = Vector2(78.5, 894)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_la7cb"]
-size = Vector2(49.5, 43)
+size = Vector2(49.5, 52.5)
 
 [node name="Standard-TowerU1" type="Node2D"]
 rotation = 1.5708
@@ -35,7 +35,6 @@ position = Vector2(0.249981, -418)
 shape = SubResource("RectangleShape2D_qf2ul")
 
 [node name="LoeschMenu" type="Control" parent="Node2D"]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -23.0
@@ -60,9 +59,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -53.0
-offset_top = 1.0
-offset_right = 70.0
-offset_bottom = 107.0
+offset_top = -29.0
+offset_right = 7.0
+offset_bottom = 77.0
 grow_horizontal = 2
 grow_vertical = 0
 rotation = -1.5708
@@ -101,7 +100,7 @@ expand_icon = true
 [node name="GegnerScan" type="Area2D" parent="Node2D"]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/GegnerScan"]
-position = Vector2(0.250032, 11)
+position = Vector2(0.250032, 6.25)
 shape = SubResource("RectangleShape2D_la7cb")
 
 [node name="BulletContainer" type="Node" parent="Node2D"]
