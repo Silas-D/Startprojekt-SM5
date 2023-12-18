@@ -48,9 +48,9 @@ func start_next_wave():
 func retrieve_wave_data(wave):
 	var wave_data = []
 	if wave == 0:
-		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 1]]
+		wave_data = [["slime_1", 1]]
 	elif wave == 1:
-		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 1]]
+		wave_data = [["slime_1", 2], ["slime_1", 2], ["slime_1", 2]]
 	elif wave == 2:
 		wave_data = [["slime_2", 1]]
 	elif wave == 3:
@@ -100,7 +100,7 @@ func spawn_enemies():
 				map_node3.add_child(checkSlime(i[0]))
 			if randomSecondPath == 4:
 				map_node4.add_child(checkSlime(i[0]))
-			
+			await get_tree().create_timer(i[1]).timeout
 	if current_wave > 6:
 		var current_wave3 = current_wave - 6
 		wave_data = retrieve_wave_data(current_wave3)
