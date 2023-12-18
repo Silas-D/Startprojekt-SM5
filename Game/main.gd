@@ -14,6 +14,7 @@ var randomStartPath = rng.randi_range(1, 4)
 var randomSecondPath = next2randomPath(randomStartPath)
 var randomThirdPath = next3randomPath(randomStartPath, randomSecondPath)
 var randomFourthPath = 10 - randomStartPath - randomSecondPath - randomThirdPath
+var waveDone = true
 
 func _ready():
 	map_node1 = get_node("Map/Path1")
@@ -29,6 +30,12 @@ func _process(_delta):
 	if Input.is_action_just_pressed("Pause"):
 		pauseMenu();
 		
+
+func _on_next_wave_pressed():
+	if waveDone:
+		waveDone = false
+		start_next_wave()
+
 ##
 ## Wave Functions
 ##
@@ -39,7 +46,8 @@ func start_next_wave():
 	await get_tree().create_timer(2).timeout ##padding
 	
 	spawn_enemies(wave_data)
-	start_next_wave()
+	current_wave += 1
+	#start_next_wave()
 
 func retrieve_wave_data():
 	# -> Array
@@ -70,7 +78,7 @@ func retrieve_wave_data():
 	else:
 		wave_data = [["slime_3", 1], ["slime_6", 1]]
 	# : Array
-	current_wave += 1
+	#current_wave += 1
 	enemies_in_wave = wave_data.size()
 	return wave_data
 
@@ -117,6 +125,9 @@ func spawn_enemies(wave_data):
 				map_node4.add_child(checkSlime(i[0]))
 		await get_tree().create_timer(i[1]).timeout
 		
+		await get_tree().create_timer(10).timeout
+		waveDone = true
+		
 func checkSlime(slime):
 	var new_enemy
 	if slime == "slime_1":
@@ -146,6 +157,10 @@ func pauseMenu():
 func _on_pause_button_pressed():
 	pauseMenu();
 
+func _on_area_2d_body_entered(body):
+	#Game Over Funktion
+	pass
+
 func next2randomPath(existingPath):
 	var secActivePath = rng.randi_range(1, 4)
 	while secActivePath == existingPath:
@@ -157,4 +172,7 @@ func next3randomPath(existingPath1, existingPath2):
 	while thirdActivePath == existingPath1 || thirdActivePath == existingPath2:
 		thirdActivePath = rng.randi_range(1, 4)
 	return thirdActivePath
+
+
+
 

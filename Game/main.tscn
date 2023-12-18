@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b86hrtmfbwl50"]
+[gd_scene load_steps=19 format=3 uid="uid://b86hrtmfbwl50"]
 
 [ext_resource type="Script" path="res://Game/main.gd" id="1_66rgv"]
 [ext_resource type="PackedScene" uid="uid://c1wd138ka86xp" path="res://Game/Level/Map.tscn" id="2_80g8p"]
@@ -15,7 +15,11 @@
 [ext_resource type="Script" path="res://Game/UI/Kaufmenu/Button6.gd" id="14_hsmw4"]
 [ext_resource type="Script" path="res://Game/UI/Kaufmenu/Button7.gd" id="15_3gsyx"]
 [ext_resource type="Script" path="res://Game/UI/Kaufmenu/Button8.gd" id="16_hi6k0"]
+[ext_resource type="Texture2D" uid="uid://6jog3wp43utg" path="res://Game/Assets/UI/forward.png" id="17_8lbx5"]
 [ext_resource type="PackedScene" uid="uid://cemg8afkqteqr" path="res://Game/UI/Money/hud.tscn" id="17_l81qk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oga75"]
+size = Vector2(106, 1114)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_66rgv")
@@ -612,6 +616,22 @@ icon = ExtResource("11_wognc")
 
 [node name="HUD" parent="." instance=ExtResource("17_l81qk")]
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-53, 540)
+shape = SubResource("RectangleShape2D_oga75")
+
+[node name="NextWave" type="Button" parent="."]
+offset_left = 960.0
+offset_top = 1000.0
+offset_right = 1035.0
+offset_bottom = 1075.0
+pivot_offset = Vector2(37, 37)
+icon = ExtResource("17_8lbx5")
+flat = true
+expand_icon = true
+
 [connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
 [connection signal="pressed" from="Kaufmenu/Button1" to="Kaufmenu/Button1" method="_on_pressed"]
 [connection signal="pressed" from="Kaufmenu/Button1/Panel11/Button Tower 1" to="Kaufmenu/Button1" method="_on_button_tower_1_pressed"]
@@ -645,3 +665,5 @@ icon = ExtResource("11_wognc")
 [connection signal="pressed" from="Kaufmenu/Button8/Panel42/Button Tower 1" to="Kaufmenu/Button8" method="_on_button_tower_1_pressed"]
 [connection signal="pressed" from="Kaufmenu/Button8/Panel42/Button Tower 2" to="Kaufmenu/Button8" method="_on_button_tower_2_pressed"]
 [connection signal="pressed" from="Kaufmenu/Button8/Panel42/Close Button" to="Kaufmenu/Button8" method="_on_close_button_pressed"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="pressed" from="NextWave" to="." method="_on_next_wave_pressed"]
