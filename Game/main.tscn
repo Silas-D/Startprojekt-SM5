@@ -28,18 +28,6 @@ script = ExtResource("1_66rgv")
 
 [node name="Towers" type="Node2D" parent="."]
 
-[node name="PauseButton" type="Button" parent="."]
-offset_left = 1812.0
-offset_right = 1920.0
-offset_bottom = 108.0
-grow_horizontal = 2
-grow_vertical = 2
-icon = ExtResource("6_mw6pf")
-flat = true
-
-[node name="pauseMenu" parent="." instance=ExtResource("5_1yo3r")]
-visible = false
-
 [node name="Kaufmenu" type="Node2D" parent="."]
 
 [node name="Button1" type="Button" parent="Kaufmenu"]
@@ -582,6 +570,18 @@ theme_override_colors/icon_normal_color = Color(0.666667, 0, 0, 1)
 icon = ExtResource("11_wognc")
 expand_icon = true
 
+[node name="PauseButton" type="Button" parent="."]
+offset_left = 1812.0
+offset_right = 1920.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("6_mw6pf")
+flat = true
+
+[node name="pauseMenu" parent="." instance=ExtResource("5_1yo3r")]
+visible = false
+
 [node name="HUD" parent="." instance=ExtResource("17_l81qk")]
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -600,7 +600,6 @@ icon = ExtResource("17_8lbx5")
 flat = true
 expand_icon = true
 
-[connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
 [connection signal="pressed" from="Kaufmenu/Button1" to="Kaufmenu/Button1" method="_on_pressed"]
 [connection signal="pressed" from="Kaufmenu/Button1/Panel11/Button Tower 1" to="Kaufmenu/Button1" method="_on_button_tower_1_pressed"]
 [connection signal="pressed" from="Kaufmenu/Button1/Panel11/Button Tower 2" to="Kaufmenu/Button1" method="_on_button_tower_2_pressed"]
@@ -633,5 +632,6 @@ expand_icon = true
 [connection signal="pressed" from="Kaufmenu/Button8/Panel42/Button Tower 1" to="Kaufmenu/Button8" method="_on_button_tower_1_pressed"]
 [connection signal="pressed" from="Kaufmenu/Button8/Panel42/Button Tower 2" to="Kaufmenu/Button8" method="_on_button_tower_2_pressed"]
 [connection signal="pressed" from="Kaufmenu/Button8/Panel42/Close Button" to="Kaufmenu/Button8" method="_on_close_button_pressed"]
+[connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="pressed" from="NextWave" to="." method="_on_next_wave_pressed"]
