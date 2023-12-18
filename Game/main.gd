@@ -57,17 +57,17 @@ func retrieve_wave_data():
 	if current_wave == 0:
 		wave_data = [["slime_1", 1]]
 	elif current_wave == 1:
-		wave_data = [["slime_2", 1]]
+		wave_data = [["slime_1", 1]]
 	elif current_wave == 2:
-		wave_data = [["slime_3", 1]]
-	elif current_wave == 3:
-		wave_data = [["slime_4", 1]]
-	elif current_wave == 4:
-		wave_data = [["slime_5", 1]]
-	elif current_wave == 5:
-		wave_data = [["slime_6", 1]]
-	elif current_wave == 6:
 		wave_data = [["slime_2", 1]]
+	elif current_wave == 3:
+		wave_data = [["slime_3", 1]]
+	elif current_wave == 4:
+		wave_data = [["slime_4", 1]]
+	elif current_wave == 5:
+		wave_data = [["slime_5", 1]]
+	elif current_wave == 6:
+		wave_data = [["slime_6", 1]]
 	elif current_wave == 7:
 		wave_data = [["slime_3", 1]]
 	elif current_wave == 8:
