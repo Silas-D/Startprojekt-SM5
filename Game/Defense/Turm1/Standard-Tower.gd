@@ -18,14 +18,15 @@ func _process(_delta):
 		if timer.is_stopped():
 			timer.start()
 	else:
-		var bullet_container = get_node("Node2D/BulletContainer")
-		if bullet_container:
-			for i in bullet_container.get_child_count():
-				bullet_container.get_child(i).queue_free()
+		if is_inside_tree():
+			var bullet_container = get_node_or_null("Node2D/BulletContainer")
+			if bullet_container:
+				for i in bullet_container.get_child_count():
+					bullet_container.get_child(i).queue_free()
 			
 	if towerHealth <= 0:
 		print("Turm down")
-		queue_free()
+		self.queue_free()
 
 func _on_timer_timeout():
 	Shoot()
@@ -33,9 +34,9 @@ func _on_timer_timeout():
 func Shoot():
 	var tempBullet = Bullet.instantiate()
 	tempBullet.pathName = pathName
-	var bullet_container = get_node("Node2D/BulletContainer")
+	var bullet_container = get_node_or_null("Node2D/BulletContainer")
 	if bullet_container:
-		get_node("Node2D/BulletContainer").add_child(tempBullet)
+		get_node_or_null("Node2D/BulletContainer").add_child(tempBullet)
 		tempBullet.global_position = $Node2D/Aim.global_position
 
 
