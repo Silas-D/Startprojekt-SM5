@@ -3,11 +3,11 @@
 [ext_resource type="Script" path="res://Game/main.gd" id="1_66rgv"]
 [ext_resource type="PackedScene" uid="uid://c1wd138ka86xp" path="res://Game/Level/Map.tscn" id="2_80g8p"]
 [ext_resource type="PackedScene" uid="uid://dbyjqrpe10lgi" path="res://Game/UI/pause_menu/pause_menu.tscn" id="5_1yo3r"]
+[ext_resource type="Texture2D" uid="uid://b2q674651fcer" path="res://Game/Assets/Towers/towerDefense_tile291.png" id="5_bghfl"]
 [ext_resource type="Texture2D" uid="uid://cvnoal2v35crs" path="res://Game/Assets/UI/menuGrid.png" id="6_mw6pf"]
 [ext_resource type="Script" path="res://Game/UI/Kaufmenu/Button1.gd" id="8_8okx3"]
 [ext_resource type="Texture2D" uid="uid://broq1vbrkluww" path="res://Game/Assets/Towers/TurmStandard.png" id="8_di1yw"]
 [ext_resource type="Script" path="res://Game/UI/Kaufmenu/Button2.gd" id="9_oe136"]
-[ext_resource type="Texture2D" uid="uid://b7uboj3b8iaaf" path="res://Game/Assets/Towers/towerDefense_tile292.png" id="9_rwl77"]
 [ext_resource type="Script" path="res://Game/UI/Kaufmenu/Button3.gd" id="11_p0gxq"]
 [ext_resource type="Texture2D" uid="uid://c2qboehssxrox" path="res://Game/Assets/UI/cross.png" id="11_wognc"]
 [ext_resource type="Script" path="res://Game/UI/Kaufmenu/Button4.gd" id="12_1jgxp"]
@@ -80,7 +80,7 @@ offset_bottom = -15.0
 grow_horizontal = 0
 grow_vertical = 0
 mouse_force_pass_scroll_events = false
-icon = ExtResource("9_rwl77")
+icon = ExtResource("5_bghfl")
 icon_alignment = 1
 expand_icon = true
 
@@ -148,7 +148,7 @@ offset_bottom = -15.0
 grow_horizontal = 0
 grow_vertical = 0
 mouse_force_pass_scroll_events = false
-icon = ExtResource("9_rwl77")
+icon = ExtResource("5_bghfl")
 icon_alignment = 1
 expand_icon = true
 
@@ -216,7 +216,7 @@ offset_bottom = -15.0
 grow_horizontal = 0
 grow_vertical = 0
 mouse_force_pass_scroll_events = false
-icon = ExtResource("9_rwl77")
+icon = ExtResource("5_bghfl")
 icon_alignment = 1
 expand_icon = true
 
@@ -281,7 +281,7 @@ offset_bottom = -15.0
 grow_horizontal = 0
 grow_vertical = 0
 mouse_force_pass_scroll_events = false
-icon = ExtResource("9_rwl77")
+icon = ExtResource("5_bghfl")
 icon_alignment = 1
 expand_icon = true
 
@@ -349,7 +349,7 @@ offset_bottom = -15.0
 grow_horizontal = 0
 grow_vertical = 0
 mouse_force_pass_scroll_events = false
-icon = ExtResource("9_rwl77")
+icon = ExtResource("5_bghfl")
 icon_alignment = 1
 expand_icon = true
 
@@ -416,7 +416,7 @@ offset_bottom = -15.0
 grow_horizontal = 0
 grow_vertical = 0
 mouse_force_pass_scroll_events = false
-icon = ExtResource("9_rwl77")
+icon = ExtResource("5_bghfl")
 icon_alignment = 1
 expand_icon = true
 
@@ -482,7 +482,7 @@ offset_bottom = -15.0
 grow_horizontal = 0
 grow_vertical = 0
 mouse_force_pass_scroll_events = false
-icon = ExtResource("9_rwl77")
+icon = ExtResource("5_bghfl")
 icon_alignment = 1
 expand_icon = true
 
@@ -549,7 +549,7 @@ offset_bottom = -15.0
 grow_horizontal = 0
 grow_vertical = 0
 mouse_force_pass_scroll_events = false
-icon = ExtResource("9_rwl77")
+icon = ExtResource("5_bghfl")
 icon_alignment = 1
 expand_icon = true
 
