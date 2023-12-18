@@ -38,7 +38,7 @@ func _on_next_wave_pressed():
 ## Wave Functions
 ##
 func start_next_wave():
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(0.2).timeout
 	spawn_enemies()
 	current_wave += 1
 	if spawn_enemies:
@@ -127,7 +127,7 @@ func spawn_enemies():
 				map_node4.add_child(checkSlime(i[0]))
 			await get_tree().create_timer(i[1]).timeout
 		
-	await get_tree().create_timer(10).timeout
+	await get_tree().create_timer(2).timeout
 	waveDone = true
 
 func checkSlime(slime):
