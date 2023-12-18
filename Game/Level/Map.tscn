@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://c1wd138ka86xp"]
+[gd_scene load_steps=7 format=3 uid="uid://c1wd138ka86xp"]
 
 [ext_resource type="Texture2D" uid="uid://cf3a12yu1xpwr" path="res://Game/Assets/Environment/Map.png" id="1_yeawc"]
+[ext_resource type="Texture2D" uid="uid://badlfepy17lbr" path="res://Game/Assets/Environment/Map Buesche.png" id="2_cmseb"]
 
 [sub_resource type="Curve2D" id="Curve2D_hh8tq"]
 _data = {
@@ -51,3 +52,7 @@ curve = SubResource("Curve2D_vkbgi")
 position = Vector2(895.839, 540)
 scale = Vector2(1.02285, 1)
 curve = SubResource("Curve2D_ei0q4")
+
+[node name="MapBuesche" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_cmseb")
