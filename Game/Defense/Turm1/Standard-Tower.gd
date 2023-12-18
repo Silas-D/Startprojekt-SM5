@@ -18,8 +18,10 @@ func _process(_delta):
 		if timer.is_stopped():
 			timer.start()
 	else:
-		for i in get_node("Node2D/BulletContainer").get_child_count():
-			get_node("Node2D/BulletContainer").get_child(i).queue_free()
+		var bullet_container = get_node("Node2D/BulletContainer")
+		if bullet_container:
+			for i in bullet_container.get_child_count():
+				bullet_container.get_child(i).queue_free()
 			
 	if towerHealth <= 0:
 		print("Turm down")
@@ -37,7 +39,6 @@ func Shoot():
 
 
 func _on_tower_body_entered(body):
-	#ob body.name funktioniert wegen umstrukturierung der slime struktur weiß ich nicht
 	if "slime" in body.name:
 		var tempArray = []
 		currTargets = get_node("Node2D/Tower").get_overlapping_bodies()

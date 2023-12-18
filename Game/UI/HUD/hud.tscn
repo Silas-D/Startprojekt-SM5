@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cemg8afkqteqr"]
 
-[ext_resource type="Script" path="res://Game/UI/Money/Symbol.gd" id="1_ttund"]
-[ext_resource type="Script" path="res://Game/UI/Money/WaveCounterLabel.gd" id="2_h7hwg"]
+[ext_resource type="Script" path="res://Game/UI/HUD/Symbol.gd" id="1_fb2ob"]
+[ext_resource type="Script" path="res://Game/UI/HUD/WaveCounterLabel.gd" id="2_ochpv"]
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -37,7 +37,7 @@ theme_override_font_sizes/font_size = 40
 text = "$"
 horizontal_alignment = 2
 vertical_alignment = 1
-script = ExtResource("1_ttund")
+script = ExtResource("1_fb2ob")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Infobar"]
 layout_mode = 1
@@ -53,4 +53,4 @@ grow_vertical = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Wave"
-script = ExtResource("2_h7hwg")
+script = ExtResource("2_ochpv")

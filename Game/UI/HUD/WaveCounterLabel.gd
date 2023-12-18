@@ -1,7 +1,5 @@
 extends Label
 
-#var main_scene = preload("res://Game/main.tscn")
-
 func _process(_delta):
 	var main_node = get_tree().get_root().get_node("Main")
 	if main_node:

@@ -15,8 +15,8 @@
 [ext_resource type="Script" path="res://Game/UI/Kaufmenu/Button6.gd" id="14_hsmw4"]
 [ext_resource type="Script" path="res://Game/UI/Kaufmenu/Button7.gd" id="15_3gsyx"]
 [ext_resource type="Script" path="res://Game/UI/Kaufmenu/Button8.gd" id="16_hi6k0"]
+[ext_resource type="PackedScene" uid="uid://cemg8afkqteqr" path="res://Game/UI/HUD/hud.tscn" id="16_mwe1b"]
 [ext_resource type="Texture2D" uid="uid://6jog3wp43utg" path="res://Game/Assets/UI/forward.png" id="17_8lbx5"]
-[ext_resource type="PackedScene" uid="uid://cemg8afkqteqr" path="res://Game/UI/Money/hud.tscn" id="17_l81qk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oga75"]
 size = Vector2(106, 1114)
@@ -582,7 +582,7 @@ flat = true
 [node name="pauseMenu" parent="." instance=ExtResource("5_1yo3r")]
 visible = false
 
-[node name="HUD" parent="." instance=ExtResource("17_l81qk")]
+[node name="HUD" parent="." instance=ExtResource("16_mwe1b")]
 
 [node name="Area2D" type="Area2D" parent="."]
 
