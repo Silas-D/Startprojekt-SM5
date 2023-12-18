@@ -26,8 +26,6 @@ script = ExtResource("1_66rgv")
 
 [node name="Map" parent="." instance=ExtResource("2_80g8p")]
 
-[node name="Towers" type="Node2D" parent="."]
-
 [node name="Kaufmenu" type="Node2D" parent="."]
 
 [node name="Button1" type="Button" parent="Kaufmenu"]
@@ -569,6 +567,8 @@ mouse_force_pass_scroll_events = false
 theme_override_colors/icon_normal_color = Color(0.666667, 0, 0, 1)
 icon = ExtResource("11_wognc")
 expand_icon = true
+
+[node name="Towers" type="Node2D" parent="."]
 
 [node name="PauseButton" type="Button" parent="."]
 offset_left = 1812.0

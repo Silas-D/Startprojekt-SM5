@@ -1,13 +1,13 @@
 extends Node2D
 
 
-var Bullet = preload("res://Game/Defense/Turm2/advancedbullet.tscn")
+var Bullet = preload("res://Game/Defense/Turm1U2/Standard-BulletU2.tscn")
 var pathName
 var currTargets = []
 var curr
-var towerHealth = 20
+var towerHealth = 15
 
-@onready var timer = $Node2D/ProgressBar/Timer
+@onready var timer = get_node("ProgressBar/Timer")
 var startShooting = false
 
 
@@ -23,6 +23,7 @@ func _process(_delta):
 					bullet_container.get_child(i).queue_free()
 			
 	if towerHealth <= 0:
+		print("Turm down")
 		self.queue_free()
 
 func _on_timer_timeout():
@@ -79,4 +80,6 @@ func _on_gegner_scan_body_entered(body):
 	if "slime6" in body.name:
 		towerHealth -= 6
 		body.get_parent().health -= 100
-		
+
+
+

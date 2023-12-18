@@ -1,9 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://b66kvas3htwn7"]
+[gd_scene load_steps=9 format=3 uid="uid://b66kvas3htwn7"]
 
-[ext_resource type="Script" path="res://Game/Defense/Turm1/Standard-Tower.gd" id="1_by2g1"]
-[ext_resource type="Texture2D" uid="uid://broq1vbrkluww" path="res://Game/Assets/Towers/TurmStandard.png" id="2_y8f7n"]
-[ext_resource type="Script" path="res://Game/Defense/Turm1/UpgradeMenu.gd" id="4_l5xth"]
-[ext_resource type="Texture2D" uid="uid://d27aesdwsp64k" path="res://Game/Assets/Towers/TurmDamage.png" id="5_6ub6n"]
+[ext_resource type="Script" path="res://Game/Defense/Turm1U2/Standard-TowerU2.gd" id="1_7hyyk"]
+[ext_resource type="Script" path="res://Game/Defense/Turm1U1/LoeschMenu.gd" id="3_j0sun"]
 [ext_resource type="Texture2D" uid="uid://dg6xsevla63td" path="res://Game/Assets/Towers/TurmSchnell.png" id="6_woyex"]
 [ext_resource type="Texture2D" uid="uid://c2qboehssxrox" path="res://Game/Assets/UI/cross.png" id="7_32xb1"]
 [ext_resource type="Texture2D" uid="uid://deyrxyynp2f0u" path="res://Game/Assets/UI/trashcanOpen.png" id="7_fvbsf"]
@@ -18,7 +16,7 @@ size = Vector2(49.5, 43)
 [node name="Standard-Tower" type="Node2D"]
 rotation = 1.5708
 scale = Vector2(2, 2)
-script = ExtResource("1_by2g1")
+script = ExtResource("1_7hyyk")
 
 [node name="Node2D" type="StaticBody2D" parent="."]
 
@@ -26,7 +24,7 @@ script = ExtResource("1_by2g1")
 position = Vector2(0.5, -29.5)
 
 [node name="Texture" type="Sprite2D" parent="Node2D"]
-texture = ExtResource("2_y8f7n")
+texture = ExtResource("6_woyex")
 
 [node name="Tower" type="Area2D" parent="Node2D"]
 input_pickable = false
@@ -36,16 +34,16 @@ show_behind_parent = true
 position = Vector2(0.249981, -418)
 shape = SubResource("RectangleShape2D_qf2ul")
 
-[node name="UpgradeMenu" type="Control" parent="Node2D"]
+[node name="LoeschMenu" type="Control" parent="Node2D"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -23.0
 offset_top = -15.0
 offset_right = 23.0
 offset_bottom = 29.0
-script = ExtResource("4_l5xth")
+script = ExtResource("3_j0sun")
 
-[node name="Button" type="Button" parent="Node2D/UpgradeMenu"]
+[node name="Button" type="Button" parent="Node2D/LoeschMenu"]
 layout_mode = 0
 offset_left = -2.0
 offset_top = -5.0
@@ -53,7 +51,7 @@ offset_right = 48.0
 offset_bottom = 47.0
 flat = true
 
-[node name="Panel" type="Panel" parent="Node2D/UpgradeMenu"]
+[node name="Panel" type="Panel" parent="Node2D/LoeschMenu"]
 visible = false
 layout_mode = 1
 anchors_preset = 7
@@ -69,29 +67,7 @@ grow_horizontal = 2
 grow_vertical = 0
 rotation = -1.5708
 
-[node name="Upgrade1" type="Button" parent="Node2D/UpgradeMenu/Panel"]
-layout_mode = 1
-offset_left = 5.0
-offset_top = 5.0
-offset_right = 50.0
-offset_bottom = 50.0
-icon = ExtResource("5_6ub6n")
-expand_icon = true
-
-[node name="Upgrade2" type="Button" parent="Node2D/UpgradeMenu/Panel"]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 5.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = -5.0
-grow_vertical = 0
-icon = ExtResource("6_woyex")
-expand_icon = true
-
-[node name="Delete" type="Button" parent="Node2D/UpgradeMenu/Panel"]
+[node name="Delete" type="Button" parent="Node2D/LoeschMenu/Panel"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -108,7 +84,7 @@ theme_override_colors/icon_hover_color = Color(0.666667, 0, 0, 1)
 icon = ExtResource("7_fvbsf")
 expand_icon = true
 
-[node name="Close" type="Button" parent="Node2D/UpgradeMenu/Panel"]
+[node name="Close" type="Button" parent="Node2D/LoeschMenu/Panel"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -137,13 +113,10 @@ offset_bottom = 4.0
 script = ExtResource("8_r1qmf")
 
 [node name="Timer" type="Timer" parent="ProgressBar"]
-wait_time = 2.0
 
 [connection signal="body_entered" from="Node2D/Tower" to="." method="_on_tower_body_entered"]
-[connection signal="pressed" from="Node2D/UpgradeMenu/Button" to="Node2D/UpgradeMenu" method="_on_button_pressed"]
-[connection signal="pressed" from="Node2D/UpgradeMenu/Panel/Upgrade1" to="Node2D/UpgradeMenu" method="_on_upgrade_1_pressed"]
-[connection signal="pressed" from="Node2D/UpgradeMenu/Panel/Upgrade2" to="Node2D/UpgradeMenu" method="_on_upgrade_2_pressed"]
-[connection signal="pressed" from="Node2D/UpgradeMenu/Panel/Delete" to="Node2D/UpgradeMenu" method="_on_delete_pressed"]
-[connection signal="pressed" from="Node2D/UpgradeMenu/Panel/Close" to="Node2D/UpgradeMenu" method="_on_close_pressed"]
+[connection signal="pressed" from="Node2D/LoeschMenu/Button" to="Node2D/LoeschMenu" method="_on_button_pressed"]
+[connection signal="pressed" from="Node2D/LoeschMenu/Panel/Delete" to="Node2D/LoeschMenu" method="_on_delete_pressed"]
+[connection signal="pressed" from="Node2D/LoeschMenu/Panel/Close" to="Node2D/LoeschMenu" method="_on_close_pressed"]
 [connection signal="body_entered" from="Node2D/GegnerScan" to="." method="_on_gegner_scan_body_entered"]
 [connection signal="timeout" from="ProgressBar/Timer" to="." method="_on_timer_timeout"]

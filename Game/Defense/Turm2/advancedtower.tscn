@@ -1,45 +1,55 @@
-[gd_scene load_steps=5 format=3 uid="uid://ccx0k6v5pltrp"]
+[gd_scene load_steps=6 format=3 uid="uid://ccx0k6v5pltrp"]
 
 [ext_resource type="Script" path="res://Game/Defense/Turm2/advancedtower.gd" id="1_46rs1"]
 [ext_resource type="Texture2D" uid="uid://b7uboj3b8iaaf" path="res://Game/Assets/Towers/towerDefense_tile292.png" id="2_wi8g2"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lxsew"]
-size = Vector2(77.25, 41)
+[ext_resource type="Script" path="res://Game/Defense/Turm2/ProgressBarT2.gd" id="3_7lvqj"]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_nqrca"]
 points = PackedVector2Array(0, -50, 200, -50, 500, -200, 1000, -300, 1250, 0, 1000, 300, 500, 200, 200, 50, 0, 50)
 
-[node name="advancedtower" type="StaticBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lxsew"]
+size = Vector2(77.25, 41)
+
+[node name="advancedtower" type="Node2D"]
 script = ExtResource("1_46rs1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3.625, -0.5)
-shape = SubResource("RectangleShape2D_lxsew")
+[node name="Node2D" type="StaticBody2D" parent="."]
 
-[node name="Aim" type="Marker2D" parent="."]
+[node name="Aim" type="Marker2D" parent="Node2D"]
 position = Vector2(62, 0)
 
-[node name="Tower" type="Area2D" parent="."]
+[node name="Texture" type="Sprite2D" parent="Node2D"]
+scale = Vector2(2, 2)
+texture = ExtResource("2_wi8g2")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tower"]
+[node name="Tower" type="Area2D" parent="Node2D"]
+input_pickable = false
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/Tower"]
 visible = false
 shape = SubResource("ConvexPolygonShape2D_nqrca")
 disabled = true
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tower"]
-polygon = PackedVector2Array(0, -50, 200, -50, 500, -200, 1000, -300, 1250, 0, 1000, 300, 500, 200, 200, 50, 0, 50)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Tower"]
+polygon = PackedVector2Array(0, -50, 150, -150, 400, -300, 700, -300, 820, 0, 700, 300, 400, 300, 150, 150, 0, 50)
 
-[node name="GegnerScan" type="Area2D" parent="."]
+[node name="GegnerScan" type="Area2D" parent="Node2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GegnerScan"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/GegnerScan"]
 position = Vector2(-3.625, -0.5)
 shape = SubResource("RectangleShape2D_lxsew")
 
-[node name="BulletContainer" type="Node" parent="."]
+[node name="BulletContainer" type="Node" parent="Node2D"]
 
-[node name="TowerDefenseTile292" type="Sprite2D" parent="."]
-scale = Vector2(2, 2)
-texture = ExtResource("2_wi8g2")
+[node name="ProgressBar" type="ProgressBar" parent="Node2D"]
+visible = false
+offset_right = 4.0
+offset_bottom = 27.0
+script = ExtResource("3_7lvqj")
 
-[connection signal="body_entered" from="Tower" to="." method="_on_advancedtower_body_entered"]
-[connection signal="body_entered" from="GegnerScan" to="." method="_on_gegner_scan_body_entered"]
+[node name="Timer" type="Timer" parent="Node2D/ProgressBar"]
+wait_time = 0.25
+
+[connection signal="body_entered" from="Node2D/Tower" to="." method="_on_tower_body_entered"]
+[connection signal="body_entered" from="Node2D/GegnerScan" to="." method="_on_gegner_scan_body_entered"]
+[connection signal="timeout" from="Node2D/ProgressBar/Timer" to="." method="_on_timer_timeout"]
