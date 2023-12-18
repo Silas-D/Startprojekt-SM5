@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5tj6x03vs7ec"]
+[gd_scene load_steps=7 format=3 uid="uid://c5tj6x03vs7ec"]
 
+[ext_resource type="Texture2D" uid="uid://dy8kptv8ra23d" path="res://Game/Assets/Startbild.png" id="1_2bnt2"]
 [ext_resource type="Script" path="res://Game/UI/mainmenu/Play.gd" id="2_ccd8p"]
 [ext_resource type="Script" path="res://Game/UI/mainmenu/Quit.gd" id="3_6m22a"]
 [ext_resource type="Texture2D" uid="uid://dpswk1yspwxa3" path="res://Game/Assets/UI/exit.png" id="4_2v8mw"]
@@ -7,6 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://ci0kumdxua3tt" path="res://Game/Assets/UI/green_button05.png" id="8_34tmh"]
 
 [node name="MainMenu" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_2bnt2")
 
 [node name="Control" type="Control" parent="."]
 custom_minimum_size = Vector2(1920, 1080)
