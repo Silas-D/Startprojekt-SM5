@@ -2,7 +2,6 @@ extends Node2D
 
 @onready var pause_menu = $pauseMenu
 var paused = false
-
 @export var current_wave = 0
 @export var enemies_in_wave = 0
 var map_node1
@@ -26,12 +25,14 @@ func _process(_delta):
 	if Input.is_action_just_pressed("Pause"):
 		pauseMenu();
 		
-
+		
 func _on_next_wave_pressed():
-	#Farbe Ändern
 	if waveDone:
+		get_node("NextWave").modulate = Color(255,255,255)
 		waveDone = false
 		start_next_wave()
+		
+
 
 ##
 ## Wave Functions
@@ -40,6 +41,9 @@ func start_next_wave():
 	await get_tree().create_timer(2).timeout
 	spawn_enemies()
 	current_wave += 1
+	if spawn_enemies:
+		get_node("NextWave").modulate = Color(255,0,0)
+	
 
 func retrieve_wave_data(wave):
 	var wave_data = []
