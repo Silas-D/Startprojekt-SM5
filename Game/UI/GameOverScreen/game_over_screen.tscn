@@ -1,0 +1,85 @@
+[gd_scene load_steps=4 format=3 uid="uid://2268ybx5jlot"]
+
+[ext_resource type="Script" path="res://Game/UI/GameOverScreen/game_over_screen.gd" id="1_4ufsc"]
+[ext_resource type="Texture2D" uid="uid://b0sl2jbdpjxsk" path="res://Game/Assets/UI/return.png" id="2_04p8a"]
+[ext_resource type="Texture2D" uid="uid://bianpclqvhloq" path="res://Game/Assets/UI/home.png" id="2_bb26p"]
+
+[node name="GameOverScreen" type="CanvasLayer"]
+script = ExtResource("1_4ufsc")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -180.0
+offset_right = 320.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Game Over" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -163.5
+offset_top = 20.0
+offset_right = 163.5
+offset_bottom = 103.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.666667, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Game Over"
+
+[node name="Wellen ausgabe" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -185.5
+offset_top = -27.5
+offset_right = 185.5
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "20 Wellen geschaft!"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -97.0
+offset_right = 300.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 30
+
+[node name="Neustart" type="Button" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 50
+icon = ExtResource("2_04p8a")
+expand_icon = true
+
+[node name="Verlassen" type="Button" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 50
+text = "
+"
+icon = ExtResource("2_bb26p")
+expand_icon = true
+
+[connection signal="pressed" from="Panel/HBoxContainer/Neustart" to="." method="_on_weiterspielen_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/Verlassen" to="." method="_on_verlassen_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b86hrtmfbwl50"]
+[gd_scene load_steps=21 format=3 uid="uid://b86hrtmfbwl50"]
 
 [ext_resource type="Script" path="res://Game/main.gd" id="1_66rgv"]
 [ext_resource type="PackedScene" uid="uid://c1wd138ka86xp" path="res://Game/Level/Map.tscn" id="2_80g8p"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://Game/UI/Kaufmenu/Button5.gd" id="13_p0xle"]
 [ext_resource type="Script" path="res://Game/UI/Kaufmenu/Button6.gd" id="14_hsmw4"]
 [ext_resource type="Script" path="res://Game/UI/Kaufmenu/Button7.gd" id="15_3gsyx"]
+[ext_resource type="PackedScene" uid="uid://2268ybx5jlot" path="res://Game/UI/GameOverScreen/game_over_screen.tscn" id="16_2wul1"]
 [ext_resource type="Script" path="res://Game/UI/Kaufmenu/Button8.gd" id="16_hi6k0"]
 [ext_resource type="PackedScene" uid="uid://cemg8afkqteqr" path="res://Game/UI/HUD/hud.tscn" id="16_mwe1b"]
 [ext_resource type="Texture2D" uid="uid://6jog3wp43utg" path="res://Game/Assets/UI/forward.png" id="17_8lbx5"]
@@ -581,6 +582,9 @@ icon = ExtResource("6_mw6pf")
 flat = true
 
 [node name="pauseMenu" parent="." instance=ExtResource("5_1yo3r")]
+visible = false
+
+[node name="GameOverScreen" parent="." instance=ExtResource("16_2wul1")]
 visible = false
 
 [node name="HUD" parent="." instance=ExtResource("16_mwe1b")]

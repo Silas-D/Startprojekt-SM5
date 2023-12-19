@@ -162,12 +162,13 @@ func pauseMenu():
 	paused = !paused
 
 func _on_pause_button_pressed():
+	get_node("FastForward").modulate = Color(255,255,255)
 	pauseMenu();
 
 func _on_area_2d_body_entered(body):
-	#Game Over Funktion
+	##Game Over Funktion
 	if "slime" in body.name:
-		get_tree().change_scene_to_file("res://Game/UI/mainmenu/main_menu.tscn")
+		$GameOverScreen.show()
 
 func next2randomPath(existingPath):
 	var secActivePath = rng.randi_range(1, 4)
