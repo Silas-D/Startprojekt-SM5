@@ -53,23 +53,23 @@ func retrieve_wave_data(wave):
 	if wave == 0:
 		wave_data = [["slime_1", 1]]
 	elif wave == 1:
-		wave_data = [["slime_1", 2], ["slime_1", 2], ["slime_1", 2]]
+		wave_data = [["slime_1", 2], ["slime_1", 3], ["slime_1", 2], ["slime_1", 2], ["slime_1", 3], ["slime_1", 2]]
 	elif wave == 2:
-		wave_data = [["slime_2", 1]]
+		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 1], ["slime_1", 1]]
 	elif wave == 3:
-		wave_data = [["slime_3", 1]]
+		wave_data = [["slime_1", 2], ["slime_1", 3],["slime_2", 3],["slime_1", 2],["slime_2", 2]] #tower auf startpath bekommt ersten damage
 	elif wave == 4:
-		wave_data = [["slime_4", 1]]
+		wave_data = [["slime_1", 0.7], ["slime_1", 0.7], ["slime_1", 0.7], ["slime_1", 0.7],["slime_1", 0.7], ["slime_2", 1],["slime_2", 1]]
 	elif wave == 5:
-		wave_data = [["slime_5", 1]]
+		wave_data = [["slime_2", 1], ["slime_2", 1], ["slime_2", 1], ["slime_2", 1], ["slime_1", 1], ["slime_1", 1], ["slime_1", 1], ["slime_2", 1]]
 	elif wave == 6:
-		wave_data = [["slime_6", 1]]
+		wave_data = [["slime_2", 1], ["slime_2", 2], ["slime_3", 1], ["slime_3", 1]]
 	elif wave == 7:
-		wave_data = [["slime_3", 1]]
+		wave_data = [["slime_3", 2], ["slime_3", 2], ["slime_3", 2], ["slime_2", 2], ["slime_2", 2], ["slime_1", 0.7], ["slime_1", 0.7], ["slime_1", 0.7], ["slime_1", 0.7],["slime_1", 0.7]]
 	elif wave == 8:
-		wave_data = [["slime_3", 1]]
+		wave_data = [["slime_3", 4], ["slime_2", 2], ["slime_2", 4], ["slime_3", 1]]
 	elif wave == 9:
-		wave_data = [["slime_3", 1]]
+		wave_data = [["slime_2", 3], ["slime_3", 2], ["slime_2", 5], ["slime_4", 1]]
 	elif wave == 10:
 		wave_data = [["slime_4", 1]]
 	else:
@@ -91,7 +91,7 @@ func spawn_enemies():
 		if randomStartPath == 4:
 			map_node4.add_child(checkSlime(i[0]))
 		await get_tree().create_timer(i[1]).timeout
-	if current_wave > 3:
+	if current_wave > 2:
 		var current_wave2 = current_wave - 3
 		wave_data = retrieve_wave_data(current_wave2)
 		for i in wave_data:
@@ -104,7 +104,7 @@ func spawn_enemies():
 			if randomSecondPath == 4:
 				map_node4.add_child(checkSlime(i[0]))
 			await get_tree().create_timer(i[1]).timeout
-	if current_wave > 6:
+	if current_wave > 5:
 		var current_wave3 = current_wave - 6
 		wave_data = retrieve_wave_data(current_wave3)
 		for i in wave_data:	
@@ -117,7 +117,7 @@ func spawn_enemies():
 			if randomThirdPath == 4:
 				map_node4.add_child(checkSlime(i[0]))
 			await get_tree().create_timer(i[1]).timeout
-	if current_wave > 9:
+	if current_wave > 8:
 		var current_wave4 = current_wave - 9
 		wave_data = retrieve_wave_data(current_wave4)
 		for i in wave_data:
@@ -185,7 +185,8 @@ func next3randomPath(existingPath1, existingPath2):
 func _on_fast_forward_toggled(toggled_on):
 	if toggled_on == true:
 		get_node("FastForward").modulate = Color(0,255,0)
-		Engine.time_scale = 2.5
+		#auf 2,5 ändern
+		Engine.time_scale = 3.5
 	else :
 		get_node("FastForward").modulate = Color(255,255,255)
 		Engine.time_scale = 1
