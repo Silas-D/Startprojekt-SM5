@@ -28,7 +28,9 @@ func _on_upgrade_1_pressed():
 		towerContainer.add_child(turm)
 		turm.position = $".".global_position + Vector2(-28, 46)
 		Money.Gold -= 300
-	$"..".queue_free()
+		$"..".queue_free()
+	else:
+		$Panel.hide()
 
 
 func _on_upgrade_2_pressed():
@@ -39,7 +41,9 @@ func _on_upgrade_2_pressed():
 		towerContainer.add_child(turm)
 		turm.position = $".".global_position + Vector2(-28, 46)
 		Money.Gold -= 300
-	$"..".queue_free()
+		$"..".queue_free()
+	else:
+		$Panel.hide()
 
 
 func _on_close_pressed():

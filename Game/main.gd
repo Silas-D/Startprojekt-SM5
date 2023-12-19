@@ -44,6 +44,7 @@ func start_next_wave():
 	current_wave += 1
 	if spawn_enemies:
 		get_node("NextWave").modulate = Color(255,0,0)
+		get_node("FastForward").modulate = Color(255,255,255)
 	
 
 func retrieve_wave_data(wave):
