@@ -30,6 +30,7 @@ func _process(_delta):
 func _on_next_wave_pressed():
 	if waveDone:
 		waveDone = false
+		Engine.time_scale =1
 		start_next_wave()
 		
 
@@ -177,4 +178,16 @@ func next3randomPath(existingPath1, existingPath2):
 	while thirdActivePath == existingPath1 || thirdActivePath == existingPath2:
 		thirdActivePath = rng.randi_range(1, 4)
 	return thirdActivePath
+	
+	
+func _on_fast_forward_pressed():
+		Engine.time_scale =2.5
+	
 
+	
+		
+	
+
+
+
+	
