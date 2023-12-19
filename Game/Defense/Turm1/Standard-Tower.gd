@@ -22,11 +22,11 @@ func _process(_delta):
 			if bullet_container:
 				for i in bullet_container.get_child_count():
 					bullet_container.get_child(i).queue_free()
-
+			
 	if towerHealth <= 0:
 		print("Turm down")
 		self.queue_free()
-
+		
 	var currTarget = null
 	for i in currTargets:
 		if currTarget == null:
@@ -37,7 +37,6 @@ func _process(_delta):
 				else:
 					if parent and i.get_parent().get_progress() > currTarget.get_parent().get_progress():
 						currTarget = parent
-
 	if currTarget:
 		curr = currTarget
 		pathName = curr.get_parent().name
@@ -48,6 +47,11 @@ func _process(_delta):
 
 func _on_timer_timeout():
 	Shoot()
+	# Remove killed slimes from the array
+	for i in range(currTargets.size()):
+			if not is_instance_valid(currTargets[i]):
+				currTargets.pop_at(i)
+			break
 
 func Shoot():
 	var tempBullet = Bullet.instantiate()
@@ -59,11 +63,12 @@ func Shoot():
 
 
 func _on_tower_body_entered(body):
-		currTargets.append(body)
-		print("Slimes im Scan: ",currTargets)
+	currTargets.append(body)
+	print("Slimes im Scan: ",currTargets)
 
 
 func _on_gegner_scan_body_entered(body):
+	
 	if "slime1" in body.name:
 		towerHealth -= 1
 		body.get_parent().health -= 100
@@ -82,4 +87,3 @@ func _on_gegner_scan_body_entered(body):
 	if "slime6" in body.name:
 		towerHealth -= 6
 		body.get_parent().health -= 100
-

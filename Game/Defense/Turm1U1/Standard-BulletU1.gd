@@ -6,20 +6,22 @@ var pathName = ""
 const bulletDamage = 3
 
 func _physics_process(_delta):
-	var slimeSpawnerNode = get_tree().get_root().get_node("Main/Map")
+	var slimeSpawnerNode = get_tree().get_root().get_node("Main/Map/AllPaths")
 	var foundTarget
 	
 	for i in range(slimeSpawnerNode.get_child_count()):
-		var child = slimeSpawnerNode.get_child(i)
-		if child.name == pathName and child.get_child_count() > 0:
-			var targetNode = child.get_child(0).get_child(0).get_child(0)
-			if targetNode:
-				target = targetNode.global_position
-				foundTarget = true
-				break  # Exit the loop once target is found
-				
+		var path = slimeSpawnerNode.get_child(i)
+		if path:  
+			for x in range(path.get_child_count()):
+				var path2D = path.get_child(x)
+				var targetNode = path2D.get_child(0)
+				if targetNode:
+					target = targetNode.global_position
+					foundTarget = true
+					break  # Exit the loop once target is found
 	if foundTarget:
-		velocity = global_position.direction_to(target) * Speed
+		var vector = Vector2.RIGHT
+		velocity = vector * (global_position.direction_to(target) * Speed)
 		move_and_slide()
 
 
