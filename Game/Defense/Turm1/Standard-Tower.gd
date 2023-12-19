@@ -6,8 +6,7 @@ var pathName
 var currTargets = []
 var curr
 var towerHealth = 10
-#wahrscheinlich nicht benötigt
-#var reload = 0
+
 
 @onready var timer = get_node("ProgressBar/Timer")
 var startShooting = false
@@ -30,6 +29,12 @@ func _process(_delta):
 
 func _on_timer_timeout():
 	Shoot()
+	# Remove invalid elements from the array
+	for i in range(currTargets.size()):
+			if not is_instance_valid(currTargets[i]):
+				currTargets.pop_at(i)
+			#	i -= 1  # Decrement i to account for the removed element
+			break
 
 func Shoot():
 	var tempBullet = Bullet.instantiate()
@@ -42,26 +47,38 @@ func Shoot():
 
 
 func _on_tower_body_entered(body):
-	if "slime" in body.name:
-		var tempArray = []
-		currTargets = get_node("Node2D/Tower").get_overlapping_bodies()
-		
-		for i in currTargets:
-			if "slime" in i.name:
-				tempArray.append(i)
+		currTargets.append(body)
+#	if "slime" in body.name:
+#		#var tempArray = ([])
+#		currTargets = get_node("Node2D/Tower").get_overlapping_bodies()
+		print("Slimes im Scan: ",currTargets)
+		#for i in currTargets:
+		#	if "slime" in i.name:
+		#		tempArray.append(i)
 		
 		var currTarget = null
 		
-		for i in tempArray:
+		for i in currTargets:
 			if currTarget == null:
-				currTarget = i.get_node("../")
-			else:
-				if i.get_parent().get_progress() > currTarget.get_progress():
-					currTarget = i.get_node("../")
+				if i != null:
+					var parent = i.get_node("../")
+					if parent:
+						currTarget = parent
+					else:
+						if parent and i.get_parent().get_progress() > currTarget.get_parent().get_progress():
+							currTarget = parent
+	#		else:
+	#			if i.get_parent().get_progress() > currTarget.get_progress():
+	#				currTarget = i.get_node("../")
 		
 		curr = currTarget
 		pathName = curr.get_parent().name
+	#	print("TargetArray: ", tempArray)
+		print("CurrTarget: ", currTarget)
+		print("Curr: ", curr)
+		print("PathName: ", pathName)
 		
+
 func _on_gegner_scan_body_entered(body):
 	
 	if "slime1" in body.name:

@@ -17,10 +17,10 @@ var waveDone = true
 
 func _ready():
 	Money.Gold = 1000
-	map_node1 = get_node("Map/Path1")
-	map_node2 = get_node("Map/Path2")
-	map_node3 = get_node("Map/Path3")
-	map_node4 = get_node("Map/Path4")
+	map_node1 = get_node("Map/AllPaths/Path1")
+	map_node2 = get_node("Map/AllPaths/Path2")
+	map_node3 = get_node("Map/AllPaths/Path3")
+	map_node4 = get_node("Map/AllPaths/Path4")
 
 func _process(_delta):
 	if Input.is_action_just_pressed("Pause"):

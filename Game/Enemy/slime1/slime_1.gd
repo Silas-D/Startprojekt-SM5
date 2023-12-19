@@ -1,5 +1,6 @@
 extends PathFollow2D
 
+signal TOD
 const speed = 50
 @export var health = 3
 
@@ -10,6 +11,7 @@ func _process(delta):
 		queue_free()
 
 	if health <= 0:
+		TOD.emit()
 		Money.Gold += 50
 		print("Tod")
 		#noch ändern dann

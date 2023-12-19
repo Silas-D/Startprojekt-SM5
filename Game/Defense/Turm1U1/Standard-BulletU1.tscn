@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://caeskkvkild1l"]
 
-[ext_resource type="Script" path="res://Game/Defense/Turm1/Standard-Bullet.gd" id="1_ou7ss"]
+[ext_resource type="Script" path="res://Game/Defense/Turm1U1/Standard-BulletU1.gd" id="1_n4e8e"]
 [ext_resource type="Texture2D" uid="uid://bwu48iiddin7h" path="res://Game/Assets/Towers/towerDefense_tile251.png" id="2_xqa3e"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hgrgn"]
@@ -11,7 +11,7 @@ height = 38.0
 scale = Vector2(1.5, 1.5)
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("1_ou7ss")
+script = ExtResource("1_n4e8e")
 
 [node name="TowerDefenseTile251" type="Sprite2D" parent="."]
 rotation = 1.5708
