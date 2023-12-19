@@ -24,6 +24,7 @@ func _ready():
 
 func _process(_delta):
 	if Input.is_action_just_pressed("Pause"):
+		get_node("FastForward").modulate = Color(255,255,255)
 		pauseMenu();
 		
 		
@@ -187,3 +188,4 @@ func _on_fast_forward_toggled(toggled_on):
 	else :
 		get_node("FastForward").modulate = Color(255,255,255)
 		Engine.time_scale = 1
+		
