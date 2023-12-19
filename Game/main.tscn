@@ -647,6 +647,7 @@ flat = true
 [connection signal="pressed" from="Kaufmenu/Button8/Panel42/Button Tower 2" to="Kaufmenu/Button8" method="_on_button_tower_2_pressed"]
 [connection signal="pressed" from="Kaufmenu/Button8/Panel42/Close Button" to="Kaufmenu/Button8" method="_on_close_button_pressed"]
 [connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="visibility_changed" from="GameOverScreen" to="GameOverScreen" method="_on_visibility_changed"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="pressed" from="NextWave" to="." method="_on_next_wave_pressed"]
 [connection signal="toggled" from="FastForward" to="." method="_on_fast_forward_toggled"]
