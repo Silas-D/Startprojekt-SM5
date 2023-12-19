@@ -8,6 +8,10 @@ var map_node1
 var map_node2
 var map_node3
 var map_node4
+var firstPath
+var secondPath
+var thirdPath
+var fourthPath
 var rng = RandomNumberGenerator.new()
 var randomStartPath = rng.randi_range(1, 4)
 var randomSecondPath = next2randomPath(randomStartPath)
@@ -41,12 +45,51 @@ func _on_next_wave_pressed():
 ##
 func start_next_wave():
 	await get_tree().create_timer(0.2).timeout
+	pathZuweisung()
 	spawn_enemies()
 	current_wave += 1
 	if spawn_enemies:
 		get_node("NextWave").modulate = Color(255,0,0)
 		get_node("FastForward").modulate = Color(255,255,255)
 	
+func pathZuweisung():
+	#First Path
+	if randomStartPath == 1:
+		firstPath = map_node1
+	elif randomStartPath == 2:
+		firstPath = map_node2
+	elif randomStartPath == 3:
+		firstPath = map_node3
+	elif randomStartPath == 4:
+		firstPath = map_node4
+	#Second Path
+	if randomSecondPath == 1:
+		secondPath = map_node1
+	elif randomSecondPath == 2:
+		secondPath = map_node2
+	elif randomSecondPath == 3:
+		secondPath = map_node3
+	elif randomSecondPath == 4:
+		secondPath = map_node4
+	#Third Path
+	if randomThirdPath == 1:
+		thirdPath = map_node1
+	elif randomThirdPath == 2:
+		thirdPath = map_node2
+	elif randomThirdPath == 3:
+		thirdPath = map_node3
+	elif randomThirdPath == 4:
+		thirdPath = map_node4
+	#Fourth Path
+	if randomFourthPath == 1:
+		fourthPath = map_node1
+	elif randomFourthPath == 2:
+		fourthPath = map_node2
+	elif randomFourthPath == 3:
+		fourthPath = map_node3
+	elif randomFourthPath == 4:
+		fourthPath = map_node4
+
 
 func retrieve_wave_data(wave):
 	var wave_data = []
@@ -79,58 +122,67 @@ func retrieve_wave_data(wave):
 	return wave_data
 
 func spawn_enemies():
-	var wave_data = retrieve_wave_data(current_wave)
+	var wave_data4
+	var wave_data3
+	var wave_data2
 	
-	for i in wave_data:
-		if randomStartPath == 1:
-			map_node1.add_child(checkSlime(i[0]))
-		if randomStartPath == 2:
-			map_node2.add_child(checkSlime(i[0]))
-		if randomStartPath == 3:
-			map_node3.add_child(checkSlime(i[0]))
-		if randomStartPath == 4:
-			map_node4.add_child(checkSlime(i[0]))
-		await get_tree().create_timer(i[1]).timeout
-	if current_wave > 2:
-		var current_wave2 = current_wave - 3
-		wave_data = retrieve_wave_data(current_wave2)
-		for i in wave_data:
-			if randomSecondPath == 1:
-				map_node1.add_child(checkSlime(i[0]))
-			if randomSecondPath == 2:
-				map_node2.add_child(checkSlime(i[0]))
-			if randomSecondPath == 3:
-				map_node3.add_child(checkSlime(i[0]))
-			if randomSecondPath == 4:
-				map_node4.add_child(checkSlime(i[0]))
-			await get_tree().create_timer(i[1]).timeout
-	if current_wave > 5:
-		var current_wave3 = current_wave - 6
-		wave_data = retrieve_wave_data(current_wave3)
-		for i in wave_data:	
-			if randomThirdPath == 1:
-				map_node1.add_child(checkSlime(i[0]))
-			if randomThirdPath == 2:
-				map_node2.add_child(checkSlime(i[0]))
-			if randomThirdPath == 3:
-				map_node3.add_child(checkSlime(i[0]))
-			if randomThirdPath == 4:
-				map_node4.add_child(checkSlime(i[0]))
-			await get_tree().create_timer(i[1]).timeout
+	#Zuordnung
 	if current_wave > 8:
-		var current_wave4 = current_wave - 9
-		wave_data = retrieve_wave_data(current_wave4)
-		for i in wave_data:
-			if randomFourthPath == 1:
-				map_node1.add_child(checkSlime(i[0]))
-			if randomFourthPath == 2:
-				map_node2.add_child(checkSlime(i[0]))
-			if randomFourthPath == 3:
-				map_node3.add_child(checkSlime(i[0]))
-			if randomFourthPath == 4:
-				map_node4.add_child(checkSlime(i[0]))
+		wave_data4 = current_wave - 9
+		wave_data3 = current_wave - 6
+		wave_data2 = current_wave - 3
+	elif current_wave > 5:
+		wave_data3 = current_wave - 6
+		wave_data2 = current_wave - 3
+	elif current_wave > 2:
+		wave_data2 = current_wave - 3
+	
+	#Spawning
+	if current_wave > 8:
+		var wave_array = retrieve_wave_data(current_wave)
+		for i in wave_array:
+			firstPath.add_child(checkSlime(i[0]))
 			await get_tree().create_timer(i[1]).timeout
-		
+		var wave_array2 = retrieve_wave_data(wave_data2)
+		for i in wave_array2:
+			secondPath.add_child(checkSlime(i[0]))
+			await get_tree().create_timer(i[1]).timeout
+		var wave_array3 = retrieve_wave_data(wave_data3)
+		for i in wave_array3:
+			thirdPath.add_child(checkSlime(i[0]))
+			await get_tree().create_timer(i[1]).timeout
+		var wave_array4 = retrieve_wave_data(wave_data4)
+		for i in wave_array3:
+			fourthPath.add_child(checkSlime(i[0]))
+			await get_tree().create_timer(i[1]).timeout
+	elif current_wave > 5:
+		var wave_array = retrieve_wave_data(current_wave)
+		for i in wave_array:
+			firstPath.add_child(checkSlime(i[0]))
+			await get_tree().create_timer(i[1]).timeout
+		var wave_array2 = retrieve_wave_data(wave_data2)
+		for i in wave_array2:
+			secondPath.add_child(checkSlime(i[0]))
+			await get_tree().create_timer(i[1]).timeout
+		var wave_array3 = retrieve_wave_data(wave_data3)
+		for i in wave_array3:
+			thirdPath.add_child(checkSlime(i[0]))
+			await get_tree().create_timer(i[1]).timeout
+	elif current_wave > 2:
+		var wave_array = retrieve_wave_data(current_wave)
+		for i in wave_array:
+			firstPath.add_child(checkSlime(i[0]))
+			await get_tree().create_timer(i[1]).timeout
+		var wave_array2 = retrieve_wave_data(wave_data2)
+		for i in wave_array2:
+			secondPath.add_child(checkSlime(i[0]))
+			await get_tree().create_timer(i[1]).timeout
+	elif current_wave >= 0:
+		var wave_array = retrieve_wave_data(current_wave)
+		for i in wave_array:
+			firstPath.add_child(checkSlime(i[0]))
+			await get_tree().create_timer(i[1]).timeout
+
 	await get_tree().create_timer(2).timeout
 	waveDone = true
 	get_node("NextWave").modulate = Color(255,255,255)
