@@ -21,7 +21,7 @@ func _physics_process(_delta):
 					break  # Exit the loop once target is found
 	if foundTarget:
 		var vector = Vector2.RIGHT
-		velocity = vector * (global_position.direction_to(target) * Speed)
+		velocity = vector * Speed
 		move_and_slide()
 
 
