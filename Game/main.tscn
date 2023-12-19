@@ -17,7 +17,7 @@
 [ext_resource type="Script" path="res://Game/UI/Kaufmenu/Button8.gd" id="16_hi6k0"]
 [ext_resource type="PackedScene" uid="uid://cemg8afkqteqr" path="res://Game/UI/HUD/hud.tscn" id="16_mwe1b"]
 [ext_resource type="Texture2D" uid="uid://6jog3wp43utg" path="res://Game/Assets/UI/forward.png" id="17_8lbx5"]
-[ext_resource type="PackedScene" uid="uid://2s8a88rijxlr" path="res://fast_forward.tscn" id="18_nukh6"]
+[ext_resource type="Texture2D" uid="uid://c7wttcin6o1ow" path="res://Game/Assets/UI/fastForward.png" id="18_cdfev"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oga75"]
 size = Vector2(106, 1114)
@@ -601,11 +601,13 @@ icon = ExtResource("17_8lbx5")
 flat = true
 expand_icon = true
 
-[node name="FastForward" parent="." instance=ExtResource("18_nukh6")]
+[node name="FastForward" type="Button" parent="."]
 offset_left = 861.0
 offset_top = 980.0
 offset_right = 969.0
 offset_bottom = 1088.0
+toggle_mode = true
+icon = ExtResource("18_cdfev")
 flat = true
 
 [connection signal="pressed" from="Kaufmenu/Button1" to="Kaufmenu/Button1" method="_on_pressed"]
@@ -643,5 +645,4 @@ flat = true
 [connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="pressed" from="NextWave" to="." method="_on_next_wave_pressed"]
-[connection signal="pressed" from="FastForward" to="." method="_on_fast_forward_pressed"]
 [connection signal="toggled" from="FastForward" to="." method="_on_fast_forward_toggled"]

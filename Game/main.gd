@@ -179,15 +179,10 @@ func next3randomPath(existingPath1, existingPath2):
 		thirdActivePath = rng.randi_range(1, 4)
 	return thirdActivePath
 	
-	
-func _on_fast_forward_pressed():
-		Engine.time_scale =2.5
-	
-
-	
-		
-	
-
-
-
-	
+func _on_fast_forward_toggled(toggled_on):
+	if toggled_on == true:
+		get_node("FastForward").modulate = Color(0,255,0)
+		Engine.time_scale = 2.5
+	else :
+		get_node("FastForward").modulate = Color(255,255,255)
+		Engine.time_scale = 1
