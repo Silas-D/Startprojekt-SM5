@@ -18,12 +18,12 @@ func _on_button_tower_1_pressed():
 
 
 func _on_button_tower_2_pressed():
-	if Money.Gold >= 250:
+	if Money.Gold >= 700:
 		UI.hide()
 		var turm2 = Tower2.instantiate()
 		get_parent().add_child(turm2)
 		turm2.position = $".".global_position + Vector2(33, 37)
-		Money.Gold -= 250
+		Money.Gold -= 700
 
 func _on_close_button_pressed():
 	UI.hide()

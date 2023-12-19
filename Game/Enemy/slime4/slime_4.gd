@@ -10,7 +10,7 @@ func _process(delta):
 		queue_free()
 
 	if health <= 0:
-		Money.Gold += 50
+		Money.Gold += 25
 		print("Tod")
 		#noch ändern dann
 		self.queue_free()

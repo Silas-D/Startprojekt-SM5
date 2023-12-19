@@ -16,7 +16,7 @@ var randomFourthPath = 10 - randomStartPath - randomSecondPath - randomThirdPath
 var waveDone = true
 
 func _ready():
-	Money.Gold = 1000
+	Money.Gold = 350
 	map_node1 = get_node("Map/AllPaths/Path1")
 	map_node2 = get_node("Map/AllPaths/Path2")
 	map_node3 = get_node("Map/AllPaths/Path3")

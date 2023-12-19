@@ -35,7 +35,7 @@ func _on_upgrade_1_pressed():
 
 func _on_upgrade_2_pressed():
 	
-	if Money.Gold >= 300:
+	if Money.Gold >= 200:
 		$Panel.hide()
 		var turm = Tower1U2.instantiate()
 		towerContainer.add_child(turm)
