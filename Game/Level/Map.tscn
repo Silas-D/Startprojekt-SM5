@@ -23,7 +23,7 @@ point_count = 5
 
 [sub_resource type="Curve2D" id="Curve2D_ei0q4"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 889.828, 387, 0, 0, 0, 0, -146, 384, 0, 0, 0, 0, -446, 378, 0, 0, 0, 0, -642, 396, 0, 0, 0, 0, -912, 395)
+"points": PackedVector2Array(0, 0, 0, 0, 859.521, 385, 0, 0, 0, 0, -146, 384, 0, 0, 0, 0, -446, 378, 0, 0, 0, 0, -642, 396, 0, 0, 0, 0, -912, 395)
 }
 point_count = 5
 
@@ -36,18 +36,18 @@ texture = ExtResource("1_yeawc")
 [node name="AllPaths" type="Node2D" parent="."]
 
 [node name="Path1" type="Path2D" parent="AllPaths"]
-position = Vector2(840.803, 540)
-scale = Vector2(0.949836, 1)
+position = Vector2(841.798, 540)
+scale = Vector2(0.950914, 1)
 curve = SubResource("Curve2D_hh8tq")
 
 [node name="Path2" type="Path2D" parent="AllPaths"]
-position = Vector2(914.049, 540)
-scale = Vector2(0.951168, 1)
+position = Vector2(877.823, 540)
+scale = Vector2(0.915352, 1)
 curve = SubResource("Curve2D_qmuij")
 
 [node name="Path3" type="Path2D" parent="AllPaths"]
-position = Vector2(865.23, 540)
-scale = Vector2(0.991309, 1)
+position = Vector2(830.752, 540)
+scale = Vector2(0.952743, 1)
 curve = SubResource("Curve2D_vkbgi")
 
 [node name="Path4" type="Path2D" parent="AllPaths"]
