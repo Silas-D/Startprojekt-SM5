@@ -137,8 +137,10 @@ func spawn_enemies():
 	elif current_wave > 2:
 		wave_data2 = current_wave - 3
 	
-	#Spawning
+	#Deciding where to spawn
+	var done
 	if current_wave > 8:
+		done = await Spawn_4_Path()
 		var wave_array = retrieve_wave_data(current_wave)
 		for i in wave_array:
 			firstPath.add_child(checkSlime(i[0]))
@@ -152,10 +154,11 @@ func spawn_enemies():
 			thirdPath.add_child(checkSlime(i[0]))
 			await get_tree().create_timer(i[1]).timeout
 		var wave_array4 = retrieve_wave_data(wave_data4)
-		for i in wave_array3:
+		for i in wave_array4:
 			fourthPath.add_child(checkSlime(i[0]))
 			await get_tree().create_timer(i[1]).timeout
 	elif current_wave > 5:
+		done = await Spawn_3_Path()
 		var wave_array = retrieve_wave_data(current_wave)
 		for i in wave_array:
 			firstPath.add_child(checkSlime(i[0]))
@@ -169,6 +172,7 @@ func spawn_enemies():
 			thirdPath.add_child(checkSlime(i[0]))
 			await get_tree().create_timer(i[1]).timeout
 	elif current_wave > 2:
+		done = await Spawn_2_Path()
 		var wave_array = retrieve_wave_data(current_wave)
 		for i in wave_array:
 			firstPath.add_child(checkSlime(i[0]))
@@ -178,14 +182,30 @@ func spawn_enemies():
 			secondPath.add_child(checkSlime(i[0]))
 			await get_tree().create_timer(i[1]).timeout
 	elif current_wave >= 0:
-		var wave_array = retrieve_wave_data(current_wave)
-		for i in wave_array:
-			firstPath.add_child(checkSlime(i[0]))
-			await get_tree().create_timer(i[1]).timeout
+		done = await Spawn_1_Path()
+		
+	if done == true: 
+		await get_tree().create_timer(2).timeout
+		waveDone = true
+		get_node("NextWave").modulate = Color(255,255,255)
 
-	await get_tree().create_timer(2).timeout
-	waveDone = true
-	get_node("NextWave").modulate = Color(255,255,255)
+##Spawn Functions
+func Spawn_4_Path():
+	
+	return true
+func Spawn_3_Path():
+	
+	return true
+func Spawn_2_Path():
+	
+	return true
+func Spawn_1_Path():
+	var wave_array = retrieve_wave_data(current_wave)
+	for i in wave_array:
+		firstPath.add_child(checkSlime(i[0]))
+		await get_tree().create_timer(i[1]).timeout
+	return true
+
 
 func checkSlime(slime):
 	var new_enemy
