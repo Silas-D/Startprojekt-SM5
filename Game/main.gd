@@ -20,7 +20,7 @@ var randomFourthPath = 10 - randomStartPath - randomSecondPath - randomThirdPath
 var waveDone = true
 
 func _ready():
-	Money.Gold = 3500
+	Money.Gold = 1000
 	map_node1 = get_node("Map/AllPaths/Path1")
 	map_node2 = get_node("Map/AllPaths/Path2")
 	map_node3 = get_node("Map/AllPaths/Path3")
@@ -167,7 +167,7 @@ func spawn_enemies():
 		done = await Spawn_1_Path()
 		
 	if done == true: 
-		await get_tree().create_timer(2).timeout
+		await get_tree().create_timer(6).timeout
 		waveDone = true
 		get_node("Buttons/NextWave").modulate = Color(255,255,255)
 
@@ -217,7 +217,7 @@ func Spawn_first_Path(waveArray):
 	for i in waveArray:
 		firstPath.add_child(checkSlime(i[0]))
 		await get_tree().create_timer(i[1]).timeout
-		return true
+	return true
 func Spawn_second_Path(waveArray):
 	for i in waveArray:
 		secondPath.add_child(checkSlime(i[0]))
@@ -251,17 +251,17 @@ func checkSlime(slime):
 func retrieve_wave_data(wave):
 	var wave_data = []
 	if wave == 0:
-		wave_data = [["slime_1", 0]]
+		wave_data = [["slime_1", 1]]
 	elif wave == 1:
-		wave_data = [["slime_1", 2], ["slime_1", 2], ["slime_1", 0]]
+		wave_data = [["slime_1", 2], ["slime_1", 2], ["slime_1", 1]]
 	elif wave == 2:
-		wave_data = [["slime_1", 2], ["slime_1", 2], ["slime_1", 4], ["slime_1", 0]]
+		wave_data = [["slime_1", 2], ["slime_1", 2], ["slime_1", 4], ["slime_1", 1]]
 	elif wave == 3:
-		wave_data = [["slime_2", 5], ["slime_1", 2],["slime_1", 3],["slime_1", 2],["slime_1", 0]] #
+		wave_data = [["slime_2", 5], ["slime_1", 2],["slime_1", 3],["slime_1", 2],["slime_1", 1]] #
 	elif wave == 4:
-		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 1], ["slime_1", 1],["slime_1", 4], ["slime_2", 1],["slime_2", 0]]
+		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 1], ["slime_1", 1],["slime_1", 4], ["slime_2", 1],["slime_2", 1]]
 	elif wave == 5:
-		wave_data = [["slime_2", 3], ["slime_2", 3], ["slime_2", 0]]#Bearbeiten
+		wave_data = [["slime_2", 3], ["slime_2", 3], ["slime_2", 1]]#Bearbeiten
 	elif wave == 6:
 		wave_data = [["slime_2", 1], ["slime_2", 2], ["slime_3", 1], ["slime_3", 1]]
 	elif wave == 7:
