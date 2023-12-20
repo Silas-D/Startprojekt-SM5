@@ -75,6 +75,7 @@ offset_left = 5.0
 offset_top = 5.0
 offset_right = 50.0
 offset_bottom = 50.0
+tooltip_text = "300"
 icon = ExtResource("5_6ub6n")
 expand_icon = true
 
@@ -88,6 +89,7 @@ offset_top = -50.0
 offset_right = 50.0
 offset_bottom = -5.0
 grow_vertical = 0
+tooltip_text = "200"
 icon = ExtResource("6_woyex")
 expand_icon = true
 

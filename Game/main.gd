@@ -20,7 +20,7 @@ var randomFourthPath = 10 - randomStartPath - randomSecondPath - randomThirdPath
 var waveDone = true
 
 func _ready():
-	Money.Gold = 350
+	Money.Gold = 3500
 	map_node1 = get_node("Map/AllPaths/Path1")
 	map_node2 = get_node("Map/AllPaths/Path2")
 	map_node3 = get_node("Map/AllPaths/Path3")
@@ -145,23 +145,23 @@ var wave_data3
 var wave_data4
 func spawn_enemies():
 	#Zuordnung
-	if current_wave > 8:
-		wave_data4 = current_wave - 9
+	if current_wave >= 10:
+		wave_data4 = current_wave - 10
 		wave_data3 = current_wave - 6
 		wave_data2 = current_wave - 3
-	elif current_wave > 5:
+	elif current_wave >= 6:
 		wave_data3 = current_wave - 6
 		wave_data2 = current_wave - 3
-	elif current_wave > 2:
+	elif current_wave >= 3:
 		wave_data2 = current_wave - 3
 	
 	#Deciding where to spawn
 	var done
-	if current_wave > 8:
+	if current_wave >= 10:
 		done = await Spawn_4_Paths()
-	elif current_wave > 5:
+	elif current_wave >= 6:
 		done = await Spawn_3_Paths()
-	elif current_wave > 2:
+	elif current_wave >= 3:
 		done = await Spawn_2_Paths()
 	elif current_wave >= 0:
 		done = await Spawn_1_Path()
@@ -173,54 +173,63 @@ func spawn_enemies():
 
 ##Spawn Functions
 func Spawn_4_Paths():
+	#Data
 	var wave_array = retrieve_wave_data(current_wave)
-	for i in wave_array:
+	var wave_array2 = retrieve_wave_data(wave_data2)
+	var wave_array3 = retrieve_wave_data(wave_data3)
+	var wave_array4 = retrieve_wave_data(wave_data4)
+	#Spawn func
+	Spawn_fourth_Path(wave_array4)
+	Spawn_third_Path(wave_array3)
+	Spawn_second_Path(wave_array2)
+	var x = await Spawn_first_Path(wave_array)
+	if x == true:
+		return true
+func Spawn_3_Paths():
+	#Data
+	var wave_array = retrieve_wave_data(current_wave)
+	var wave_array2 = retrieve_wave_data(wave_data2)
+	var wave_array3 = retrieve_wave_data(wave_data3)
+	#Spawn func
+	Spawn_third_Path(wave_array3)
+	Spawn_second_Path(wave_array2)
+	var x = await Spawn_first_Path(wave_array)
+	if x == true:
+		return true
+func Spawn_2_Paths():
+	#Data
+	var wave_array = retrieve_wave_data(current_wave)
+	var wave_array2 = retrieve_wave_data(wave_data2)
+	#Spawn func
+	Spawn_second_Path(wave_array2)
+	var x = await Spawn_first_Path(wave_array)
+	if x == true:
+		return true
+func Spawn_1_Path():
+	#Data
+	var wave_array = retrieve_wave_data(current_wave)
+	#Spawn func
+	var x = await Spawn_first_Path(wave_array)
+	if x == true:
+		return true
+
+func Spawn_first_Path(waveArray):
+	for i in waveArray:
 		firstPath.add_child(checkSlime(i[0]))
 		await get_tree().create_timer(i[1]).timeout
-	var wave_array2 = retrieve_wave_data(wave_data2)
-	for i in wave_array2:
+		return true
+func Spawn_second_Path(waveArray):
+	for i in waveArray:
 		secondPath.add_child(checkSlime(i[0]))
 		await get_tree().create_timer(i[1]).timeout
-	var wave_array3 = retrieve_wave_data(wave_data3)
-	for i in wave_array3:
+func Spawn_third_Path(waveArray):
+	for i in waveArray:
 		thirdPath.add_child(checkSlime(i[0]))
 		await get_tree().create_timer(i[1]).timeout
-	var wave_array4 = retrieve_wave_data(wave_data4)
-	for i in wave_array4:
+func Spawn_fourth_Path(waveArray):
+	for i in waveArray:
 		fourthPath.add_child(checkSlime(i[0]))
 		await get_tree().create_timer(i[1]).timeout
-	return true
-func Spawn_3_Paths():
-	var wave_array = retrieve_wave_data(current_wave)
-	for i in wave_array:
-		firstPath.add_child(checkSlime(i[0]))
-		await get_tree().create_timer(i[1]).timeout
-	var wave_array2 = retrieve_wave_data(wave_data2)
-	for i in wave_array2:
-		thirdPath.add_child(checkSlime(i[0]))
-		await get_tree().create_timer(i[1]).timeout
-	var wave_array3 = retrieve_wave_data(wave_data3)
-	for i in wave_array3:
-		secondPath.add_child(checkSlime(i[0]))
-		await get_tree().create_timer(i[1]).timeout
-	return true
-func Spawn_2_Paths():
-	var wave_array = retrieve_wave_data(current_wave)
-	for i in wave_array:
-		firstPath.add_child(checkSlime(i[0]))
-		await get_tree().create_timer(i[1]).timeout
-	var wave_array2 = retrieve_wave_data(wave_data2)
-	for i in wave_array2:
-		secondPath.add_child(checkSlime(i[0]))
-		await get_tree().create_timer(i[1]).timeout
-	return true
-func Spawn_1_Path():
-	var wave_array = retrieve_wave_data(current_wave)
-	for i in wave_array:
-		firstPath.add_child(checkSlime(i[0]))
-		await get_tree().create_timer(i[1]).timeout
-	return true
-
 
 func checkSlime(slime):
 	var new_enemy
@@ -244,15 +253,15 @@ func checkSlime(slime):
 func retrieve_wave_data(wave):
 	var wave_data = []
 	if wave == 0:
-		wave_data = [["slime_1", 1]]
+		wave_data = [["slime_1", 2]]
 	elif wave == 1:
-		wave_data = [["slime_1", 2], ["slime_1", 3], ["slime_1", 2], ["slime_1", 2], ["slime_1", 3], ["slime_1", 2]]
+		wave_data = [["slime_1", 2], ["slime_1", 2], ["slime_1", 2]]
 	elif wave == 2:
-		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 1], ["slime_1", 1]]
+		wave_data = [["slime_1", 2], ["slime_1", 2], ["slime_1", 4], ["slime_1", 2]]
 	elif wave == 3:
-		wave_data = [["slime_1", 2], ["slime_1", 3],["slime_2", 3],["slime_1", 2],["slime_2", 2]] #tower auf startpath bekommt ersten damage
+		wave_data = [["slime_2", 5], ["slime_1", 2],["slime_1", 3],["slime_1", 2],["slime_1", 2]] #
 	elif wave == 4:
-		wave_data = [["slime_1", 0.7], ["slime_1", 0.7], ["slime_1", 0.7], ["slime_1", 0.7],["slime_1", 0.7], ["slime_2", 1],["slime_2", 1]]
+		wave_data = [["slime_1", 0.7], ["slime_1", 0.7], ["slime_1", 0.7], ["slime_1", 0.7],["slime_1", 0.7], ["slime_2", 1],["slime_2", 1]]#Bearbeiten
 	elif wave == 5:
 		wave_data = [["slime_2", 1], ["slime_2", 1], ["slime_2", 1], ["slime_2", 1], ["slime_1", 1], ["slime_1", 1], ["slime_1", 1], ["slime_2", 1]]
 	elif wave == 6:
