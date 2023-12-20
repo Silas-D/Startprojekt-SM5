@@ -555,7 +555,8 @@ scale = Vector2(6, 6)
 shape = SubResource("CircleShape2D_dwfuq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="slime2"]
-scale = Vector2(4, 4)
+position = Vector2(0, -1)
+scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_k04tn")
 animation = &"slime 2"
 autoplay = "slime 2"

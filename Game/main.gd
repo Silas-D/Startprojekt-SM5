@@ -97,7 +97,7 @@ func _on_game_over_detection_body_entered(body):
 func pauseMenu():
 	if paused:
 		pause_menu.hide()
-		Engine.time_scale =1
+		Engine.time_scale = 1
 	else:
 		pause_menu.show()
 		Engine.time_scale = 0
@@ -114,7 +114,7 @@ func _on_pause_button_pressed():
 func _on_next_wave_pressed():
 	if waveDone:
 		waveDone = false
-		Engine.time_scale =1
+		Engine.time_scale = 1
 		start_next_wave()
 
 func _on_fast_forward_toggled(toggled_on):
@@ -248,22 +248,20 @@ func checkSlime(slime):
 	return new_enemy
 
 
-
-
 func retrieve_wave_data(wave):
 	var wave_data = []
 	if wave == 0:
-		wave_data = [["slime_1", 2]]
+		wave_data = [["slime_1", 0]]
 	elif wave == 1:
-		wave_data = [["slime_1", 2], ["slime_1", 2], ["slime_1", 2]]
+		wave_data = [["slime_1", 2], ["slime_1", 2], ["slime_1", 0]]
 	elif wave == 2:
-		wave_data = [["slime_1", 2], ["slime_1", 2], ["slime_1", 4], ["slime_1", 2]]
+		wave_data = [["slime_1", 2], ["slime_1", 2], ["slime_1", 4], ["slime_1", 0]]
 	elif wave == 3:
-		wave_data = [["slime_2", 5], ["slime_1", 2],["slime_1", 3],["slime_1", 2],["slime_1", 2]] #
+		wave_data = [["slime_2", 5], ["slime_1", 2],["slime_1", 3],["slime_1", 2],["slime_1", 0]] #
 	elif wave == 4:
-		wave_data = [["slime_1", 0.7], ["slime_1", 0.7], ["slime_1", 0.7], ["slime_1", 0.7],["slime_1", 0.7], ["slime_2", 1],["slime_2", 1]]#Bearbeiten
+		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 1], ["slime_1", 1],["slime_1", 4], ["slime_2", 1],["slime_2", 0]]
 	elif wave == 5:
-		wave_data = [["slime_2", 1], ["slime_2", 1], ["slime_2", 1], ["slime_2", 1], ["slime_1", 1], ["slime_1", 1], ["slime_1", 1], ["slime_2", 1]]
+		wave_data = [["slime_2", 3], ["slime_2", 3], ["slime_2", 0]]#Bearbeiten
 	elif wave == 6:
 		wave_data = [["slime_2", 1], ["slime_2", 2], ["slime_3", 1], ["slime_3", 1]]
 	elif wave == 7:
@@ -274,8 +272,47 @@ func retrieve_wave_data(wave):
 		wave_data = [["slime_2", 3], ["slime_3", 2], ["slime_2", 5], ["slime_4", 1]]
 	elif wave == 10:
 		wave_data = [["slime_4", 1]]
+	elif wave == 11:
+		wave_data = [["slime_4", 1]]
+	elif wave == 12:
+		wave_data = [["slime_4", 1]]
+	elif wave == 13:
+		wave_data = [["slime_4", 1]]
+	elif wave == 14:
+		wave_data = [["slime_4", 1]]
+	elif wave == 15:
+		wave_data = [["slime_4", 1]]
+	elif wave == 16:
+		wave_data = [["slime_4", 1]]
+	elif wave == 17:
+		wave_data = [["slime_4", 1]]
+	elif wave == 18:
+		wave_data = [["slime_4", 1]]
+	elif wave == 19:
+		wave_data = [["slime_5", 4], ["slime_5", 4], ["slime_5", 4]]
+	elif wave == 20:
+		wave_data = [["slime_6", 10]]
+	elif wave == 21:
+		wave_data = [["slime_4", 1]]
+	elif wave == 22:
+		wave_data = [["slime_4", 1]]
+	elif wave == 23:
+		wave_data = [["slime_4", 1]]
+	elif wave == 24:
+		wave_data = [["slime_4", 1]]
+	elif wave == 25:
+		wave_data = [["slime_4", 1]]
+	elif wave == 26:
+		wave_data = [["slime_4", 1]]
+	elif wave == 27:
+		wave_data = [["slime_4", 1]]
+	elif wave == 28:
+		wave_data = [["slime_4", 1]]
+	elif wave == 29:
+		wave_data = [["slime_4", 1]]
+	
 	else:
-		wave_data = [["slime_6", 3], ["slime_3", 1]]
+		wave_data = [["slime_6", 5], ["slime_6", 5], ["slime_6", 5], ["slime_6", 5]]
 	
 	enemies_in_wave += wave_data.size()
 	return wave_data
