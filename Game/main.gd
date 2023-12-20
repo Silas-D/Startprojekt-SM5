@@ -25,33 +25,23 @@ func _ready():
 	map_node2 = get_node("Map/AllPaths/Path2")
 	map_node3 = get_node("Map/AllPaths/Path3")
 	map_node4 = get_node("Map/AllPaths/Path4")
-
-func _process(_delta):
-	if Input.is_action_just_pressed("Pause"):
-		get_node("FastForward").modulate = Color(255,255,255)
-		pauseMenu();
-		
-		
-func _on_next_wave_pressed():
-	if waveDone:
-		waveDone = false
-		Engine.time_scale =1
-		start_next_wave()
-		
-
-
-##
-## Wave Functions
-##
-func start_next_wave():
-	await get_tree().create_timer(0.2).timeout
 	pathZuweisung()
-	spawn_enemies()
-	current_wave += 1
-	if spawn_enemies:
-		get_node("NextWave").modulate = Color(255,0,0)
-		get_node("FastForward").modulate = Color(255,255,255)
-	
+
+##
+##Path funcs
+##
+func next2randomPath(existingPath):
+	var secActivePath = rng.randi_range(1, 4)
+	while secActivePath == existingPath:
+		secActivePath = rng.randi_range(1, 4)
+	return secActivePath
+
+func next3randomPath(existingPath1, existingPath2):
+	var thirdActivePath = rng.randi_range(1, 4)
+	while thirdActivePath == existingPath1 || thirdActivePath == existingPath2:
+		thirdActivePath = rng.randi_range(1, 4)
+	return thirdActivePath
+
 func pathZuweisung():
 	#First Path
 	if randomStartPath == 1:
@@ -90,6 +80,166 @@ func pathZuweisung():
 	elif randomFourthPath == 4:
 		fourthPath = map_node4
 
+##
+##Immer aktive Funcs
+##
+func _process(_delta):
+	if Input.is_action_just_pressed("Pause"):
+		_on_fast_forward_toggled(false)
+		pauseMenu();
+
+##Game Over Func
+func _on_game_over_detection_body_entered(body):
+	if "slime" in body.name:
+		$GameOverScreen.show()
+
+##Pause Menue
+func pauseMenu():
+	if paused:
+		pause_menu.hide()
+		Engine.time_scale =1
+	else:
+		pause_menu.show()
+		Engine.time_scale = 0
+		
+	paused = !paused
+
+##
+##Button Funcs
+##
+func _on_pause_button_pressed():
+	_on_fast_forward_toggled(false)
+	pauseMenu();
+
+func _on_next_wave_pressed():
+	if waveDone:
+		waveDone = false
+		Engine.time_scale =1
+		start_next_wave()
+
+func _on_fast_forward_toggled(toggled_on):
+	if toggled_on:
+		get_node("Buttons/FastForward").modulate = Color(0,255,0)
+		Engine.time_scale = 2.5
+	else :
+		get_node("Buttons/FastForward").modulate = Color(255,255,255)
+		Engine.time_scale = 1
+
+
+##
+## Wave Functions
+##
+func start_next_wave():
+	#Star Delay
+	await get_tree().create_timer(0.2).timeout
+	
+	spawn_enemies()
+	current_wave += 1
+	if spawn_enemies:
+		get_node("Buttons/NextWave").modulate = Color(255,0,0)
+		get_node("Buttons/FastForward").modulate = Color(255,255,255)
+
+
+var wave_data2
+var wave_data3
+var wave_data4
+func spawn_enemies():
+	#Zuordnung
+	if current_wave > 8:
+		wave_data4 = current_wave - 9
+		wave_data3 = current_wave - 6
+		wave_data2 = current_wave - 3
+	elif current_wave > 5:
+		wave_data3 = current_wave - 6
+		wave_data2 = current_wave - 3
+	elif current_wave > 2:
+		wave_data2 = current_wave - 3
+	
+	#Deciding where to spawn
+	var done
+	if current_wave > 8:
+		done = await Spawn_4_Paths()
+	elif current_wave > 5:
+		done = await Spawn_3_Paths()
+	elif current_wave > 2:
+		done = await Spawn_2_Paths()
+	elif current_wave >= 0:
+		done = await Spawn_1_Path()
+		
+	if done == true: 
+		await get_tree().create_timer(2).timeout
+		waveDone = true
+		get_node("Buttons/NextWave").modulate = Color(255,255,255)
+
+##Spawn Functions
+func Spawn_4_Paths():
+	var wave_array = retrieve_wave_data(current_wave)
+	for i in wave_array:
+		firstPath.add_child(checkSlime(i[0]))
+		await get_tree().create_timer(i[1]).timeout
+	var wave_array2 = retrieve_wave_data(wave_data2)
+	for i in wave_array2:
+		secondPath.add_child(checkSlime(i[0]))
+		await get_tree().create_timer(i[1]).timeout
+	var wave_array3 = retrieve_wave_data(wave_data3)
+	for i in wave_array3:
+		thirdPath.add_child(checkSlime(i[0]))
+		await get_tree().create_timer(i[1]).timeout
+	var wave_array4 = retrieve_wave_data(wave_data4)
+	for i in wave_array4:
+		fourthPath.add_child(checkSlime(i[0]))
+		await get_tree().create_timer(i[1]).timeout
+	return true
+func Spawn_3_Paths():
+	var wave_array = retrieve_wave_data(current_wave)
+	for i in wave_array:
+		firstPath.add_child(checkSlime(i[0]))
+		await get_tree().create_timer(i[1]).timeout
+	var wave_array2 = retrieve_wave_data(wave_data2)
+	for i in wave_array2:
+		thirdPath.add_child(checkSlime(i[0]))
+		await get_tree().create_timer(i[1]).timeout
+	var wave_array3 = retrieve_wave_data(wave_data3)
+	for i in wave_array3:
+		secondPath.add_child(checkSlime(i[0]))
+		await get_tree().create_timer(i[1]).timeout
+	return true
+func Spawn_2_Paths():
+	var wave_array = retrieve_wave_data(current_wave)
+	for i in wave_array:
+		firstPath.add_child(checkSlime(i[0]))
+		await get_tree().create_timer(i[1]).timeout
+	var wave_array2 = retrieve_wave_data(wave_data2)
+	for i in wave_array2:
+		secondPath.add_child(checkSlime(i[0]))
+		await get_tree().create_timer(i[1]).timeout
+	return true
+func Spawn_1_Path():
+	var wave_array = retrieve_wave_data(current_wave)
+	for i in wave_array:
+		firstPath.add_child(checkSlime(i[0]))
+		await get_tree().create_timer(i[1]).timeout
+	return true
+
+
+func checkSlime(slime):
+	var new_enemy
+	if slime == "slime_1":
+		new_enemy = load("res://Game/Enemy/slime1/" + slime + ".tscn").instantiate()
+	if slime == "slime_2":
+		new_enemy = load("res://Game/Enemy/slime2/" + slime + ".tscn").instantiate()
+	if slime == "slime_3":
+		new_enemy = load("res://Game/Enemy/slime3/" + slime + ".tscn").instantiate()
+	if slime == "slime_4":
+		new_enemy = load("res://Game/Enemy/slime4/" + slime + ".tscn").instantiate()
+	if slime == "slime_5":
+		new_enemy = load("res://Game/Enemy/slime5/" + slime + ".tscn").instantiate()
+	if slime == "slime_6":
+		new_enemy = load("res://Game/Enemy/slime6/" + slime + ".tscn").instantiate()
+	return new_enemy
+
+
+
 
 func retrieve_wave_data(wave):
 	var wave_data = []
@@ -120,146 +270,3 @@ func retrieve_wave_data(wave):
 	
 	enemies_in_wave += wave_data.size()
 	return wave_data
-
-func spawn_enemies():
-	var wave_data4
-	var wave_data3
-	var wave_data2
-	
-	#Zuordnung
-	if current_wave > 8:
-		wave_data4 = current_wave - 9
-		wave_data3 = current_wave - 6
-		wave_data2 = current_wave - 3
-	elif current_wave > 5:
-		wave_data3 = current_wave - 6
-		wave_data2 = current_wave - 3
-	elif current_wave > 2:
-		wave_data2 = current_wave - 3
-	
-	#Deciding where to spawn
-	var done
-	if current_wave > 8:
-		done = await Spawn_4_Path()
-		var wave_array = retrieve_wave_data(current_wave)
-		for i in wave_array:
-			firstPath.add_child(checkSlime(i[0]))
-			await get_tree().create_timer(i[1]).timeout
-		var wave_array2 = retrieve_wave_data(wave_data2)
-		for i in wave_array2:
-			secondPath.add_child(checkSlime(i[0]))
-			await get_tree().create_timer(i[1]).timeout
-		var wave_array3 = retrieve_wave_data(wave_data3)
-		for i in wave_array3:
-			thirdPath.add_child(checkSlime(i[0]))
-			await get_tree().create_timer(i[1]).timeout
-		var wave_array4 = retrieve_wave_data(wave_data4)
-		for i in wave_array4:
-			fourthPath.add_child(checkSlime(i[0]))
-			await get_tree().create_timer(i[1]).timeout
-	elif current_wave > 5:
-		done = await Spawn_3_Path()
-		var wave_array = retrieve_wave_data(current_wave)
-		for i in wave_array:
-			firstPath.add_child(checkSlime(i[0]))
-			await get_tree().create_timer(i[1]).timeout
-		var wave_array2 = retrieve_wave_data(wave_data2)
-		for i in wave_array2:
-			secondPath.add_child(checkSlime(i[0]))
-			await get_tree().create_timer(i[1]).timeout
-		var wave_array3 = retrieve_wave_data(wave_data3)
-		for i in wave_array3:
-			thirdPath.add_child(checkSlime(i[0]))
-			await get_tree().create_timer(i[1]).timeout
-	elif current_wave > 2:
-		done = await Spawn_2_Path()
-		var wave_array = retrieve_wave_data(current_wave)
-		for i in wave_array:
-			firstPath.add_child(checkSlime(i[0]))
-			await get_tree().create_timer(i[1]).timeout
-		var wave_array2 = retrieve_wave_data(wave_data2)
-		for i in wave_array2:
-			secondPath.add_child(checkSlime(i[0]))
-			await get_tree().create_timer(i[1]).timeout
-	elif current_wave >= 0:
-		done = await Spawn_1_Path()
-		
-	if done == true: 
-		await get_tree().create_timer(2).timeout
-		waveDone = true
-		get_node("NextWave").modulate = Color(255,255,255)
-
-##Spawn Functions
-func Spawn_4_Path():
-	
-	return true
-func Spawn_3_Path():
-	
-	return true
-func Spawn_2_Path():
-	
-	return true
-func Spawn_1_Path():
-	var wave_array = retrieve_wave_data(current_wave)
-	for i in wave_array:
-		firstPath.add_child(checkSlime(i[0]))
-		await get_tree().create_timer(i[1]).timeout
-	return true
-
-
-func checkSlime(slime):
-	var new_enemy
-	if slime == "slime_1":
-		new_enemy = load("res://Game/Enemy/slime1/" + slime + ".tscn").instantiate()
-	if slime == "slime_2":
-		new_enemy = load("res://Game/Enemy/slime2/" + slime + ".tscn").instantiate()
-	if slime == "slime_3":
-		new_enemy = load("res://Game/Enemy/slime3/" + slime + ".tscn").instantiate()
-	if slime == "slime_4":
-		new_enemy = load("res://Game/Enemy/slime4/" + slime + ".tscn").instantiate()
-	if slime == "slime_5":
-		new_enemy = load("res://Game/Enemy/slime5/" + slime + ".tscn").instantiate()
-	if slime == "slime_6":
-		new_enemy = load("res://Game/Enemy/slime6/" + slime + ".tscn").instantiate()
-	return new_enemy
-
-func pauseMenu():
-	if paused:
-		pause_menu.hide()
-		Engine.time_scale =1
-	else:
-		pause_menu.show()
-		Engine.time_scale = 0
-		
-	paused = !paused
-
-func _on_pause_button_pressed():
-	get_node("FastForward").modulate = Color(255,255,255)
-	pauseMenu();
-
-func _on_area_2d_body_entered(body):
-	##Game Over Funktion
-	if "slime" in body.name:
-		$GameOverScreen.show()
-
-func next2randomPath(existingPath):
-	var secActivePath = rng.randi_range(1, 4)
-	while secActivePath == existingPath:
-		secActivePath = rng.randi_range(1, 4)
-	return secActivePath
-
-func next3randomPath(existingPath1, existingPath2):
-	var thirdActivePath = rng.randi_range(1, 4)
-	while thirdActivePath == existingPath1 || thirdActivePath == existingPath2:
-		thirdActivePath = rng.randi_range(1, 4)
-	return thirdActivePath
-	
-func _on_fast_forward_toggled(toggled_on):
-	if toggled_on == true:
-		get_node("FastForward").modulate = Color(0,255,0)
-		#auf 2,5 ändern
-		Engine.time_scale = 3.5
-	else :
-		get_node("FastForward").modulate = Color(255,255,255)
-		Engine.time_scale = 1
-		
