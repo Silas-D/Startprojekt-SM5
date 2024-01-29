@@ -99,6 +99,7 @@ func _process(_delta):
 ##Game Over Func
 func _on_game_over_detection_body_entered(body):
 	if "slime" in body.name:
+		autostart = false
 		$GameOverScreen.show()
 
 ##Pause Menue
@@ -147,7 +148,7 @@ func _on_fast_forward_toggled(toggled_on):
 ## Wave Functions
 ##
 func start_next_wave():
-	#Star Delay
+	#Start Delay
 	await get_tree().create_timer(0.2).timeout
 	
 	spawn_enemies()
