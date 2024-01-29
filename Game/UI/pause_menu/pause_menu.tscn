@@ -114,3 +114,4 @@ text = "Pausiert"
 
 [connection signal="pressed" from="Panel2/Panel/HBoxContainer/Weiterspielen" to="." method="_on_weiterspielen_pressed"]
 [connection signal="pressed" from="Panel2/Panel/HBoxContainer/Verlassen" to="." method="_on_verlassen_pressed"]
+[connection signal="toggled" from="Panel2/Panel/HBoxContainer2/TextureButton" to="." method="_on_texture_AUTOSTART_toggled"]

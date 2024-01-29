@@ -674,5 +674,6 @@ shape = SubResource("RectangleShape2D_oga75")
 [connection signal="pressed" from="Buttons/PauseButton" to="." method="_on_pause_button_pressed"]
 [connection signal="pressed" from="Buttons/NextWave" to="." method="_on_next_wave_pressed"]
 [connection signal="toggled" from="Buttons/FastForward" to="." method="_on_fast_forward_toggled"]
+[connection signal="autostart_toggel" from="pauseMenu" to="." method="_on_pause_menu_autostart_toggel"]
 [connection signal="visibility_changed" from="GameOverScreen" to="GameOverScreen" method="_on_visibility_changed"]
 [connection signal="body_entered" from="GameOverDetection" to="." method="_on_game_over_detection_body_entered"]

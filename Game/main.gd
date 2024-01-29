@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var pause_menu = $pauseMenu
 var paused = false
+var autostart
 @export var current_wave = 0
 @export var enemies_in_wave = 0
 var map_node1
@@ -21,6 +22,7 @@ var waveDone = true
 
 func _ready():
 	Money.Gold = 1000
+	autostart = false
 	map_node1 = get_node("Map/AllPaths/Path1")
 	map_node2 = get_node("Map/AllPaths/Path2")
 	map_node3 = get_node("Map/AllPaths/Path3")
@@ -87,6 +89,12 @@ func _process(_delta):
 	if Input.is_action_just_pressed("Pause"):
 		_on_fast_forward_toggled(false)
 		pauseMenu();
+	
+	if autostart:
+		if waveDone:
+			waveDone = false
+			Engine.time_scale = 1
+			start_next_wave()
 
 ##Game Over Func
 func _on_game_over_detection_body_entered(body):
@@ -103,6 +111,9 @@ func pauseMenu():
 		Engine.time_scale = 0
 		
 	paused = !paused
+##Autostart
+func _on_pause_menu_autostart_toggel():
+	autostart = true
 
 ##
 ##Button Funcs
@@ -316,3 +327,6 @@ func retrieve_wave_data(wave):
 	
 	enemies_in_wave += wave_data.size()
 	return wave_data
+
+
+
