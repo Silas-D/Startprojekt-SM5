@@ -42,7 +42,6 @@ flat = true
 script = ExtResource("8_8okx3")
 
 [node name="Panel11" type="Panel" parent="Kaufmenu/Button1"]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_top = -0.581081
@@ -68,6 +67,24 @@ icon = ExtResource("8_di1yw")
 icon_alignment = 1
 expand_icon = true
 
+[node name="T1 Preis" type="Label" parent="Kaufmenu/Button1/Panel11/Button Tower 1"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -30.0
+offset_right = 40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 22
+text = "150"
+horizontal_alignment = 1
+
 [node name="Button Tower 2" type="Button" parent="Kaufmenu/Button1/Panel11"]
 layout_mode = 1
 anchors_preset = 3
@@ -85,6 +102,24 @@ mouse_force_pass_scroll_events = false
 icon = ExtResource("5_bghfl")
 icon_alignment = 1
 expand_icon = true
+
+[node name="T2 Preis" type="Label" parent="Kaufmenu/Button1/Panel11/Button Tower 2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -30.0
+offset_right = 40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 22
+text = "700"
+horizontal_alignment = 1
 
 [node name="Close Button" type="Button" parent="Kaufmenu/Button1/Panel11"]
 layout_mode = 1
