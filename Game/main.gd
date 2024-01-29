@@ -136,10 +136,10 @@ func _on_next_wave_pressed():
 
 func _on_fast_forward_toggled(toggled_on):
 	if toggled_on:
-		get_node("Buttons/FastForward").modulate = Color(0,255,0)
+		get_node("Buttons/FastForward").modulate = Color(0,1,0)
 		Engine.time_scale = 2.5
 	else :
-		get_node("Buttons/FastForward").modulate = Color(255,255,255)
+		get_node("Buttons/FastForward").modulate = Color(1,1,1)
 		Engine.time_scale = 1
 
 
@@ -153,8 +153,8 @@ func start_next_wave():
 	spawn_enemies()
 	current_wave += 1
 	if spawn_enemies:
-		get_node("Buttons/NextWave").modulate = Color(255,0,0)
-		get_node("Buttons/FastForward").modulate = Color(255,255,255)
+		get_node("Buttons/NextWave").modulate = Color(1,0,0)
+		get_node("Buttons/FastForward").modulate = Color(1,1,1)
 
 
 var wave_data2

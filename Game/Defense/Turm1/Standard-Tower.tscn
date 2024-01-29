@@ -54,7 +54,6 @@ offset_bottom = 47.0
 flat = true
 
 [node name="Panel" type="Panel" parent="Node2D/UpgradeMenu"]
-visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -75,9 +74,25 @@ offset_left = 5.0
 offset_top = 5.0
 offset_right = 50.0
 offset_bottom = 50.0
-tooltip_text = "300"
 icon = ExtResource("5_6ub6n")
 expand_icon = true
+
+[node name="U1 Preis" type="Label" parent="Node2D/UpgradeMenu/Panel/Upgrade1"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+text = "300"
+horizontal_alignment = 1
 
 [node name="Upgrade2" type="Button" parent="Node2D/UpgradeMenu/Panel"]
 layout_mode = 1
@@ -89,9 +104,25 @@ offset_top = -50.0
 offset_right = 50.0
 offset_bottom = -5.0
 grow_vertical = 0
-tooltip_text = "300"
 icon = ExtResource("6_woyex")
 expand_icon = true
+
+[node name="U2 Preis" type="Label" parent="Node2D/UpgradeMenu/Panel/Upgrade2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+text = "300"
+horizontal_alignment = 1
 
 [node name="Delete" type="Button" parent="Node2D/UpgradeMenu/Panel"]
 layout_mode = 1

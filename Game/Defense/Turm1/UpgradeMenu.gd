@@ -11,11 +11,22 @@ func _ready():
 		if towerContainer:
 			towerContainer = towerContainer.get_node("Towers")
 
+func _process(_delta):
+	if Money.Gold <= 300:
+		$"Panel/Upgrade1/U1 Preis".set("theme_override_colors/font_color", Color(1,0,0))
+	if Money.Gold >= 300:
+		$"Panel/Upgrade1/U1 Preis".set("theme_override_colors/font_color", Color(0,1,0))
+	if Money.Gold <= 300:
+		$"Panel/Upgrade2/U2 Preis".set("theme_override_colors/font_color", Color(1,0,0))
+	if Money.Gold >= 300:
+		$"Panel/Upgrade2/U2 Preis".set("theme_override_colors/font_color", Color(0,1,0))
+
+
 func _on_button_pressed():
 	$Panel.show()
 
-
 func _on_delete_pressed():
+	Money.Gold += 1
 	$"..".queue_free()
 	$Panel.hide()
 
