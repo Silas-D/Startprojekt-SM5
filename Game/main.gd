@@ -112,8 +112,14 @@ func pauseMenu():
 		
 	paused = !paused
 ##Autostart
+var c = 0
 func _on_pause_menu_autostart_toggel():
-	autostart = true
+	c += 1
+	if c %2 == 0:
+		autostart = false
+	elif c %2 != 0:
+		autostart = true
+	
 
 ##
 ##Button Funcs

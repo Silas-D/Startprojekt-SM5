@@ -11,5 +11,5 @@ func _on_verlassen_pressed():
 
 
 signal autostart_toggel
-func _on_texture_AUTOSTART_toggled(toggled_on):
+func _on_texture_button_pressed():
 	autostart_toggel.emit()
