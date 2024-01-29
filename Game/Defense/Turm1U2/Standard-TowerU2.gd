@@ -60,8 +60,7 @@ func Shoot():
 
 func _on_tower_body_entered(body):
 	currTargets.append(body)
-	print("Slimes im Scan: ",currTargets)
-		
+	
 func _on_gegner_scan_body_entered(body):
 	
 	if "slime1" in body.name:

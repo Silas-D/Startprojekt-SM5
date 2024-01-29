@@ -41,9 +41,6 @@ func _process(_delta):
 		curr = currTarget
 		pathName = curr.get_parent().name
 
-#	print("CurrTarget: ", currTarget)
-#	print("Curr: ", curr)
-#	print("PathName: ", pathName)
 
 func _on_timer_timeout():
 	Shoot()
@@ -64,7 +61,6 @@ func Shoot():
 
 func _on_tower_body_entered(body):
 	currTargets.append(body)
-	print("Slimes im Scan: ",currTargets)
 
 
 func _on_gegner_scan_body_entered(body):

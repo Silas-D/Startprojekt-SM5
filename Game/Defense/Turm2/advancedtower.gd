@@ -49,6 +49,7 @@ func _on_timer_timeout():
 			break
 
 func Shoot():
+	print(currTargets)
 	var tempBullet = Bullet.instantiate()
 	tempBullet.pathName = pathName
 	var bullet_container = get_node_or_null("Node2D/BulletContainer")
