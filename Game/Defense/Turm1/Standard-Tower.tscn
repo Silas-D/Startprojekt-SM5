@@ -54,6 +54,7 @@ offset_bottom = 47.0
 flat = true
 
 [node name="Panel" type="Panel" parent="Node2D/UpgradeMenu"]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
