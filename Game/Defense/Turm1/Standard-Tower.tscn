@@ -75,6 +75,7 @@ offset_left = 5.0
 offset_top = 5.0
 offset_right = 50.0
 offset_bottom = 50.0
+tooltip_text = "Größere Raketen"
 icon = ExtResource("5_6ub6n")
 expand_icon = true
 
@@ -93,7 +94,7 @@ grow_vertical = 0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 17
-text = "300"
+text = "200"
 horizontal_alignment = 1
 vertical_alignment = 2
 
@@ -107,6 +108,7 @@ offset_top = -50.0
 offset_right = 50.0
 offset_bottom = -5.0
 grow_vertical = 0
+tooltip_text = "Mehr Geschwindigkeit"
 icon = ExtResource("6_woyex")
 expand_icon = true
 
@@ -125,7 +127,7 @@ grow_vertical = 0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 17
-text = "300"
+text = "200"
 horizontal_alignment = 1
 vertical_alignment = 2
 

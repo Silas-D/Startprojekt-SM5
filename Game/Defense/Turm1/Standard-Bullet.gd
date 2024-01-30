@@ -3,7 +3,7 @@ extends CharacterBody2D
 var target = Vector2.ZERO
 const Speed = 1000
 var pathName = ""
-const bulletDamage = 1
+const bulletDamage = 1.5
 
 func _process(_delta):
 	var slimeSpawnerNode = get_tree().get_root().get_node("Main/Map/AllPaths")

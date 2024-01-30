@@ -2,8 +2,8 @@ extends Control
 
 const Tower1U1 = preload("res://Game/Defense/Turm1U1/Standard-TowerU1.tscn")
 const Tower1U2 = preload("res://Game/Defense/Turm1U2/Standard-TowerU2.tscn")
-const U1Preis = 300
-const U2Preis = 300
+const U1Preis = 200
+const U2Preis = 200
 var main = load("res://Game/main.tscn")
 var towerContainer 
 
@@ -28,7 +28,7 @@ func _on_button_pressed():
 	$Panel.show()
 
 func _on_delete_pressed():
-	Money.Gold += 1
+	Money.Gold += 100
 	$"..".queue_free()
 	$Panel.hide()
 

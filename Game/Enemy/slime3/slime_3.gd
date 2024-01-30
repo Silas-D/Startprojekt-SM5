@@ -1,7 +1,7 @@
 extends PathFollow2D
 
-const speed = 100
-@export var health = 9
+const speed = 90
+@export var health = 7
 
 func _process(delta):
 	move(delta)

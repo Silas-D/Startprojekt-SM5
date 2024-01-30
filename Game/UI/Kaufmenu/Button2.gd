@@ -4,7 +4,7 @@ extends Button
 const Tower1 = preload("res://Game/Defense/Turm1/Standard-Tower.tscn")
 const Tower2 = preload ("res://Game/Defense/Turm2/advancedtower.tscn")
 const T1Preis = 150
-const T2Preis = 700
+const T2Preis = 1000
 
 
 func _process(_delta):

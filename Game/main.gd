@@ -21,7 +21,7 @@ var randomFourthPath = 10 - randomStartPath - randomSecondPath - randomThirdPath
 var waveDone = true
 
 func _ready():
-	Money.Gold = 1000
+	Money.Gold = 405
 	autostart = false
 	map_node1 = get_node("Map/AllPaths/Path1")
 	map_node2 = get_node("Map/AllPaths/Path2")
@@ -163,8 +163,8 @@ var wave_data3
 var wave_data4
 func spawn_enemies():
 	#Zuordnung
-	if current_wave >= 10:
-		wave_data4 = current_wave - 10
+	if current_wave >= 9:
+		wave_data4 = current_wave - 9
 		wave_data3 = current_wave - 6
 		wave_data2 = current_wave - 3
 	elif current_wave >= 6:
@@ -175,7 +175,7 @@ func spawn_enemies():
 	
 	#Deciding where to spawn
 	var done
-	if current_wave >= 10:
+	if current_wave >= 9:
 		done = await Spawn_4_Paths()
 	elif current_wave >= 6:
 		done = await Spawn_3_Paths()
@@ -271,63 +271,63 @@ func retrieve_wave_data(wave):
 	if wave == 0:
 		wave_data = [["slime_1", 1]]
 	elif wave == 1:
-		wave_data = [["slime_1", 2], ["slime_1", 2], ["slime_1", 1]]
+		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 1], ["slime_1", 1]]
 	elif wave == 2:
-		wave_data = [["slime_1", 2], ["slime_1", 2], ["slime_1", 4], ["slime_1", 1]]
+		wave_data = [["slime_2", 3], ["slime_1", 2], ["slime_1", 2], ["slime_1", 1]]
 	elif wave == 3:
-		wave_data = [["slime_2", 5], ["slime_1", 2],["slime_1", 3],["slime_1", 2],["slime_1", 1]] #
+		wave_data = [["slime_2", 3.5], ["slime_1", 2],["slime_1", 2],["slime_1", 2],["slime_1", 2]] #OK 2 Türme auf 1.+2. (+265 Gold über)
 	elif wave == 4:
-		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 1], ["slime_1", 1],["slime_1", 4], ["slime_2", 1],["slime_2", 1]]
+		wave_data = [["slime_1", 1], ["slime_1", 1], ["slime_1", 1], ["slime_1", 1],["slime_1", 4], ["slime_2", 1]]# 1. Turm Upgrade (170G am Ende)
 	elif wave == 5:
-		wave_data = [["slime_2", 3], ["slime_2", 3], ["slime_2", 1]]#Bearbeiten
+		wave_data = [["slime_2", 4], ["slime_2", 4], ["slime_2", 2]] 
 	elif wave == 6:
-		wave_data = [["slime_2", 1], ["slime_2", 2], ["slime_3", 1], ["slime_3", 1]]
+		wave_data = [["slime_2", 3], ["slime_2", 3], ["slime_2", 2], ["slime_2", 3]] # 3. Turm (235G am Ende)
 	elif wave == 7:
-		wave_data = [["slime_3", 2], ["slime_3", 2], ["slime_3", 2], ["slime_2", 2], ["slime_2", 2], ["slime_1", 0.7], ["slime_1", 0.7], ["slime_1", 0.7], ["slime_1", 0.7],["slime_1", 0.7]]
+		wave_data = [["slime_3", 5], ["slime_2", 2], ["slime_2", 3], ["slime_1", 1], ["slime_1", 1], ["slime_1", 1],["slime_1", 3]]#2. Turm Upgrade (230G über am Ende)
 	elif wave == 8:
-		wave_data = [["slime_3", 4], ["slime_2", 2], ["slime_2", 4], ["slime_3", 1]]
+		wave_data = [["slime_3", 5], ["slime_2", 4], ["slime_2", 4], ["slime_2", 2]]
 	elif wave == 9:
-		wave_data = [["slime_2", 3], ["slime_3", 2], ["slime_2", 5], ["slime_4", 1]]
+		wave_data = [["slime_3", 5], ["slime_3", 5], ["slime_2", 3], ["slime_2", 3]] #4. Turm (430G am Ende)
 	elif wave == 10:
-		wave_data = [["slime_4", 1]]
+		wave_data = [["slime_4", 5]] #650G am Ende
 	elif wave == 11:
-		wave_data = [["slime_4", 1]]
+		wave_data = [["slime_3", 3],["slime_3", 3],["slime_3", 3],["slime_2", 2],["slime_2", 2],["slime_2", 2]] #3. Turm Upgrade
 	elif wave == 12:
-		wave_data = [["slime_4", 1]]
+		wave_data = [["slime_4", 5],["slime_4", 5],["slime_4", 5]] #970G am Ende
 	elif wave == 13:
-		wave_data = [["slime_4", 1]]
+		wave_data = [["slime_4", 3],["slime_3", 3],["slime_3", 3],["slime_2", 2],["slime_2", 2],["slime_2", 2],["slime_1", 1],["slime_1", 1],["slime_1", 1],["slime_1", 1],["slime_1", 1],["slime_1", 1]] #4. Turm Upgrade
 	elif wave == 14:
-		wave_data = [["slime_4", 1]]
+		wave_data = [["slime_5", 5]]
 	elif wave == 15:
-		wave_data = [["slime_4", 1]]
+		wave_data = [["slime_4", 4],["slime_4", 4],["slime_4", 4],["slime_4", 3],["slime_3", 3],["slime_3", 3]]
 	elif wave == 16:
-		wave_data = [["slime_4", 1]]
+		wave_data = [["slime_5", 4],["slime_3", 3],["slime_3", 3],["slime_3", 3],["slime_3", 3]]
 	elif wave == 17:
-		wave_data = [["slime_4", 1]]
+		wave_data = [["slime_5", 4],["slime_4", 3],["slime_4", 3],["slime_4", 3],["slime_3", 3]]
 	elif wave == 18:
-		wave_data = [["slime_4", 1]]
+		wave_data = [["slime_5", 4],["slime_4", 2],["slime_4", 2],["slime_3", 1.5],["slime_3", 1.5],["slime_3", 3]]
 	elif wave == 19:
 		wave_data = [["slime_5", 4], ["slime_5", 4], ["slime_5", 4]]
 	elif wave == 20:
 		wave_data = [["slime_6", 10]]
 	elif wave == 21:
-		wave_data = [["slime_4", 1]]
+		wave_data = [["slime_6", 10]]
 	elif wave == 22:
-		wave_data = [["slime_4", 1]]
+		wave_data = [["slime_6", 10]]
 	elif wave == 23:
-		wave_data = [["slime_4", 1]]
+		wave_data = [["slime_6", 10]]
 	elif wave == 24:
-		wave_data = [["slime_4", 1]]
+		wave_data = [["slime_6", 10]]
 	elif wave == 25:
-		wave_data = [["slime_4", 1]]
+		wave_data = [["slime_6", 10]]
 	elif wave == 26:
-		wave_data = [["slime_4", 1]]
+		wave_data = [["slime_6", 10]]
 	elif wave == 27:
-		wave_data = [["slime_4", 1]]
+		wave_data = [["slime_6", 10]]
 	elif wave == 28:
-		wave_data = [["slime_4", 1]]
+		wave_data = [["slime_6", 10]]
 	elif wave == 29:
-		wave_data = [["slime_4", 1]]
+		wave_data = [["slime_6", 10]]
 	
 	else:
 		wave_data = [["slime_6", 5], ["slime_6", 5], ["slime_6", 5], ["slime_6", 5]]

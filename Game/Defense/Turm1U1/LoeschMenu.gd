@@ -6,6 +6,7 @@ func _on_button_pressed():
 
 
 func _on_delete_pressed():
+	Money.Gold += 150
 	$"..".queue_free()
 	$Panel.hide()
 

@@ -119,7 +119,7 @@ grow_vertical = 0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 22
-text = "700"
+text = "1000"
 horizontal_alignment = 1
 
 [node name="Close Button" type="Button" parent="Kaufmenu/Button1/Panel11"]
@@ -223,7 +223,7 @@ grow_vertical = 0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 22
-text = "700"
+text = "1000"
 horizontal_alignment = 1
 
 [node name="Close Button" type="Button" parent="Kaufmenu/Button2/Panel12"]
@@ -327,7 +327,7 @@ grow_vertical = 0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 22
-text = "700"
+text = "1000"
 horizontal_alignment = 1
 
 [node name="Close Button" type="Button" parent="Kaufmenu/Button3/Panel21"]
@@ -428,7 +428,7 @@ grow_vertical = 0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 22
-text = "700"
+text = "1000"
 horizontal_alignment = 1
 
 [node name="Close Button" type="Button" parent="Kaufmenu/Button4/Panel22"]
@@ -532,7 +532,7 @@ grow_vertical = 0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 22
-text = "700"
+text = "1000"
 horizontal_alignment = 1
 
 [node name="Close Button" type="Button" parent="Kaufmenu/Button5/Panel31"]
@@ -635,7 +635,7 @@ grow_vertical = 0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 22
-text = "700"
+text = "1000"
 horizontal_alignment = 1
 
 [node name="Close Button" type="Button" parent="Kaufmenu/Button6/Panel32"]
@@ -737,7 +737,7 @@ grow_vertical = 0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 22
-text = "700"
+text = "1000"
 horizontal_alignment = 1
 
 [node name="Close Button" type="Button" parent="Kaufmenu/Button7/Panel41"]
@@ -840,7 +840,7 @@ grow_vertical = 0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 22
-text = "700"
+text = "1000"
 horizontal_alignment = 1
 
 [node name="Close Button" type="Button" parent="Kaufmenu/Button8/Panel42"]
