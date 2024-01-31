@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b86hrtmfbwl50"]
+[gd_scene load_steps=25 format=3 uid="uid://b86hrtmfbwl50"]
 
 [ext_resource type="Script" path="res://Game/main.gd" id="1_66rgv"]
 [ext_resource type="PackedScene" uid="uid://c1wd138ka86xp" path="res://Game/Level/Map.tscn" id="2_80g8p"]
@@ -19,6 +19,10 @@
 [ext_resource type="PackedScene" uid="uid://cemg8afkqteqr" path="res://Game/UI/HUD/hud.tscn" id="16_mwe1b"]
 [ext_resource type="Texture2D" uid="uid://6jog3wp43utg" path="res://Game/Assets/UI/forward.png" id="17_8lbx5"]
 [ext_resource type="Texture2D" uid="uid://c7wttcin6o1ow" path="res://Game/Assets/UI/fastForward.png" id="18_cdfev"]
+[ext_resource type="Script" path="res://Game/Tutorial.gd" id="20_2heqd"]
+[ext_resource type="Texture2D" uid="uid://c4i7gu832etuu" path="res://Game/Assets/Tut0.png" id="21_aqilb"]
+[ext_resource type="Texture2D" uid="uid://diralww0nlsyv" path="res://Game/Assets/Tut1.png" id="22_h6hbo"]
+[ext_resource type="Texture2D" uid="uid://cn86pcuhgn6fo" path="res://Game/Assets/UI/checkmark.png" id="23_n3ahq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oga75"]
 size = Vector2(106, 1114)
@@ -913,6 +917,78 @@ icon = ExtResource("18_cdfev")
 flat = true
 expand_icon = true
 
+[node name="Tutorial" type="CanvasLayer" parent="."]
+script = ExtResource("20_2heqd")
+
+[node name="Panel" type="Panel" parent="Tutorial"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -270.0
+offset_right = 480.0
+offset_bottom = 270.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Tutorial/Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 50.0
+offset_top = -169.0
+offset_right = 379.0
+offset_bottom = 170.0
+grow_vertical = 2
+
+[node name="Tut0" type="Sprite2D" parent="Tutorial/Panel/Panel"]
+position = Vector2(165, 83)
+texture = ExtResource("21_aqilb")
+
+[node name="Tut1" type="Sprite2D" parent="Tutorial/Panel/Panel"]
+position = Vector2(163, 244)
+texture = ExtResource("22_h6hbo")
+
+[node name="Label" type="Label" parent="Tutorial/Panel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -460.0
+offset_top = -63.5
+offset_right = -33.0
+offset_bottom = 63.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Platziere Türme und wehre die Slimes ab.
+
+Klicke die Fundamente an um das Kaufmenü zu öffnen.
+
+Klicke auf platzierte Türme um sie zu verbessern / 
+entfernen."
+
+[node name="Button" type="Button" parent="Tutorial/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -54.0
+offset_top = -108.0
+offset_right = 6.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 0
+icon = ExtResource("23_n3ahq")
+expand_icon = true
+
 [node name="pauseMenu" parent="." instance=ExtResource("5_1yo3r")]
 visible = false
 
@@ -962,6 +1038,7 @@ shape = SubResource("RectangleShape2D_oga75")
 [connection signal="pressed" from="Buttons/PauseButton" to="." method="_on_pause_button_pressed"]
 [connection signal="pressed" from="Buttons/NextWave" to="." method="_on_next_wave_pressed"]
 [connection signal="toggled" from="Buttons/FastForward" to="." method="_on_fast_forward_toggled"]
+[connection signal="pressed" from="Tutorial/Panel/Button" to="Tutorial" method="_on_button_pressed"]
 [connection signal="autostart_toggel" from="pauseMenu" to="." method="_on_pause_menu_autostart_toggel"]
 [connection signal="visibility_changed" from="GameOverScreen" to="GameOverScreen" method="_on_visibility_changed"]
 [connection signal="body_entered" from="GameOverDetection" to="." method="_on_game_over_detection_body_entered"]
